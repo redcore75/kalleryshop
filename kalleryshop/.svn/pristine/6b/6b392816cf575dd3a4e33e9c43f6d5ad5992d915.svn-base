@@ -1,0 +1,11 @@
+package kr.co.redcore.mapper;
+
+import java.sql.SQLException;
+import java.util.List;
+import kr.co.redcore.domain.Tbl_cate_prd;
+import kr.co.redcore.domain.Tbl_prd_detail;
+import kr.co.redcore.util.ParamMap;
+
+public interface Tbl_prd_detailMapper {
+	public int insertTbl_prd_detail(Tbl_prd_detail tbl_prd_detail) throws SQLException;	
+}

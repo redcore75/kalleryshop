@@ -1,0 +1,89 @@
+package kr.co.redcore.domain.api;
+
+import java.io.Serializable;
+
+public class ResultExternal implements Serializable {
+	private static final long serialVersionUID = 1L;
+
+	private String version;
+	private String transaction_id;
+	private String func_code;
+	private String datetime;
+	private String email;
+	private String mac_addr;
+	private String result_code;
+	private String result_msg;
+	private String body;
+
+	public String getVersion() {
+		return version;
+	}
+
+	public void setVersion(String version) {
+		this.version = version;
+	}
+
+	public String getTransaction_id() {
+		return transaction_id;
+	}
+
+	public void setTransaction_id(String transaction_id) {
+		this.transaction_id = transaction_id;
+	}
+
+	public String getFunc_code() {
+		return func_code;
+	}
+
+	public void setFunc_code(String func_code) {
+		this.func_code = func_code;
+	}
+
+	public String getDatetime() {
+		return datetime;
+	}
+
+	public void setDatetime(String datetime) {
+		this.datetime = datetime;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getMac_addr() {
+		return mac_addr;
+	}
+
+	public void setMac_addr(String mac_addr) {
+		this.mac_addr = mac_addr;
+	}
+
+	public String getResult_code() {
+		return result_code;
+	}
+
+	public void setResult_code(String result_code) {
+		this.result_code = result_code;
+	}
+
+	public String getResult_msg() {
+		return result_msg;
+	}
+
+	public void setResult_msg(String result_msg) {
+		this.result_msg = result_msg;
+	}
+
+	public String getBody() {
+		return body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+	}
+}

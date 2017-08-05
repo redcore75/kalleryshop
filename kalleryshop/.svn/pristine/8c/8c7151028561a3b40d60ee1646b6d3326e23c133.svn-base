@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Tbl_prd_opt">	
+	<insert id="insertTbl_prd_opt" parameterType="Tbl_prd_opt">
+		<![CDATA[
+		INSERT INTO tbl_prd_opt(prd_mst_seq,
+		                        opt_group_id,
+		                        prd_opt_id,
+		                        prd_opt_name,
+		                        prd_opt_in_price,
+		                        prd_opt_sl_price,
+		                        orderby,
+		                        regby,
+		                        regdate)
+		VALUES (#{prd_mst_seq},
+		        #{opt_group_id},
+		        #{prd_opt_id},
+		        #{prd_opt_name},
+		        #{prd_opt_in_price},
+		        #{prd_opt_sl_price},
+		        #{orderby},
+		        #{regby},
+		        sysdate())
+		]]>
+	</insert>
+</mapper>

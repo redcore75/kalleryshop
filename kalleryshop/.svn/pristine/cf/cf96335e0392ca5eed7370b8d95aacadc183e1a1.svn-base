@@ -1,0 +1,34 @@
+package kr.co.redcore.mapper.impl;
+
+import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.List;
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import kr.co.redcore.domain.Tbl_prd_detail;
+import kr.co.redcore.domain.Tbl_prd_mst;
+import kr.co.redcore.domain.Tbl_prd_opt;
+import kr.co.redcore.mapper.Tbl_prd_mstMapper;
+import kr.co.redcore.mapper.Tbl_prd_optMapper;
+import kr.co.redcore.util.ParamMap;
+
+@Repository
+public class Tbl_prd_optMapperImpl implements Tbl_prd_optMapper {
+	@Autowired
+	private SqlSessionTemplate sqlSession;
+	
+	public Tbl_prd_opt getTbl_prd_optLastByPrd_mst_seqEtc(long prd_mst_seq, String opt_group_id, String opt_opt_id) throws SQLException {
+		HashMap param = new HashMap();
+		param.put("prd_mst_seq", prd_mst_seq);
+		param.put("opt_group_id", opt_group_id);
+		param.put("opt_opt_id", opt_opt_id);
+		
+		return sqlSession.selectOne("Tbl_prd_opt.getTbl_prd_optLastByPrd_mst_seqEtc", param);
+	}
+	
+	public long insertTbl_prd_opt(Tbl_prd_opt tbl_prd_opt) throws SQLException {
+		return sqlSession.insert("Tbl_prd_opt.insertTbl_prd_opt", tbl_prd_opt);		
+	}
+}

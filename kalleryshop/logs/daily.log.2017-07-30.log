@@ -1,0 +1,1012 @@
+2017-07-30 19:20:24,656 [Thread-2] [DEBUG] [n.s.e.config.ConfigurationFactory] Configuring ehcache from InputStream
+2017-07-30 19:20:24,668 [Thread-2] [DEBUG] [net.sf.ehcache.config.BeanHandler] Ignoring ehcache attribute xmlns:xsi
+2017-07-30 19:20:24,669 [Thread-2] [DEBUG] [net.sf.ehcache.config.BeanHandler] Ignoring ehcache attribute xsi:noNamespaceSchemaLocation
+2017-07-30 19:20:24,670 [Thread-2] [DEBUG] [n.s.e.config.DiskStoreConfiguration] Disk Store Path: C:\Users\myhome\AppData\Local\Temp\
+2017-07-30 19:20:24,677 [Thread-2] [DEBUG] [net.sf.ehcache.CacheManager] Creating new CacheManager with InputStream
+2017-07-30 19:20:24,678 [Thread-2] [DEBUG] [net.sf.ehcache.util.PropertyUtil] propertiesString is null.
+2017-07-30 19:20:24,682 [Thread-2] [DEBUG] [n.s.e.config.ConfigurationHelper] No CacheManagerEventListenerFactory class specified. Skipping...
+2017-07-30 19:20:24,683 [Thread-2] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for hostName: null
+2017-07-30 19:20:24,683 [Thread-2] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for port: 9000
+2017-07-30 19:20:24,683 [Thread-2] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for remoteObjectPort: null
+2017-07-30 19:20:24,683 [Thread-2] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for socketTimeoutMillis: 120000
+2017-07-30 19:20:24,687 [Thread-2] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for peerDiscovery: automatic
+2017-07-30 19:20:24,687 [Thread-2] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for hostName: null
+2017-07-30 19:20:24,687 [Thread-2] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for multicastGroupAddress: 230.0.0.100
+2017-07-30 19:20:24,687 [Thread-2] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for multicastGroupPort: 9000
+2017-07-30 19:20:24,687 [Thread-2] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for timeToLive: null
+2017-07-30 19:20:24,688 [Thread-2] [DEBUG] [n.s.e.d.RMICacheManagerPeerProviderFactory] No TTL set. Setting it to the default of 1, which means packets are limited to the same subnet.
+2017-07-30 19:20:25,723 [Thread-2] [DEBUG] [n.s.e.d.RMICacheManagerPeerListener] 0 RMICachePeers bound in registry for RMI listener
+2017-07-30 19:20:25,794 [Thread-2] [DEBUG] [net.sf.ehcache.util.PropertyUtil] propertiesString is null.
+2017-07-30 19:20:25,796 [Thread-2] [DEBUG] [net.sf.ehcache.Cache] No BootstrapCacheLoaderFactory class specified. Skipping...
+2017-07-30 19:20:25,797 [Thread-2] [DEBUG] [net.sf.ehcache.Cache] CacheWriter factory not configured. Skipping...
+2017-07-30 19:20:25,797 [Thread-2] [DEBUG] [n.s.e.config.ConfigurationHelper] No CacheExceptionHandlerFactory class specified. Skipping...
+2017-07-30 19:20:25,810 [Thread-2] [DEBUG] [net.sf.ehcache.store.MemoryStore] Initialized net.sf.ehcache.store.MemoryStore for tokens
+2017-07-30 19:20:25,828 [Thread-2] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Pass-Through Statistic: LOCAL_OFFHEAP_SIZE
+2017-07-30 19:20:25,829 [Thread-2] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Pass-Through Statistic: LOCAL_OFFHEAP_SIZE_BYTES
+2017-07-30 19:20:25,829 [Thread-2] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Pass-Through Statistic: LOCAL_DISK_SIZE
+2017-07-30 19:20:25,829 [Thread-2] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Pass-Through Statistic: LOCAL_DISK_SIZE_BYTES
+2017-07-30 19:20:25,829 [Thread-2] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Pass-Through Statistic: WRITER_QUEUE_LENGTH
+2017-07-30 19:20:25,830 [Thread-2] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Pass-Through Statistic: REMOTE_SIZE
+2017-07-30 19:20:25,830 [Thread-2] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Pass-Through Statistic: LAST_REJOIN_TIMESTAMP
+2017-07-30 19:20:25,839 [Thread-2] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: OFFHEAP_GET
+2017-07-30 19:20:25,840 [Thread-2] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: OFFHEAP_PUT
+2017-07-30 19:20:25,840 [Thread-2] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: OFFHEAP_REMOVE
+2017-07-30 19:20:25,840 [Thread-2] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: DISK_GET
+2017-07-30 19:20:25,840 [Thread-2] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: DISK_PUT
+2017-07-30 19:20:25,840 [Thread-2] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: DISK_REMOVE
+2017-07-30 19:20:25,840 [Thread-2] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: XA_COMMIT
+2017-07-30 19:20:25,841 [Thread-2] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: XA_ROLLBACK
+2017-07-30 19:20:25,841 [Thread-2] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: XA_RECOVERY
+2017-07-30 19:20:25,841 [Thread-2] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: CLUSTER_EVENT
+2017-07-30 19:20:25,841 [Thread-2] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: NONSTOP
+2017-07-30 19:20:25,844 [Thread-2] [DEBUG] [net.sf.ehcache.Cache] Initialised cache: tokens
+2017-07-30 19:20:25,844 [Thread-2] [DEBUG] [n.s.e.d.RMICacheManagerPeerListener] Adding to RMI listener
+2017-07-30 19:20:25,864 [Thread-2] [DEBUG] [n.s.e.d.RMICacheManagerPeerListener] 1 RMICachePeers bound in registry for RMI listener
+2017-07-30 19:20:25,865 [Thread-2] [DEBUG] [n.s.e.config.ConfigurationHelper] CacheDecoratorFactory not configured. Skipping for 'tokens'.
+2017-07-30 19:20:25,865 [Thread-2] [DEBUG] [n.s.e.config.ConfigurationHelper] CacheDecoratorFactory not configured for defaultCache. Skipping for 'tokens'.
+2017-07-30 19:20:26,054 [Thread-2] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Scanned package: 'kr.co.redcore.domain' for aliases
+2017-07-30 19:20:26,058 [Thread-2] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Scanned package: 'kr.co.redcore.domain.view' for aliases
+2017-07-30 19:20:26,097 [Thread-2] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed configuration file: 'class path resource [mybatis/mybatis-config.xml]'
+2017-07-30 19:20:26,575 [Thread-2] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_auth_num.xml]'
+2017-07-30 19:20:26,587 [Thread-2] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_cate_mst.xml]'
+2017-07-30 19:20:26,595 [Thread-2] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_cate_prd.xml]'
+2017-07-30 19:20:26,607 [Thread-2] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_common_code.xml]'
+2017-07-30 19:20:26,613 [Thread-2] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_common_code_group.xml]'
+2017-07-30 19:20:26,625 [Thread-2] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_member.xml]'
+2017-07-30 19:20:26,631 [Thread-2] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_member_access_log.xml]'
+2017-07-30 19:20:26,635 [Thread-2] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_member_point.xml]'
+2017-07-30 19:20:26,641 [Thread-2] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_opt_group.xml]'
+2017-07-30 19:20:26,646 [Thread-2] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_prd_detail.xml]'
+2017-07-30 19:20:26,654 [Thread-2] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_prd_mst.xml]'
+2017-07-30 19:20:26,659 [Thread-2] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_prd_opt.xml]'
+2017-07-30 19:20:27,365 [Thread-2] [INFO ] [org.hibernate.validator.util.Version] Hibernate Validator 4.2.0.Final
+2017-07-30 19:20:27,369 [Thread-2] [DEBUG] [o.h.v.e.r.DefaultTraversableResolver] Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+2017-07-30 19:20:27,371 [Thread-2] [DEBUG] [o.h.v.xml.ValidationXmlParser] Trying to load META-INF/validation.xml for XML based Validator configuration.
+2017-07-30 19:20:27,372 [Thread-2] [DEBUG] [o.h.v.xml.ValidationXmlParser] No META-INF/validation.xml found. Using annotation based configuration only
+2017-07-30 19:20:29,697 [Multicast Heartbeat Sender Thread] [DEBUG] [n.s.ehcache.distribution.PayloadUtil] Cache peers for this CacheManager to be advertised: //192.168.219.173:9000/tokens
+2017-07-30 19:21:07,956 [Thread-7] [DEBUG] [n.s.e.d.MulticastKeepaliveHeartbeatReceiver] dispose called
+2017-07-30 19:21:07,959 [Thread-7] [DEBUG] [n.s.e.d.RMICacheManagerPeerListener] rmiregistry unexported.
+2017-07-30 19:21:07,959 [Thread-7] [DEBUG] [n.s.e.d.RMICacheManagerPeerListener] 1 RMICachePeers unbound from registry in RMI listener
+2017-07-30 19:21:09,937 [Thread-8] [DEBUG] [n.s.e.config.ConfigurationFactory] Configuring ehcache from InputStream
+2017-07-30 19:21:09,945 [Thread-8] [DEBUG] [net.sf.ehcache.config.BeanHandler] Ignoring ehcache attribute xmlns:xsi
+2017-07-30 19:21:09,945 [Thread-8] [DEBUG] [net.sf.ehcache.config.BeanHandler] Ignoring ehcache attribute xsi:noNamespaceSchemaLocation
+2017-07-30 19:21:09,946 [Thread-8] [DEBUG] [n.s.e.config.DiskStoreConfiguration] Disk Store Path: C:\Users\myhome\AppData\Local\Temp\
+2017-07-30 19:21:09,953 [Thread-8] [DEBUG] [net.sf.ehcache.CacheManager] Creating new CacheManager with InputStream
+2017-07-30 19:21:09,954 [Thread-8] [DEBUG] [net.sf.ehcache.util.PropertyUtil] propertiesString is null.
+2017-07-30 19:21:09,958 [Thread-8] [DEBUG] [n.s.e.config.ConfigurationHelper] No CacheManagerEventListenerFactory class specified. Skipping...
+2017-07-30 19:21:09,959 [Thread-8] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for hostName: null
+2017-07-30 19:21:09,959 [Thread-8] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for port: 9000
+2017-07-30 19:21:09,959 [Thread-8] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for remoteObjectPort: null
+2017-07-30 19:21:09,959 [Thread-8] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for socketTimeoutMillis: 120000
+2017-07-30 19:21:09,961 [Thread-8] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for peerDiscovery: automatic
+2017-07-30 19:21:09,961 [Thread-8] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for hostName: null
+2017-07-30 19:21:09,961 [Thread-8] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for multicastGroupAddress: 230.0.0.100
+2017-07-30 19:21:09,961 [Thread-8] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for multicastGroupPort: 9000
+2017-07-30 19:21:09,961 [Thread-8] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for timeToLive: null
+2017-07-30 19:21:09,962 [Thread-8] [DEBUG] [n.s.e.d.RMICacheManagerPeerProviderFactory] No TTL set. Setting it to the default of 1, which means packets are limited to the same subnet.
+2017-07-30 19:21:09,970 [Thread-8] [DEBUG] [n.s.e.d.RMICacheManagerPeerListener] 0 RMICachePeers bound in registry for RMI listener
+2017-07-30 19:21:09,995 [Thread-8] [DEBUG] [net.sf.ehcache.util.PropertyUtil] propertiesString is null.
+2017-07-30 19:21:09,997 [Thread-8] [DEBUG] [net.sf.ehcache.Cache] No BootstrapCacheLoaderFactory class specified. Skipping...
+2017-07-30 19:21:09,997 [Thread-8] [DEBUG] [net.sf.ehcache.Cache] CacheWriter factory not configured. Skipping...
+2017-07-30 19:21:09,997 [Thread-8] [DEBUG] [n.s.e.config.ConfigurationHelper] No CacheExceptionHandlerFactory class specified. Skipping...
+2017-07-30 19:21:10,006 [Thread-8] [DEBUG] [net.sf.ehcache.store.MemoryStore] Initialized net.sf.ehcache.store.MemoryStore for tokens
+2017-07-30 19:21:10,026 [Thread-8] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Pass-Through Statistic: LOCAL_OFFHEAP_SIZE
+2017-07-30 19:21:10,027 [Thread-8] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Pass-Through Statistic: LOCAL_OFFHEAP_SIZE_BYTES
+2017-07-30 19:21:10,027 [Thread-8] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Pass-Through Statistic: LOCAL_DISK_SIZE
+2017-07-30 19:21:10,027 [Thread-8] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Pass-Through Statistic: LOCAL_DISK_SIZE_BYTES
+2017-07-30 19:21:10,027 [Thread-8] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Pass-Through Statistic: WRITER_QUEUE_LENGTH
+2017-07-30 19:21:10,027 [Thread-8] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Pass-Through Statistic: REMOTE_SIZE
+2017-07-30 19:21:10,027 [Thread-8] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Pass-Through Statistic: LAST_REJOIN_TIMESTAMP
+2017-07-30 19:21:10,035 [Thread-8] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: OFFHEAP_GET
+2017-07-30 19:21:10,035 [Thread-8] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: OFFHEAP_PUT
+2017-07-30 19:21:10,035 [Thread-8] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: OFFHEAP_REMOVE
+2017-07-30 19:21:10,035 [Thread-8] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: DISK_GET
+2017-07-30 19:21:10,035 [Thread-8] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: DISK_PUT
+2017-07-30 19:21:10,036 [Thread-8] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: DISK_REMOVE
+2017-07-30 19:21:10,036 [Thread-8] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: XA_COMMIT
+2017-07-30 19:21:10,036 [Thread-8] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: XA_ROLLBACK
+2017-07-30 19:21:10,036 [Thread-8] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: XA_RECOVERY
+2017-07-30 19:21:10,036 [Thread-8] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: CLUSTER_EVENT
+2017-07-30 19:21:10,036 [Thread-8] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: NONSTOP
+2017-07-30 19:21:10,039 [Thread-8] [DEBUG] [net.sf.ehcache.Cache] Initialised cache: tokens
+2017-07-30 19:21:10,039 [Thread-8] [DEBUG] [n.s.e.d.RMICacheManagerPeerListener] Adding to RMI listener
+2017-07-30 19:21:10,045 [Thread-8] [DEBUG] [n.s.e.d.RMICacheManagerPeerListener] 1 RMICachePeers bound in registry for RMI listener
+2017-07-30 19:21:10,045 [Thread-8] [DEBUG] [n.s.e.config.ConfigurationHelper] CacheDecoratorFactory not configured. Skipping for 'tokens'.
+2017-07-30 19:21:10,046 [Thread-8] [DEBUG] [n.s.e.config.ConfigurationHelper] CacheDecoratorFactory not configured for defaultCache. Skipping for 'tokens'.
+2017-07-30 19:21:10,135 [Thread-8] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Scanned package: 'kr.co.redcore.domain' for aliases
+2017-07-30 19:21:10,137 [Thread-8] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Scanned package: 'kr.co.redcore.domain.view' for aliases
+2017-07-30 19:21:10,151 [Thread-8] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed configuration file: 'class path resource [mybatis/mybatis-config.xml]'
+2017-07-30 19:21:10,483 [Thread-8] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_auth_num.xml]'
+2017-07-30 19:21:10,500 [Thread-8] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_cate_mst.xml]'
+2017-07-30 19:21:10,505 [Thread-8] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_cate_prd.xml]'
+2017-07-30 19:21:10,514 [Thread-8] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_common_code.xml]'
+2017-07-30 19:21:10,519 [Thread-8] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_common_code_group.xml]'
+2017-07-30 19:21:10,530 [Thread-8] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_member.xml]'
+2017-07-30 19:21:10,534 [Thread-8] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_member_access_log.xml]'
+2017-07-30 19:21:10,540 [Thread-8] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_member_point.xml]'
+2017-07-30 19:21:10,544 [Thread-8] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_opt_group.xml]'
+2017-07-30 19:21:10,548 [Thread-8] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_prd_detail.xml]'
+2017-07-30 19:21:10,556 [Thread-8] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_prd_mst.xml]'
+2017-07-30 19:21:10,560 [Thread-8] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_prd_opt.xml]'
+2017-07-30 19:21:11,037 [Thread-8] [INFO ] [org.hibernate.validator.util.Version] Hibernate Validator 4.2.0.Final
+2017-07-30 19:21:11,041 [Thread-8] [DEBUG] [o.h.v.e.r.DefaultTraversableResolver] Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+2017-07-30 19:21:11,042 [Thread-8] [DEBUG] [o.h.v.xml.ValidationXmlParser] Trying to load META-INF/validation.xml for XML based Validator configuration.
+2017-07-30 19:21:11,043 [Thread-8] [DEBUG] [o.h.v.xml.ValidationXmlParser] No META-INF/validation.xml found. Using annotation based configuration only
+2017-07-30 19:21:14,969 [Multicast Heartbeat Sender Thread] [DEBUG] [n.s.ehcache.distribution.PayloadUtil] Cache peers for this CacheManager to be advertised: //192.168.219.173:9000/tokens
+2017-07-30 19:22:11,622 [Thread-11] [DEBUG] [n.s.e.d.MulticastKeepaliveHeartbeatReceiver] dispose called
+2017-07-30 19:22:11,625 [Thread-11] [DEBUG] [n.s.e.d.RMICacheManagerPeerListener] rmiregistry unexported.
+2017-07-30 19:22:11,625 [Thread-11] [DEBUG] [n.s.e.d.RMICacheManagerPeerListener] 1 RMICachePeers unbound from registry in RMI listener
+2017-07-30 19:22:13,630 [Thread-12] [DEBUG] [n.s.e.config.ConfigurationFactory] Configuring ehcache from InputStream
+2017-07-30 19:22:13,637 [Thread-12] [DEBUG] [net.sf.ehcache.config.BeanHandler] Ignoring ehcache attribute xmlns:xsi
+2017-07-30 19:22:13,637 [Thread-12] [DEBUG] [net.sf.ehcache.config.BeanHandler] Ignoring ehcache attribute xsi:noNamespaceSchemaLocation
+2017-07-30 19:22:13,638 [Thread-12] [DEBUG] [n.s.e.config.DiskStoreConfiguration] Disk Store Path: C:\Users\myhome\AppData\Local\Temp\
+2017-07-30 19:22:13,646 [Thread-12] [DEBUG] [net.sf.ehcache.CacheManager] Creating new CacheManager with InputStream
+2017-07-30 19:22:13,646 [Thread-12] [DEBUG] [net.sf.ehcache.util.PropertyUtil] propertiesString is null.
+2017-07-30 19:22:13,650 [Thread-12] [DEBUG] [n.s.e.config.ConfigurationHelper] No CacheManagerEventListenerFactory class specified. Skipping...
+2017-07-30 19:22:13,651 [Thread-12] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for hostName: null
+2017-07-30 19:22:13,651 [Thread-12] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for port: 9000
+2017-07-30 19:22:13,651 [Thread-12] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for remoteObjectPort: null
+2017-07-30 19:22:13,651 [Thread-12] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for socketTimeoutMillis: 120000
+2017-07-30 19:22:13,654 [Thread-12] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for peerDiscovery: automatic
+2017-07-30 19:22:13,654 [Thread-12] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for hostName: null
+2017-07-30 19:22:13,654 [Thread-12] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for multicastGroupAddress: 230.0.0.100
+2017-07-30 19:22:13,654 [Thread-12] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for multicastGroupPort: 9000
+2017-07-30 19:22:13,654 [Thread-12] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for timeToLive: null
+2017-07-30 19:22:13,655 [Thread-12] [DEBUG] [n.s.e.d.RMICacheManagerPeerProviderFactory] No TTL set. Setting it to the default of 1, which means packets are limited to the same subnet.
+2017-07-30 19:22:13,663 [Thread-12] [DEBUG] [n.s.e.d.RMICacheManagerPeerListener] 0 RMICachePeers bound in registry for RMI listener
+2017-07-30 19:22:13,691 [Thread-12] [DEBUG] [net.sf.ehcache.util.PropertyUtil] propertiesString is null.
+2017-07-30 19:22:13,693 [Thread-12] [DEBUG] [net.sf.ehcache.Cache] No BootstrapCacheLoaderFactory class specified. Skipping...
+2017-07-30 19:22:13,693 [Thread-12] [DEBUG] [net.sf.ehcache.Cache] CacheWriter factory not configured. Skipping...
+2017-07-30 19:22:13,693 [Thread-12] [DEBUG] [n.s.e.config.ConfigurationHelper] No CacheExceptionHandlerFactory class specified. Skipping...
+2017-07-30 19:22:13,701 [Thread-12] [DEBUG] [net.sf.ehcache.store.MemoryStore] Initialized net.sf.ehcache.store.MemoryStore for tokens
+2017-07-30 19:22:13,796 [Thread-12] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Pass-Through Statistic: LOCAL_OFFHEAP_SIZE
+2017-07-30 19:22:13,796 [Thread-12] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Pass-Through Statistic: LOCAL_OFFHEAP_SIZE_BYTES
+2017-07-30 19:22:13,796 [Thread-12] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Pass-Through Statistic: LOCAL_DISK_SIZE
+2017-07-30 19:22:13,796 [Thread-12] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Pass-Through Statistic: LOCAL_DISK_SIZE_BYTES
+2017-07-30 19:22:13,797 [Thread-12] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Pass-Through Statistic: WRITER_QUEUE_LENGTH
+2017-07-30 19:22:13,797 [Thread-12] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Pass-Through Statistic: REMOTE_SIZE
+2017-07-30 19:22:13,797 [Thread-12] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Pass-Through Statistic: LAST_REJOIN_TIMESTAMP
+2017-07-30 19:22:13,804 [Thread-12] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: OFFHEAP_GET
+2017-07-30 19:22:13,805 [Thread-12] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: OFFHEAP_PUT
+2017-07-30 19:22:13,805 [Thread-12] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: OFFHEAP_REMOVE
+2017-07-30 19:22:13,805 [Thread-12] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: DISK_GET
+2017-07-30 19:22:13,805 [Thread-12] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: DISK_PUT
+2017-07-30 19:22:13,805 [Thread-12] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: DISK_REMOVE
+2017-07-30 19:22:13,805 [Thread-12] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: XA_COMMIT
+2017-07-30 19:22:13,805 [Thread-12] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: XA_ROLLBACK
+2017-07-30 19:22:13,805 [Thread-12] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: XA_RECOVERY
+2017-07-30 19:22:13,806 [Thread-12] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: CLUSTER_EVENT
+2017-07-30 19:22:13,806 [Thread-12] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: NONSTOP
+2017-07-30 19:22:13,808 [Thread-12] [DEBUG] [net.sf.ehcache.Cache] Initialised cache: tokens
+2017-07-30 19:22:13,809 [Thread-12] [DEBUG] [n.s.e.d.RMICacheManagerPeerListener] Adding to RMI listener
+2017-07-30 19:22:13,815 [Thread-12] [DEBUG] [n.s.e.d.RMICacheManagerPeerListener] 1 RMICachePeers bound in registry for RMI listener
+2017-07-30 19:22:13,815 [Thread-12] [DEBUG] [n.s.e.config.ConfigurationHelper] CacheDecoratorFactory not configured. Skipping for 'tokens'.
+2017-07-30 19:22:13,815 [Thread-12] [DEBUG] [n.s.e.config.ConfigurationHelper] CacheDecoratorFactory not configured for defaultCache. Skipping for 'tokens'.
+2017-07-30 19:22:13,901 [Thread-12] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Scanned package: 'kr.co.redcore.domain' for aliases
+2017-07-30 19:22:13,902 [Thread-12] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Scanned package: 'kr.co.redcore.domain.view' for aliases
+2017-07-30 19:22:13,914 [Thread-12] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed configuration file: 'class path resource [mybatis/mybatis-config.xml]'
+2017-07-30 19:22:14,276 [Thread-12] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_auth_num.xml]'
+2017-07-30 19:22:14,285 [Thread-12] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_cate_mst.xml]'
+2017-07-30 19:22:14,291 [Thread-12] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_cate_prd.xml]'
+2017-07-30 19:22:14,304 [Thread-12] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_common_code.xml]'
+2017-07-30 19:22:14,308 [Thread-12] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_common_code_group.xml]'
+2017-07-30 19:22:14,319 [Thread-12] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_member.xml]'
+2017-07-30 19:22:14,323 [Thread-12] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_member_access_log.xml]'
+2017-07-30 19:22:14,328 [Thread-12] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_member_point.xml]'
+2017-07-30 19:22:14,333 [Thread-12] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_opt_group.xml]'
+2017-07-30 19:22:14,337 [Thread-12] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_prd_detail.xml]'
+2017-07-30 19:22:14,343 [Thread-12] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_prd_mst.xml]'
+2017-07-30 19:22:14,348 [Thread-12] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_prd_opt.xml]'
+2017-07-30 19:22:14,775 [Thread-12] [INFO ] [org.hibernate.validator.util.Version] Hibernate Validator 4.2.0.Final
+2017-07-30 19:22:14,778 [Thread-12] [DEBUG] [o.h.v.e.r.DefaultTraversableResolver] Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+2017-07-30 19:22:14,780 [Thread-12] [DEBUG] [o.h.v.xml.ValidationXmlParser] Trying to load META-INF/validation.xml for XML based Validator configuration.
+2017-07-30 19:22:14,780 [Thread-12] [DEBUG] [o.h.v.xml.ValidationXmlParser] No META-INF/validation.xml found. Using annotation based configuration only
+2017-07-30 19:22:18,661 [Multicast Heartbeat Sender Thread] [DEBUG] [n.s.ehcache.distribution.PayloadUtil] Cache peers for this CacheManager to be advertised: //192.168.219.173:9000/tokens
+2017-07-30 19:22:25,269 [Thread-15] [DEBUG] [n.s.e.d.MulticastKeepaliveHeartbeatReceiver] dispose called
+2017-07-30 19:22:25,271 [Thread-15] [DEBUG] [n.s.e.d.RMICacheManagerPeerListener] rmiregistry unexported.
+2017-07-30 19:22:25,271 [Thread-15] [DEBUG] [n.s.e.d.RMICacheManagerPeerListener] 1 RMICachePeers unbound from registry in RMI listener
+2017-07-30 19:22:27,187 [Thread-16] [DEBUG] [n.s.e.config.ConfigurationFactory] Configuring ehcache from InputStream
+2017-07-30 19:22:27,194 [Thread-16] [DEBUG] [net.sf.ehcache.config.BeanHandler] Ignoring ehcache attribute xmlns:xsi
+2017-07-30 19:22:27,194 [Thread-16] [DEBUG] [net.sf.ehcache.config.BeanHandler] Ignoring ehcache attribute xsi:noNamespaceSchemaLocation
+2017-07-30 19:22:27,195 [Thread-16] [DEBUG] [n.s.e.config.DiskStoreConfiguration] Disk Store Path: C:\Users\myhome\AppData\Local\Temp\
+2017-07-30 19:22:27,202 [Thread-16] [DEBUG] [net.sf.ehcache.CacheManager] Creating new CacheManager with InputStream
+2017-07-30 19:22:27,203 [Thread-16] [DEBUG] [net.sf.ehcache.util.PropertyUtil] propertiesString is null.
+2017-07-30 19:22:27,207 [Thread-16] [DEBUG] [n.s.e.config.ConfigurationHelper] No CacheManagerEventListenerFactory class specified. Skipping...
+2017-07-30 19:22:27,208 [Thread-16] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for hostName: null
+2017-07-30 19:22:27,208 [Thread-16] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for port: 9000
+2017-07-30 19:22:27,208 [Thread-16] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for remoteObjectPort: null
+2017-07-30 19:22:27,208 [Thread-16] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for socketTimeoutMillis: 120000
+2017-07-30 19:22:27,211 [Thread-16] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for peerDiscovery: automatic
+2017-07-30 19:22:27,211 [Thread-16] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for hostName: null
+2017-07-30 19:22:27,211 [Thread-16] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for multicastGroupAddress: 230.0.0.100
+2017-07-30 19:22:27,211 [Thread-16] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for multicastGroupPort: 9000
+2017-07-30 19:22:27,211 [Thread-16] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for timeToLive: null
+2017-07-30 19:22:27,211 [Thread-16] [DEBUG] [n.s.e.d.RMICacheManagerPeerProviderFactory] No TTL set. Setting it to the default of 1, which means packets are limited to the same subnet.
+2017-07-30 19:22:27,217 [Thread-16] [DEBUG] [n.s.e.d.RMICacheManagerPeerListener] 0 RMICachePeers bound in registry for RMI listener
+2017-07-30 19:22:27,243 [Thread-16] [DEBUG] [net.sf.ehcache.util.PropertyUtil] propertiesString is null.
+2017-07-30 19:22:27,245 [Thread-16] [DEBUG] [net.sf.ehcache.Cache] No BootstrapCacheLoaderFactory class specified. Skipping...
+2017-07-30 19:22:27,245 [Thread-16] [DEBUG] [net.sf.ehcache.Cache] CacheWriter factory not configured. Skipping...
+2017-07-30 19:22:27,245 [Thread-16] [DEBUG] [n.s.e.config.ConfigurationHelper] No CacheExceptionHandlerFactory class specified. Skipping...
+2017-07-30 19:22:27,253 [Thread-16] [DEBUG] [net.sf.ehcache.store.MemoryStore] Initialized net.sf.ehcache.store.MemoryStore for tokens
+2017-07-30 19:22:27,270 [Thread-16] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Pass-Through Statistic: LOCAL_OFFHEAP_SIZE
+2017-07-30 19:22:27,271 [Thread-16] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Pass-Through Statistic: LOCAL_OFFHEAP_SIZE_BYTES
+2017-07-30 19:22:27,271 [Thread-16] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Pass-Through Statistic: LOCAL_DISK_SIZE
+2017-07-30 19:22:27,271 [Thread-16] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Pass-Through Statistic: LOCAL_DISK_SIZE_BYTES
+2017-07-30 19:22:27,271 [Thread-16] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Pass-Through Statistic: WRITER_QUEUE_LENGTH
+2017-07-30 19:22:27,271 [Thread-16] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Pass-Through Statistic: REMOTE_SIZE
+2017-07-30 19:22:27,271 [Thread-16] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Pass-Through Statistic: LAST_REJOIN_TIMESTAMP
+2017-07-30 19:22:27,278 [Thread-16] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: OFFHEAP_GET
+2017-07-30 19:22:27,279 [Thread-16] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: OFFHEAP_PUT
+2017-07-30 19:22:27,279 [Thread-16] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: OFFHEAP_REMOVE
+2017-07-30 19:22:27,279 [Thread-16] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: DISK_GET
+2017-07-30 19:22:27,279 [Thread-16] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: DISK_PUT
+2017-07-30 19:22:27,279 [Thread-16] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: DISK_REMOVE
+2017-07-30 19:22:27,279 [Thread-16] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: XA_COMMIT
+2017-07-30 19:22:27,280 [Thread-16] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: XA_ROLLBACK
+2017-07-30 19:22:27,280 [Thread-16] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: XA_RECOVERY
+2017-07-30 19:22:27,280 [Thread-16] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: CLUSTER_EVENT
+2017-07-30 19:22:27,280 [Thread-16] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: NONSTOP
+2017-07-30 19:22:27,282 [Thread-16] [DEBUG] [net.sf.ehcache.Cache] Initialised cache: tokens
+2017-07-30 19:22:27,283 [Thread-16] [DEBUG] [n.s.e.d.RMICacheManagerPeerListener] Adding to RMI listener
+2017-07-30 19:22:27,288 [Thread-16] [DEBUG] [n.s.e.d.RMICacheManagerPeerListener] 1 RMICachePeers bound in registry for RMI listener
+2017-07-30 19:22:27,288 [Thread-16] [DEBUG] [n.s.e.config.ConfigurationHelper] CacheDecoratorFactory not configured. Skipping for 'tokens'.
+2017-07-30 19:22:27,288 [Thread-16] [DEBUG] [n.s.e.config.ConfigurationHelper] CacheDecoratorFactory not configured for defaultCache. Skipping for 'tokens'.
+2017-07-30 19:22:27,367 [Thread-16] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Scanned package: 'kr.co.redcore.domain' for aliases
+2017-07-30 19:22:27,369 [Thread-16] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Scanned package: 'kr.co.redcore.domain.view' for aliases
+2017-07-30 19:22:27,380 [Thread-16] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed configuration file: 'class path resource [mybatis/mybatis-config.xml]'
+2017-07-30 19:22:27,722 [Thread-16] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_auth_num.xml]'
+2017-07-30 19:22:27,734 [Thread-16] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_cate_mst.xml]'
+2017-07-30 19:22:27,744 [Thread-16] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_cate_prd.xml]'
+2017-07-30 19:22:27,755 [Thread-16] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_common_code.xml]'
+2017-07-30 19:22:27,759 [Thread-16] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_common_code_group.xml]'
+2017-07-30 19:22:27,772 [Thread-16] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_member.xml]'
+2017-07-30 19:22:27,776 [Thread-16] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_member_access_log.xml]'
+2017-07-30 19:22:27,780 [Thread-16] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_member_point.xml]'
+2017-07-30 19:22:27,784 [Thread-16] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_opt_group.xml]'
+2017-07-30 19:22:27,788 [Thread-16] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_prd_detail.xml]'
+2017-07-30 19:22:27,796 [Thread-16] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_prd_mst.xml]'
+2017-07-30 19:22:27,801 [Thread-16] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_prd_opt.xml]'
+2017-07-30 19:22:28,303 [Thread-16] [INFO ] [org.hibernate.validator.util.Version] Hibernate Validator 4.2.0.Final
+2017-07-30 19:22:28,306 [Thread-16] [DEBUG] [o.h.v.e.r.DefaultTraversableResolver] Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+2017-07-30 19:22:28,308 [Thread-16] [DEBUG] [o.h.v.xml.ValidationXmlParser] Trying to load META-INF/validation.xml for XML based Validator configuration.
+2017-07-30 19:22:28,308 [Thread-16] [DEBUG] [o.h.v.xml.ValidationXmlParser] No META-INF/validation.xml found. Using annotation based configuration only
+2017-07-30 19:22:32,218 [Multicast Heartbeat Sender Thread] [DEBUG] [n.s.ehcache.distribution.PayloadUtil] Cache peers for this CacheManager to be advertised: //192.168.219.173:9000/tokens
+2017-07-30 19:42:34,973 [Thread-2] [DEBUG] [n.s.e.config.ConfigurationFactory] Configuring ehcache from InputStream
+2017-07-30 19:42:34,983 [Thread-2] [DEBUG] [net.sf.ehcache.config.BeanHandler] Ignoring ehcache attribute xmlns:xsi
+2017-07-30 19:42:34,983 [Thread-2] [DEBUG] [net.sf.ehcache.config.BeanHandler] Ignoring ehcache attribute xsi:noNamespaceSchemaLocation
+2017-07-30 19:42:34,984 [Thread-2] [DEBUG] [n.s.e.config.DiskStoreConfiguration] Disk Store Path: C:\Users\myhome\AppData\Local\Temp\
+2017-07-30 19:42:34,992 [Thread-2] [DEBUG] [net.sf.ehcache.CacheManager] Creating new CacheManager with InputStream
+2017-07-30 19:42:34,993 [Thread-2] [DEBUG] [net.sf.ehcache.util.PropertyUtil] propertiesString is null.
+2017-07-30 19:42:34,997 [Thread-2] [DEBUG] [n.s.e.config.ConfigurationHelper] No CacheManagerEventListenerFactory class specified. Skipping...
+2017-07-30 19:42:34,998 [Thread-2] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for hostName: null
+2017-07-30 19:42:34,998 [Thread-2] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for port: 9000
+2017-07-30 19:42:34,998 [Thread-2] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for remoteObjectPort: null
+2017-07-30 19:42:34,998 [Thread-2] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for socketTimeoutMillis: 120000
+2017-07-30 19:42:35,001 [Thread-2] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for peerDiscovery: automatic
+2017-07-30 19:42:35,001 [Thread-2] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for hostName: null
+2017-07-30 19:42:35,001 [Thread-2] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for multicastGroupAddress: 230.0.0.100
+2017-07-30 19:42:35,001 [Thread-2] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for multicastGroupPort: 9000
+2017-07-30 19:42:35,001 [Thread-2] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for timeToLive: null
+2017-07-30 19:42:35,002 [Thread-2] [DEBUG] [n.s.e.d.RMICacheManagerPeerProviderFactory] No TTL set. Setting it to the default of 1, which means packets are limited to the same subnet.
+2017-07-30 19:42:36,021 [Thread-2] [DEBUG] [n.s.e.d.RMICacheManagerPeerListener] 0 RMICachePeers bound in registry for RMI listener
+2017-07-30 19:42:36,088 [Thread-2] [DEBUG] [net.sf.ehcache.util.PropertyUtil] propertiesString is null.
+2017-07-30 19:42:36,090 [Thread-2] [DEBUG] [net.sf.ehcache.Cache] No BootstrapCacheLoaderFactory class specified. Skipping...
+2017-07-30 19:42:36,090 [Thread-2] [DEBUG] [net.sf.ehcache.Cache] CacheWriter factory not configured. Skipping...
+2017-07-30 19:42:36,090 [Thread-2] [DEBUG] [n.s.e.config.ConfigurationHelper] No CacheExceptionHandlerFactory class specified. Skipping...
+2017-07-30 19:42:36,102 [Thread-2] [DEBUG] [net.sf.ehcache.store.MemoryStore] Initialized net.sf.ehcache.store.MemoryStore for tokens
+2017-07-30 19:42:36,119 [Thread-2] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Pass-Through Statistic: LOCAL_OFFHEAP_SIZE
+2017-07-30 19:42:36,119 [Thread-2] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Pass-Through Statistic: LOCAL_OFFHEAP_SIZE_BYTES
+2017-07-30 19:42:36,120 [Thread-2] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Pass-Through Statistic: LOCAL_DISK_SIZE
+2017-07-30 19:42:36,120 [Thread-2] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Pass-Through Statistic: LOCAL_DISK_SIZE_BYTES
+2017-07-30 19:42:36,120 [Thread-2] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Pass-Through Statistic: WRITER_QUEUE_LENGTH
+2017-07-30 19:42:36,120 [Thread-2] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Pass-Through Statistic: REMOTE_SIZE
+2017-07-30 19:42:36,120 [Thread-2] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Pass-Through Statistic: LAST_REJOIN_TIMESTAMP
+2017-07-30 19:42:36,128 [Thread-2] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: OFFHEAP_GET
+2017-07-30 19:42:36,131 [Thread-2] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: OFFHEAP_PUT
+2017-07-30 19:42:36,131 [Thread-2] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: OFFHEAP_REMOVE
+2017-07-30 19:42:36,131 [Thread-2] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: DISK_GET
+2017-07-30 19:42:36,131 [Thread-2] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: DISK_PUT
+2017-07-30 19:42:36,131 [Thread-2] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: DISK_REMOVE
+2017-07-30 19:42:36,132 [Thread-2] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: XA_COMMIT
+2017-07-30 19:42:36,132 [Thread-2] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: XA_ROLLBACK
+2017-07-30 19:42:36,132 [Thread-2] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: XA_RECOVERY
+2017-07-30 19:42:36,132 [Thread-2] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: CLUSTER_EVENT
+2017-07-30 19:42:36,132 [Thread-2] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: NONSTOP
+2017-07-30 19:42:36,135 [Thread-2] [DEBUG] [net.sf.ehcache.Cache] Initialised cache: tokens
+2017-07-30 19:42:36,135 [Thread-2] [DEBUG] [n.s.e.d.RMICacheManagerPeerListener] Adding to RMI listener
+2017-07-30 19:42:36,147 [Thread-2] [DEBUG] [n.s.e.d.RMICacheManagerPeerListener] 1 RMICachePeers bound in registry for RMI listener
+2017-07-30 19:42:36,147 [Thread-2] [DEBUG] [n.s.e.config.ConfigurationHelper] CacheDecoratorFactory not configured. Skipping for 'tokens'.
+2017-07-30 19:42:36,147 [Thread-2] [DEBUG] [n.s.e.config.ConfigurationHelper] CacheDecoratorFactory not configured for defaultCache. Skipping for 'tokens'.
+2017-07-30 19:42:36,277 [Thread-2] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Scanned package: 'kr.co.redcore.domain' for aliases
+2017-07-30 19:42:36,280 [Thread-2] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Scanned package: 'kr.co.redcore.domain.view' for aliases
+2017-07-30 19:42:36,300 [Thread-2] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed configuration file: 'class path resource [mybatis/mybatis-config.xml]'
+2017-07-30 19:42:36,811 [Thread-2] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_auth_num.xml]'
+2017-07-30 19:42:36,820 [Thread-2] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_cate_mst.xml]'
+2017-07-30 19:42:36,827 [Thread-2] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_cate_prd.xml]'
+2017-07-30 19:42:36,838 [Thread-2] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_common_code.xml]'
+2017-07-30 19:42:36,844 [Thread-2] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_common_code_group.xml]'
+2017-07-30 19:42:36,857 [Thread-2] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_member.xml]'
+2017-07-30 19:42:36,861 [Thread-2] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_member_access_log.xml]'
+2017-07-30 19:42:36,866 [Thread-2] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_member_point.xml]'
+2017-07-30 19:42:36,870 [Thread-2] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_opt_group.xml]'
+2017-07-30 19:42:36,876 [Thread-2] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_prd_detail.xml]'
+2017-07-30 19:42:36,884 [Thread-2] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_prd_mst.xml]'
+2017-07-30 19:42:36,888 [Thread-2] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_prd_opt.xml]'
+2017-07-30 19:42:37,391 [Thread-2] [INFO ] [org.hibernate.validator.util.Version] Hibernate Validator 4.2.0.Final
+2017-07-30 19:42:37,394 [Thread-2] [DEBUG] [o.h.v.e.r.DefaultTraversableResolver] Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+2017-07-30 19:42:37,396 [Thread-2] [DEBUG] [o.h.v.xml.ValidationXmlParser] Trying to load META-INF/validation.xml for XML based Validator configuration.
+2017-07-30 19:42:37,397 [Thread-2] [DEBUG] [o.h.v.xml.ValidationXmlParser] No META-INF/validation.xml found. Using annotation based configuration only
+2017-07-30 19:42:40,010 [Multicast Heartbeat Sender Thread] [DEBUG] [n.s.ehcache.distribution.PayloadUtil] Cache peers for this CacheManager to be advertised: //192.168.219.173:9000/tokens
+2017-07-30 19:42:51,928 ["http-bio-8080"-exec-6] [DEBUG] [kr.co.redcore.aop.ControllerAspect] @@@@@@@@@@@@@ >>> Around Action Execution Time Start !! >>>
+2017-07-30 19:42:51,928 ["http-bio-8080"-exec-6] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ------------------- controller start -----------------------------------------------------
+2017-07-30 19:42:51,929 ["http-bio-8080"-exec-6] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ### Controller Before Advice Start !! ###
+2017-07-30 19:42:51,929 ["http-bio-8080"-exec-6] [DEBUG] [kr.co.redcore.aop.ControllerAspect] Controller Class => AdminLoginController
+2017-07-30 19:42:51,929 ["http-bio-8080"-exec-6] [DEBUG] [kr.co.redcore.aop.ControllerAspect] Controller Method => loginForm
+2017-07-30 19:42:51,929 ["http-bio-8080"-exec-6] [DEBUG] [kr.co.redcore.aop.ControllerAspect] /kalleryshop/admin/login/loginForm.do
+2017-07-30 19:42:51,929 ["http-bio-8080"-exec-6] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ################################################################################
+2017-07-30 19:42:51,929 ["http-bio-8080"-exec-6] [DEBUG] [kr.co.redcore.aop.ControllerAspect] Params => 
+2017-07-30 19:42:51,929 ["http-bio-8080"-exec-6] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ################################################################################
+2017-07-30 19:42:51,930 ["http-bio-8080"-exec-6] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ### Controller Before Advice End !! ###
+2017-07-30 19:42:51,943 ["http-bio-8080"-exec-6] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ------------------- controller end -------------------------------------------------------
+2017-07-30 19:42:51,943 ["http-bio-8080"-exec-6] [DEBUG] [kr.co.redcore.aop.ControllerAspect] >>> class kr.co.redcore.controller.admin.AdminLoginController Execution time : 0.013
+2017-07-30 19:42:51,943 ["http-bio-8080"-exec-6] [DEBUG] [kr.co.redcore.aop.ControllerAspect] @@@@@@@@@@@@@ >>> Around Action Execution Time END !! >>>
+2017-07-30 19:42:58,255 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] @@@@@@@@@@@@@ >>> Around Action Execution Time Start !! >>>
+2017-07-30 19:42:58,255 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ------------------- controller start -----------------------------------------------------
+2017-07-30 19:42:58,255 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ### Controller Before Advice Start !! ###
+2017-07-30 19:42:58,255 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] Controller Class => AdminLoginController
+2017-07-30 19:42:58,255 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] Controller Method => login
+2017-07-30 19:42:58,255 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] /kalleryshop/admin/login/login.do
+2017-07-30 19:42:58,255 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ################################################################################
+2017-07-30 19:42:58,255 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] Params => 
+2017-07-30 19:42:58,255 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] password = 1234
+2017-07-30 19:42:58,255 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] member_id = admin@gmail.com
+2017-07-30 19:42:58,255 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ################################################################################
+2017-07-30 19:42:58,255 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ### Controller Before Advice End !! ###
+2017-07-30 19:42:58,398 ["http-bio-8080"-exec-3] [DEBUG] [T.getTbl_memberByMember_idEtc] ==>  Preparing: SELECT member_seq, member_level_seq, member_id, member_name, member_nick_name, password, member_type, ifnull(email_addr, '') AS email_addr, ifnull(mobile_num, '') AS mobile_num, birthday, profile_photo_path, curr_point, is_valid, is_del, ifnull(memo, '') AS memo, regby, date_format(regdate, '%Y%m%d') AS regdate, uptby, date_format(uptdate, '%Y%m%d') AS uptdate FROM tbl_member WHERE member_id = ? AND password = ? 
+2017-07-30 19:42:58,435 ["http-bio-8080"-exec-3] [DEBUG] [T.getTbl_memberByMember_idEtc] ==> Parameters: admin@gmail.com(String), 1234(String)
+2017-07-30 19:42:58,460 ["http-bio-8080"-exec-3] [DEBUG] [k.c.r.service.member.LoginService] >>> login success !!! member_id >>> admin@gmail.com
+2017-07-30 19:42:58,460 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ------------------- controller end -------------------------------------------------------
+2017-07-30 19:42:58,460 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] >>> class kr.co.redcore.controller.admin.AdminLoginController Execution time : 0.205
+2017-07-30 19:42:58,460 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] @@@@@@@@@@@@@ >>> Around Action Execution Time END !! >>>
+2017-07-30 19:42:59,843 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] @@@@@@@@@@@@@ >>> Around Action Execution Time Start !! >>>
+2017-07-30 19:42:59,844 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ------------------- controller start -----------------------------------------------------
+2017-07-30 19:42:59,844 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ### Controller Before Advice Start !! ###
+2017-07-30 19:42:59,844 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] Controller Class => AdminMemberController
+2017-07-30 19:42:59,844 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] Controller Method => searchList
+2017-07-30 19:42:59,844 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] /kalleryshop/admin/admin_member/searchList.do
+2017-07-30 19:42:59,844 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ################################################################################
+2017-07-30 19:42:59,844 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] Params => 
+2017-07-30 19:42:59,844 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ################################################################################
+2017-07-30 19:42:59,922 ["http-bio-8080"-exec-3] [DEBUG] [T.insertTbl_member_access_log] ==>  Preparing: INSERT INTO tbl_member_access_log(member_seq, member_id, ip_addr, access_url, regby, regdate) VALUES (?, ?, ?, ?, ?, sysdate()) 
+2017-07-30 19:42:59,923 ["http-bio-8080"-exec-3] [DEBUG] [T.insertTbl_member_access_log] ==> Parameters: 1(Long), admin@gmail.com(String), 0:0:0:0:0:0:0:1(String), /kalleryshop/admin/admin_member/searchList.do(String), admin@gmail.com(String)
+2017-07-30 19:42:59,971 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] URL => /kalleryshop/admin/admin_member/searchList.do : access log insert !!!
+2017-07-30 19:42:59,972 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ### Controller Before Advice End !! ###
+2017-07-30 19:43:00,080 ["http-bio-8080"-exec-3] [DEBUG] [T.getPageHelperCntByParamMap] ==>  Preparing: SELECT COUNT(*) FROM tbl_member WHERE IS_DEL != 'Y' AND member_type = ? 
+2017-07-30 19:43:00,080 ["http-bio-8080"-exec-3] [DEBUG] [T.getPageHelperCntByParamMap] ==> Parameters: A(String)
+2017-07-30 19:43:00,147 ["http-bio-8080"-exec-3] [DEBUG] [T.getPageHelperListByParamMapEtc] ==>  Preparing: SELECT tm.member_seq, tm.member_level_seq, tml.level_name, tm.member_id, tm.member_name, member_nick_name, tm.password, tm.member_type, ifnull(tm.email_addr, '') AS email_addr, ifnull(tm.mobile_num, '') AS mobile_num, birthday, profile_photo_path, tm.curr_point, tm.is_valid, tm.is_del, ifnull(tm.memo, '') AS memo, tm.regby, date_format(tm.regdate, '%Y%m%d') AS regdate, tm.uptby, date_format(tm.uptdate, '%Y%m%d') AS uptdate FROM tbl_member tm, (SELECT member_seq FROM tbl_member WHERE IS_DEL != 'Y' AND member_type = ? LIMIT ?, ?) sub, tbl_member_level tml WHERE tm.member_seq = sub.member_seq AND tm.member_level_seq = tml.member_level_seq ORDER BY member_seq DESC 
+2017-07-30 19:43:00,149 ["http-bio-8080"-exec-3] [DEBUG] [T.getPageHelperListByParamMapEtc] ==> Parameters: A(String), 0(Integer), 10(Integer)
+2017-07-30 19:43:00,166 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ------------------- controller end -------------------------------------------------------
+2017-07-30 19:43:00,167 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] >>> class kr.co.redcore.controller.admin.AdminMemberController Execution time : 0.322
+2017-07-30 19:43:00,167 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] @@@@@@@@@@@@@ >>> Around Action Execution Time END !! >>>
+2017-07-30 19:43:00,313 ["http-bio-8080"-exec-3] [DEBUG] [T.getVw_common_codeByParamMap] ==>  Preparing: SELECT tcc.*, tccg.code_group_name FROM tbl_common_code_group tccg, tbl_common_code tcc WHERE tccg.code_group_id = tcc.code_group_id AND tcc.code_id = ? AND tcc.code_group_id = ? AND tcc.code_locale = ? 
+2017-07-30 19:43:00,314 ["http-bio-8080"-exec-3] [DEBUG] [T.getVw_common_codeByParamMap] ==> Parameters: Y(String), IS_VALID(String), ko(String)
+2017-07-30 19:43:03,603 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] @@@@@@@@@@@@@ >>> Around Action Execution Time Start !! >>>
+2017-07-30 19:43:03,603 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ------------------- controller start -----------------------------------------------------
+2017-07-30 19:43:03,603 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ### Controller Before Advice Start !! ###
+2017-07-30 19:43:03,603 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] Controller Class => ShopEnvController
+2017-07-30 19:43:03,603 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] Controller Method => updateForm
+2017-07-30 19:43:03,603 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] /kalleryshop/admin/shop_env/updateForm.do
+2017-07-30 19:43:03,604 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ################################################################################
+2017-07-30 19:43:03,604 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] Params => 
+2017-07-30 19:43:03,604 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ################################################################################
+2017-07-30 19:43:03,656 ["http-bio-8080"-exec-3] [DEBUG] [T.insertTbl_member_access_log] ==>  Preparing: INSERT INTO tbl_member_access_log(member_seq, member_id, ip_addr, access_url, regby, regdate) VALUES (?, ?, ?, ?, ?, sysdate()) 
+2017-07-30 19:43:03,658 ["http-bio-8080"-exec-3] [DEBUG] [T.insertTbl_member_access_log] ==> Parameters: 1(Long), admin@gmail.com(String), 0:0:0:0:0:0:0:1(String), /kalleryshop/admin/shop_env/updateForm.do(String), admin@gmail.com(String)
+2017-07-30 19:43:03,707 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] URL => /kalleryshop/admin/shop_env/updateForm.do : access log insert !!!
+2017-07-30 19:43:03,707 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ### Controller Before Advice End !! ###
+2017-07-30 19:43:03,727 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ------------------- controller end -------------------------------------------------------
+2017-07-30 19:43:03,728 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] >>> class kr.co.redcore.controller.admin.ShopEnvController Execution time : 0.124
+2017-07-30 19:43:03,728 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] @@@@@@@@@@@@@ >>> Around Action Execution Time END !! >>>
+2017-07-30 19:43:04,072 ["http-bio-8080"-exec-3] [ERROR] [o.s.web.servlet.tags.MessageTag] No message found under code 'common.wd.쇼핑몰ID' for locale 'ko'.javax.servlet.jsp.JspTagException: No message found under code 'common.wd.쇼핑몰ID' for locale 'ko'.
+	at org.springframework.web.servlet.tags.MessageTag.doStartTagInternal(MessageTag.java:185) ~[spring-webmvc-3.2.4.RELEASE.jar:3.2.4.RELEASE]
+	at org.springframework.web.servlet.tags.RequestContextAwareTag.doStartTag(RequestContextAwareTag.java:80) ~[spring-webmvc-3.2.4.RELEASE.jar:3.2.4.RELEASE]
+	at org.apache.jsp.WEB_002dINF.views.admin.shop_005fenv.updateForm_jsp._jspx_meth_spring_005fmessage_005f2(updateForm_jsp.java:1163) [kalleryshop/:na]
+	at org.apache.jsp.WEB_002dINF.views.admin.shop_005fenv.updateForm_jsp._jspService(updateForm_jsp.java:174) [kalleryshop/:na]
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70) [jasper.jar:7.0.8]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722) [servlet-api.jar:na]
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:417) [jasper.jar:7.0.8]
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:391) [jasper.jar:7.0.8]
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:334) [jasper.jar:7.0.8]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722) [servlet-api.jar:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:306) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:672) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:463) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:402) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:329) [catalina.jar:7.0.8]
+	at org.springframework.web.servlet.view.InternalResourceView.renderMergedOutputModel(InternalResourceView.java:238) [spring-webmvc-3.2.4.RELEASE.jar:3.2.4.RELEASE]
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:263) [spring-webmvc-3.2.4.RELEASE.jar:3.2.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1208) [spring-webmvc-3.2.4.RELEASE.jar:3.2.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:992) [spring-webmvc-3.2.4.RELEASE.jar:3.2.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:939) [spring-webmvc-3.2.4.RELEASE.jar:3.2.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:856) [spring-webmvc-3.2.4.RELEASE.jar:3.2.4.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:936) [spring-webmvc-3.2.4.RELEASE.jar:3.2.4.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:827) [spring-webmvc-3.2.4.RELEASE.jar:3.2.4.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621) [servlet-api.jar:na]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:812) [spring-webmvc-3.2.4.RELEASE.jar:3.2.4.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722) [servlet-api.jar:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:306) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210) [catalina.jar:7.0.8]
+	at kr.co.redcore.filter.LoginAdminFilter.doFilter(LoginAdminFilter.java:98) [LoginAdminFilter.class:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:244) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210) [catalina.jar:7.0.8]
+	at com.navercorp.lucy.security.xss.servletfilter.XssEscapeServletFilter.doFilter(XssEscapeServletFilter.java:36) [lucy-xss-servlet-2.0.0.jar:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:244) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210) [catalina.jar:7.0.8]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:88) [spring-web-3.2.4.RELEASE.jar:3.2.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-3.2.4.RELEASE.jar:3.2.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:244) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210) [catalina.jar:7.0.8]
+	at com.opensymphony.sitemesh.webapp.SiteMeshFilter.obtainContent(SiteMeshFilter.java:129) [sitemesh-2.4.2.jar:na]
+	at com.opensymphony.sitemesh.webapp.SiteMeshFilter.doFilter(SiteMeshFilter.java:77) [sitemesh-2.4.2.jar:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:244) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:240) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:161) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:164) [catalina.jar:7.0.8]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100) [catalina.jar:7.0.8]
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:541) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118) [catalina.jar:7.0.8]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:383) [catalina.jar:7.0.8]
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:243) [tomcat-coyote.jar:7.0.8]
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:188) [tomcat-coyote.jar:7.0.8]
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:288) [tomcat-coyote.jar:7.0.8]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [na:1.7.0_45]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [na:1.7.0_45]
+	at java.lang.Thread.run(Unknown Source) [na:1.7.0_45]
+
+2017-07-30 19:43:58,097 [Thread-7] [DEBUG] [n.s.e.d.MulticastKeepaliveHeartbeatReceiver] dispose called
+2017-07-30 19:43:58,099 [Thread-7] [DEBUG] [n.s.e.d.RMICacheManagerPeerListener] rmiregistry unexported.
+2017-07-30 19:43:58,099 [Thread-7] [DEBUG] [n.s.e.d.RMICacheManagerPeerListener] 1 RMICachePeers unbound from registry in RMI listener
+2017-07-30 19:44:04,627 [Thread-2] [DEBUG] [n.s.e.config.ConfigurationFactory] Configuring ehcache from InputStream
+2017-07-30 19:44:04,636 [Thread-2] [DEBUG] [net.sf.ehcache.config.BeanHandler] Ignoring ehcache attribute xmlns:xsi
+2017-07-30 19:44:04,637 [Thread-2] [DEBUG] [net.sf.ehcache.config.BeanHandler] Ignoring ehcache attribute xsi:noNamespaceSchemaLocation
+2017-07-30 19:44:04,637 [Thread-2] [DEBUG] [n.s.e.config.DiskStoreConfiguration] Disk Store Path: C:\Users\myhome\AppData\Local\Temp\
+2017-07-30 19:44:04,645 [Thread-2] [DEBUG] [net.sf.ehcache.CacheManager] Creating new CacheManager with InputStream
+2017-07-30 19:44:04,645 [Thread-2] [DEBUG] [net.sf.ehcache.util.PropertyUtil] propertiesString is null.
+2017-07-30 19:44:04,650 [Thread-2] [DEBUG] [n.s.e.config.ConfigurationHelper] No CacheManagerEventListenerFactory class specified. Skipping...
+2017-07-30 19:44:04,651 [Thread-2] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for hostName: null
+2017-07-30 19:44:04,651 [Thread-2] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for port: 9000
+2017-07-30 19:44:04,651 [Thread-2] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for remoteObjectPort: null
+2017-07-30 19:44:04,651 [Thread-2] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for socketTimeoutMillis: 120000
+2017-07-30 19:44:04,654 [Thread-2] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for peerDiscovery: automatic
+2017-07-30 19:44:04,654 [Thread-2] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for hostName: null
+2017-07-30 19:44:04,654 [Thread-2] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for multicastGroupAddress: 230.0.0.100
+2017-07-30 19:44:04,654 [Thread-2] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for multicastGroupPort: 9000
+2017-07-30 19:44:04,654 [Thread-2] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for timeToLive: null
+2017-07-30 19:44:04,655 [Thread-2] [DEBUG] [n.s.e.d.RMICacheManagerPeerProviderFactory] No TTL set. Setting it to the default of 1, which means packets are limited to the same subnet.
+2017-07-30 19:44:05,673 [Thread-2] [DEBUG] [n.s.e.d.RMICacheManagerPeerListener] 0 RMICachePeers bound in registry for RMI listener
+2017-07-30 19:44:05,734 [Thread-2] [DEBUG] [net.sf.ehcache.util.PropertyUtil] propertiesString is null.
+2017-07-30 19:44:05,736 [Thread-2] [DEBUG] [net.sf.ehcache.Cache] No BootstrapCacheLoaderFactory class specified. Skipping...
+2017-07-30 19:44:05,736 [Thread-2] [DEBUG] [net.sf.ehcache.Cache] CacheWriter factory not configured. Skipping...
+2017-07-30 19:44:05,736 [Thread-2] [DEBUG] [n.s.e.config.ConfigurationHelper] No CacheExceptionHandlerFactory class specified. Skipping...
+2017-07-30 19:44:05,749 [Thread-2] [DEBUG] [net.sf.ehcache.store.MemoryStore] Initialized net.sf.ehcache.store.MemoryStore for tokens
+2017-07-30 19:44:05,767 [Thread-2] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Pass-Through Statistic: LOCAL_OFFHEAP_SIZE
+2017-07-30 19:44:05,767 [Thread-2] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Pass-Through Statistic: LOCAL_OFFHEAP_SIZE_BYTES
+2017-07-30 19:44:05,768 [Thread-2] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Pass-Through Statistic: LOCAL_DISK_SIZE
+2017-07-30 19:44:05,768 [Thread-2] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Pass-Through Statistic: LOCAL_DISK_SIZE_BYTES
+2017-07-30 19:44:05,768 [Thread-2] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Pass-Through Statistic: WRITER_QUEUE_LENGTH
+2017-07-30 19:44:05,768 [Thread-2] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Pass-Through Statistic: REMOTE_SIZE
+2017-07-30 19:44:05,768 [Thread-2] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Pass-Through Statistic: LAST_REJOIN_TIMESTAMP
+2017-07-30 19:44:05,776 [Thread-2] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: OFFHEAP_GET
+2017-07-30 19:44:05,778 [Thread-2] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: OFFHEAP_PUT
+2017-07-30 19:44:05,778 [Thread-2] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: OFFHEAP_REMOVE
+2017-07-30 19:44:05,779 [Thread-2] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: DISK_GET
+2017-07-30 19:44:05,779 [Thread-2] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: DISK_PUT
+2017-07-30 19:44:05,779 [Thread-2] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: DISK_REMOVE
+2017-07-30 19:44:05,779 [Thread-2] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: XA_COMMIT
+2017-07-30 19:44:05,779 [Thread-2] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: XA_ROLLBACK
+2017-07-30 19:44:05,779 [Thread-2] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: XA_RECOVERY
+2017-07-30 19:44:05,780 [Thread-2] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: CLUSTER_EVENT
+2017-07-30 19:44:05,780 [Thread-2] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: NONSTOP
+2017-07-30 19:44:05,783 [Thread-2] [DEBUG] [net.sf.ehcache.Cache] Initialised cache: tokens
+2017-07-30 19:44:05,783 [Thread-2] [DEBUG] [n.s.e.d.RMICacheManagerPeerListener] Adding to RMI listener
+2017-07-30 19:44:05,795 [Thread-2] [DEBUG] [n.s.e.d.RMICacheManagerPeerListener] 1 RMICachePeers bound in registry for RMI listener
+2017-07-30 19:44:05,795 [Thread-2] [DEBUG] [n.s.e.config.ConfigurationHelper] CacheDecoratorFactory not configured. Skipping for 'tokens'.
+2017-07-30 19:44:05,795 [Thread-2] [DEBUG] [n.s.e.config.ConfigurationHelper] CacheDecoratorFactory not configured for defaultCache. Skipping for 'tokens'.
+2017-07-30 19:44:05,926 [Thread-2] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Scanned package: 'kr.co.redcore.domain' for aliases
+2017-07-30 19:44:05,928 [Thread-2] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Scanned package: 'kr.co.redcore.domain.view' for aliases
+2017-07-30 19:44:05,948 [Thread-2] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed configuration file: 'class path resource [mybatis/mybatis-config.xml]'
+2017-07-30 19:44:06,464 [Thread-2] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_auth_num.xml]'
+2017-07-30 19:44:06,477 [Thread-2] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_cate_mst.xml]'
+2017-07-30 19:44:06,483 [Thread-2] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_cate_prd.xml]'
+2017-07-30 19:44:06,493 [Thread-2] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_common_code.xml]'
+2017-07-30 19:44:06,498 [Thread-2] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_common_code_group.xml]'
+2017-07-30 19:44:06,511 [Thread-2] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_member.xml]'
+2017-07-30 19:44:06,515 [Thread-2] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_member_access_log.xml]'
+2017-07-30 19:44:06,521 [Thread-2] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_member_point.xml]'
+2017-07-30 19:44:06,525 [Thread-2] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_opt_group.xml]'
+2017-07-30 19:44:06,530 [Thread-2] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_prd_detail.xml]'
+2017-07-30 19:44:06,537 [Thread-2] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_prd_mst.xml]'
+2017-07-30 19:44:06,542 [Thread-2] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_prd_opt.xml]'
+2017-07-30 19:44:07,036 [Thread-2] [INFO ] [org.hibernate.validator.util.Version] Hibernate Validator 4.2.0.Final
+2017-07-30 19:44:07,039 [Thread-2] [DEBUG] [o.h.v.e.r.DefaultTraversableResolver] Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+2017-07-30 19:44:07,041 [Thread-2] [DEBUG] [o.h.v.xml.ValidationXmlParser] Trying to load META-INF/validation.xml for XML based Validator configuration.
+2017-07-30 19:44:07,042 [Thread-2] [DEBUG] [o.h.v.xml.ValidationXmlParser] No META-INF/validation.xml found. Using annotation based configuration only
+2017-07-30 19:44:09,661 [Multicast Heartbeat Sender Thread] [DEBUG] [n.s.ehcache.distribution.PayloadUtil] Cache peers for this CacheManager to be advertised: //192.168.219.173:9000/tokens
+2017-07-30 19:44:24,933 ["http-bio-8080"-exec-6] [DEBUG] [kr.co.redcore.aop.ControllerAspect] @@@@@@@@@@@@@ >>> Around Action Execution Time Start !! >>>
+2017-07-30 19:44:24,933 ["http-bio-8080"-exec-6] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ------------------- controller start -----------------------------------------------------
+2017-07-30 19:44:24,934 ["http-bio-8080"-exec-6] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ### Controller Before Advice Start !! ###
+2017-07-30 19:44:24,934 ["http-bio-8080"-exec-6] [DEBUG] [kr.co.redcore.aop.ControllerAspect] Controller Class => ShopEnvController
+2017-07-30 19:44:24,934 ["http-bio-8080"-exec-6] [DEBUG] [kr.co.redcore.aop.ControllerAspect] Controller Method => updateForm
+2017-07-30 19:44:24,934 ["http-bio-8080"-exec-6] [DEBUG] [kr.co.redcore.aop.ControllerAspect] /kalleryshop/admin/shop_env/updateForm.do
+2017-07-30 19:44:24,934 ["http-bio-8080"-exec-6] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ################################################################################
+2017-07-30 19:44:24,934 ["http-bio-8080"-exec-6] [DEBUG] [kr.co.redcore.aop.ControllerAspect] Params => 
+2017-07-30 19:44:24,934 ["http-bio-8080"-exec-6] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ################################################################################
+2017-07-30 19:44:25,112 ["http-bio-8080"-exec-6] [DEBUG] [T.insertTbl_member_access_log] ==>  Preparing: INSERT INTO tbl_member_access_log(member_seq, member_id, ip_addr, access_url, regby, regdate) VALUES (?, ?, ?, ?, ?, sysdate()) 
+2017-07-30 19:44:25,141 ["http-bio-8080"-exec-6] [DEBUG] [T.insertTbl_member_access_log] ==> Parameters: 1(Long), admin@gmail.com(String), 0:0:0:0:0:0:0:1(String), /kalleryshop/admin/shop_env/updateForm.do(String), admin@gmail.com(String)
+2017-07-30 19:44:25,192 ["http-bio-8080"-exec-6] [DEBUG] [kr.co.redcore.aop.ControllerAspect] URL => /kalleryshop/admin/shop_env/updateForm.do : access log insert !!!
+2017-07-30 19:44:25,192 ["http-bio-8080"-exec-6] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ### Controller Before Advice End !! ###
+2017-07-30 19:44:25,215 ["http-bio-8080"-exec-6] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ------------------- controller end -------------------------------------------------------
+2017-07-30 19:44:25,215 ["http-bio-8080"-exec-6] [DEBUG] [kr.co.redcore.aop.ControllerAspect] >>> class kr.co.redcore.controller.admin.ShopEnvController Execution time : 0.279
+2017-07-30 19:44:25,216 ["http-bio-8080"-exec-6] [DEBUG] [kr.co.redcore.aop.ControllerAspect] @@@@@@@@@@@@@ >>> Around Action Execution Time END !! >>>
+2017-07-30 19:44:25,301 ["http-bio-8080"-exec-6] [ERROR] [o.s.web.servlet.tags.form.InputTag] Neither BindingResult nor plain target object for bean name 'tbl_shop_env' available as request attributejava.lang.IllegalStateException: Neither BindingResult nor plain target object for bean name 'tbl_shop_env' available as request attribute
+	at org.springframework.web.servlet.support.BindStatus.<init>(BindStatus.java:141) ~[spring-webmvc-3.2.4.RELEASE.jar:3.2.4.RELEASE]
+	at org.springframework.web.servlet.tags.form.AbstractDataBoundFormElementTag.getBindStatus(AbstractDataBoundFormElementTag.java:179) ~[spring-webmvc-3.2.4.RELEASE.jar:3.2.4.RELEASE]
+	at org.springframework.web.servlet.tags.form.AbstractDataBoundFormElementTag.getPropertyPath(AbstractDataBoundFormElementTag.java:199) ~[spring-webmvc-3.2.4.RELEASE.jar:3.2.4.RELEASE]
+	at org.springframework.web.servlet.tags.form.AbstractDataBoundFormElementTag.getName(AbstractDataBoundFormElementTag.java:165) ~[spring-webmvc-3.2.4.RELEASE.jar:3.2.4.RELEASE]
+	at org.springframework.web.servlet.tags.form.AbstractDataBoundFormElementTag.autogenerateId(AbstractDataBoundFormElementTag.java:152) ~[spring-webmvc-3.2.4.RELEASE.jar:3.2.4.RELEASE]
+	at org.springframework.web.servlet.tags.form.AbstractDataBoundFormElementTag.resolveId(AbstractDataBoundFormElementTag.java:143) ~[spring-webmvc-3.2.4.RELEASE.jar:3.2.4.RELEASE]
+	at org.springframework.web.servlet.tags.form.AbstractDataBoundFormElementTag.writeDefaultAttributes(AbstractDataBoundFormElementTag.java:127) ~[spring-webmvc-3.2.4.RELEASE.jar:3.2.4.RELEASE]
+	at org.springframework.web.servlet.tags.form.AbstractHtmlElementTag.writeDefaultAttributes(AbstractHtmlElementTag.java:421) ~[spring-webmvc-3.2.4.RELEASE.jar:3.2.4.RELEASE]
+	at org.springframework.web.servlet.tags.form.InputTag.writeTagContent(InputTag.java:142) ~[spring-webmvc-3.2.4.RELEASE.jar:3.2.4.RELEASE]
+	at org.springframework.web.servlet.tags.form.AbstractFormTag.doStartTagInternal(AbstractFormTag.java:103) ~[spring-webmvc-3.2.4.RELEASE.jar:3.2.4.RELEASE]
+	at org.springframework.web.servlet.tags.RequestContextAwareTag.doStartTag(RequestContextAwareTag.java:80) ~[spring-webmvc-3.2.4.RELEASE.jar:3.2.4.RELEASE]
+	at org.apache.jsp.WEB_002dINF.views.admin.shop_005fenv.updateForm_jsp._jspx_meth_form_005finput_005f0(updateForm_jsp.java:1200) [kalleryshop/:na]
+	at org.apache.jsp.WEB_002dINF.views.admin.shop_005fenv.updateForm_jsp._jspService(updateForm_jsp.java:206) [kalleryshop/:na]
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70) [jasper.jar:7.0.8]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722) [servlet-api.jar:na]
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:417) [jasper.jar:7.0.8]
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:391) [jasper.jar:7.0.8]
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:334) [jasper.jar:7.0.8]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722) [servlet-api.jar:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:306) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:672) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:463) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:402) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:329) [catalina.jar:7.0.8]
+	at org.springframework.web.servlet.view.InternalResourceView.renderMergedOutputModel(InternalResourceView.java:238) [spring-webmvc-3.2.4.RELEASE.jar:3.2.4.RELEASE]
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:263) [spring-webmvc-3.2.4.RELEASE.jar:3.2.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1208) [spring-webmvc-3.2.4.RELEASE.jar:3.2.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:992) [spring-webmvc-3.2.4.RELEASE.jar:3.2.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:939) [spring-webmvc-3.2.4.RELEASE.jar:3.2.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:856) [spring-webmvc-3.2.4.RELEASE.jar:3.2.4.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:936) [spring-webmvc-3.2.4.RELEASE.jar:3.2.4.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:827) [spring-webmvc-3.2.4.RELEASE.jar:3.2.4.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621) [servlet-api.jar:na]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:812) [spring-webmvc-3.2.4.RELEASE.jar:3.2.4.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722) [servlet-api.jar:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:306) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210) [catalina.jar:7.0.8]
+	at kr.co.redcore.filter.LoginAdminFilter.doFilter(LoginAdminFilter.java:98) [LoginAdminFilter.class:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:244) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210) [catalina.jar:7.0.8]
+	at com.navercorp.lucy.security.xss.servletfilter.XssEscapeServletFilter.doFilter(XssEscapeServletFilter.java:36) [lucy-xss-servlet-2.0.0.jar:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:244) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210) [catalina.jar:7.0.8]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:88) [spring-web-3.2.4.RELEASE.jar:3.2.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-3.2.4.RELEASE.jar:3.2.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:244) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210) [catalina.jar:7.0.8]
+	at com.opensymphony.sitemesh.webapp.SiteMeshFilter.obtainContent(SiteMeshFilter.java:129) [sitemesh-2.4.2.jar:na]
+	at com.opensymphony.sitemesh.webapp.SiteMeshFilter.doFilter(SiteMeshFilter.java:77) [sitemesh-2.4.2.jar:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:244) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:240) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:161) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:164) [catalina.jar:7.0.8]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100) [catalina.jar:7.0.8]
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:541) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118) [catalina.jar:7.0.8]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:383) [catalina.jar:7.0.8]
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:243) [tomcat-coyote.jar:7.0.8]
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:188) [tomcat-coyote.jar:7.0.8]
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:166) [tomcat-coyote.jar:7.0.8]
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:288) [tomcat-coyote.jar:7.0.8]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [na:1.7.0_45]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [na:1.7.0_45]
+	at java.lang.Thread.run(Unknown Source) [na:1.7.0_45]
+
+2017-07-30 19:44:35,967 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] @@@@@@@@@@@@@ >>> Around Action Execution Time Start !! >>>
+2017-07-30 19:44:35,968 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ------------------- controller start -----------------------------------------------------
+2017-07-30 19:44:35,968 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ### Controller Before Advice Start !! ###
+2017-07-30 19:44:35,968 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] Controller Class => AdminLoginController
+2017-07-30 19:44:35,968 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] Controller Method => loginForm
+2017-07-30 19:44:35,968 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] /kalleryshop/admin/login/loginForm.do
+2017-07-30 19:44:35,968 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ################################################################################
+2017-07-30 19:44:35,968 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] Params => 
+2017-07-30 19:44:35,968 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ################################################################################
+2017-07-30 19:44:36,027 ["http-bio-8080"-exec-3] [DEBUG] [T.insertTbl_member_access_log] ==>  Preparing: INSERT INTO tbl_member_access_log(member_seq, member_id, ip_addr, access_url, regby, regdate) VALUES (?, ?, ?, ?, ?, sysdate()) 
+2017-07-30 19:44:36,028 ["http-bio-8080"-exec-3] [DEBUG] [T.insertTbl_member_access_log] ==> Parameters: 1(Long), admin@gmail.com(String), 0:0:0:0:0:0:0:1(String), /kalleryshop/admin/login/loginForm.do(String), admin@gmail.com(String)
+2017-07-30 19:44:36,077 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] URL => /kalleryshop/admin/login/loginForm.do : access log insert !!!
+2017-07-30 19:44:36,077 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ### Controller Before Advice End !! ###
+2017-07-30 19:44:36,100 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ------------------- controller end -------------------------------------------------------
+2017-07-30 19:44:36,100 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] >>> class kr.co.redcore.controller.admin.AdminLoginController Execution time : 0.132
+2017-07-30 19:44:36,100 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] @@@@@@@@@@@@@ >>> Around Action Execution Time END !! >>>
+2017-07-30 19:44:39,314 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] @@@@@@@@@@@@@ >>> Around Action Execution Time Start !! >>>
+2017-07-30 19:44:39,314 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ------------------- controller start -----------------------------------------------------
+2017-07-30 19:44:39,314 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ### Controller Before Advice Start !! ###
+2017-07-30 19:44:39,314 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] Controller Class => AdminLoginController
+2017-07-30 19:44:39,315 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] Controller Method => login
+2017-07-30 19:44:39,315 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] /kalleryshop/admin/login/login.do
+2017-07-30 19:44:39,315 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ################################################################################
+2017-07-30 19:44:39,315 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] Params => 
+2017-07-30 19:44:39,315 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] password = 1234
+2017-07-30 19:44:39,315 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] member_id = admin@gmail.com
+2017-07-30 19:44:39,315 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ################################################################################
+2017-07-30 19:44:39,382 ["http-bio-8080"-exec-3] [DEBUG] [T.insertTbl_member_access_log] ==>  Preparing: INSERT INTO tbl_member_access_log(member_seq, member_id, ip_addr, access_url, regby, regdate) VALUES (?, ?, ?, ?, ?, sysdate()) 
+2017-07-30 19:44:39,384 ["http-bio-8080"-exec-3] [DEBUG] [T.insertTbl_member_access_log] ==> Parameters: 1(Long), admin@gmail.com(String), 0:0:0:0:0:0:0:1(String), /kalleryshop/admin/login/login.do(String), admin@gmail.com(String)
+2017-07-30 19:44:39,430 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] URL => /kalleryshop/admin/login/login.do : access log insert !!!
+2017-07-30 19:44:39,430 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ### Controller Before Advice End !! ###
+2017-07-30 19:44:39,500 ["http-bio-8080"-exec-3] [DEBUG] [T.getTbl_memberByMember_idEtc] ==>  Preparing: SELECT member_seq, member_level_seq, member_id, member_name, member_nick_name, password, member_type, ifnull(email_addr, '') AS email_addr, ifnull(mobile_num, '') AS mobile_num, birthday, profile_photo_path, curr_point, is_valid, is_del, ifnull(memo, '') AS memo, regby, date_format(regdate, '%Y%m%d') AS regdate, uptby, date_format(uptdate, '%Y%m%d') AS uptdate FROM tbl_member WHERE member_id = ? AND password = ? 
+2017-07-30 19:44:39,501 ["http-bio-8080"-exec-3] [DEBUG] [T.getTbl_memberByMember_idEtc] ==> Parameters: admin@gmail.com(String), 1234(String)
+2017-07-30 19:44:39,551 ["http-bio-8080"-exec-3] [DEBUG] [k.c.r.service.member.LoginService] >>> login success !!! member_id >>> admin@gmail.com
+2017-07-30 19:44:39,551 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ------------------- controller end -------------------------------------------------------
+2017-07-30 19:44:39,551 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] >>> class kr.co.redcore.controller.admin.AdminLoginController Execution time : 0.237
+2017-07-30 19:44:39,552 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] @@@@@@@@@@@@@ >>> Around Action Execution Time END !! >>>
+2017-07-30 19:44:40,641 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] @@@@@@@@@@@@@ >>> Around Action Execution Time Start !! >>>
+2017-07-30 19:44:40,641 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ------------------- controller start -----------------------------------------------------
+2017-07-30 19:44:40,641 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ### Controller Before Advice Start !! ###
+2017-07-30 19:44:40,641 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] Controller Class => AdminMemberController
+2017-07-30 19:44:40,641 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] Controller Method => searchList
+2017-07-30 19:44:40,641 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] /kalleryshop/admin/admin_member/searchList.do
+2017-07-30 19:44:40,641 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ################################################################################
+2017-07-30 19:44:40,641 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] Params => 
+2017-07-30 19:44:40,641 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ################################################################################
+2017-07-30 19:44:40,702 ["http-bio-8080"-exec-3] [DEBUG] [T.insertTbl_member_access_log] ==>  Preparing: INSERT INTO tbl_member_access_log(member_seq, member_id, ip_addr, access_url, regby, regdate) VALUES (?, ?, ?, ?, ?, sysdate()) 
+2017-07-30 19:44:40,704 ["http-bio-8080"-exec-3] [DEBUG] [T.insertTbl_member_access_log] ==> Parameters: 1(Long), admin@gmail.com(String), 0:0:0:0:0:0:0:1(String), /kalleryshop/admin/admin_member/searchList.do(String), admin@gmail.com(String)
+2017-07-30 19:44:40,743 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] URL => /kalleryshop/admin/admin_member/searchList.do : access log insert !!!
+2017-07-30 19:44:40,743 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ### Controller Before Advice End !! ###
+2017-07-30 19:44:40,846 ["http-bio-8080"-exec-3] [DEBUG] [T.getPageHelperCntByParamMap] ==>  Preparing: SELECT COUNT(*) FROM tbl_member WHERE IS_DEL != 'Y' AND member_type = ? 
+2017-07-30 19:44:40,846 ["http-bio-8080"-exec-3] [DEBUG] [T.getPageHelperCntByParamMap] ==> Parameters: A(String)
+2017-07-30 19:44:40,901 ["http-bio-8080"-exec-3] [DEBUG] [T.getPageHelperListByParamMapEtc] ==>  Preparing: SELECT tm.member_seq, tm.member_level_seq, tml.level_name, tm.member_id, tm.member_name, member_nick_name, tm.password, tm.member_type, ifnull(tm.email_addr, '') AS email_addr, ifnull(tm.mobile_num, '') AS mobile_num, birthday, profile_photo_path, tm.curr_point, tm.is_valid, tm.is_del, ifnull(tm.memo, '') AS memo, tm.regby, date_format(tm.regdate, '%Y%m%d') AS regdate, tm.uptby, date_format(tm.uptdate, '%Y%m%d') AS uptdate FROM tbl_member tm, (SELECT member_seq FROM tbl_member WHERE IS_DEL != 'Y' AND member_type = ? LIMIT ?, ?) sub, tbl_member_level tml WHERE tm.member_seq = sub.member_seq AND tm.member_level_seq = tml.member_level_seq ORDER BY member_seq DESC 
+2017-07-30 19:44:40,902 ["http-bio-8080"-exec-3] [DEBUG] [T.getPageHelperListByParamMapEtc] ==> Parameters: A(String), 0(Integer), 10(Integer)
+2017-07-30 19:44:40,921 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ------------------- controller end -------------------------------------------------------
+2017-07-30 19:44:40,921 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] >>> class kr.co.redcore.controller.admin.AdminMemberController Execution time : 0.28
+2017-07-30 19:44:40,921 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] @@@@@@@@@@@@@ >>> Around Action Execution Time END !! >>>
+2017-07-30 19:44:41,012 ["http-bio-8080"-exec-3] [DEBUG] [T.getVw_common_codeByParamMap] ==>  Preparing: SELECT tcc.*, tccg.code_group_name FROM tbl_common_code_group tccg, tbl_common_code tcc WHERE tccg.code_group_id = tcc.code_group_id AND tcc.code_id = ? AND tcc.code_group_id = ? AND tcc.code_locale = ? 
+2017-07-30 19:44:41,013 ["http-bio-8080"-exec-3] [DEBUG] [T.getVw_common_codeByParamMap] ==> Parameters: Y(String), IS_VALID(String), ko(String)
+2017-07-30 19:44:42,403 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] @@@@@@@@@@@@@ >>> Around Action Execution Time Start !! >>>
+2017-07-30 19:44:42,403 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ------------------- controller start -----------------------------------------------------
+2017-07-30 19:44:42,403 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ### Controller Before Advice Start !! ###
+2017-07-30 19:44:42,403 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] Controller Class => ShopEnvController
+2017-07-30 19:44:42,403 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] Controller Method => updateForm
+2017-07-30 19:44:42,403 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] /kalleryshop/admin/shop_env/updateForm.do
+2017-07-30 19:44:42,403 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ################################################################################
+2017-07-30 19:44:42,403 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] Params => 
+2017-07-30 19:44:42,403 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ################################################################################
+2017-07-30 19:44:42,461 ["http-bio-8080"-exec-3] [DEBUG] [T.insertTbl_member_access_log] ==>  Preparing: INSERT INTO tbl_member_access_log(member_seq, member_id, ip_addr, access_url, regby, regdate) VALUES (?, ?, ?, ?, ?, sysdate()) 
+2017-07-30 19:44:42,462 ["http-bio-8080"-exec-3] [DEBUG] [T.insertTbl_member_access_log] ==> Parameters: 1(Long), admin@gmail.com(String), 0:0:0:0:0:0:0:1(String), /kalleryshop/admin/shop_env/updateForm.do(String), admin@gmail.com(String)
+2017-07-30 19:44:42,502 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] URL => /kalleryshop/admin/shop_env/updateForm.do : access log insert !!!
+2017-07-30 19:44:42,502 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ### Controller Before Advice End !! ###
+2017-07-30 19:44:42,502 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ------------------- controller end -------------------------------------------------------
+2017-07-30 19:44:42,503 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] >>> class kr.co.redcore.controller.admin.ShopEnvController Execution time : 0.099
+2017-07-30 19:44:42,503 ["http-bio-8080"-exec-3] [DEBUG] [kr.co.redcore.aop.ControllerAspect] @@@@@@@@@@@@@ >>> Around Action Execution Time END !! >>>
+2017-07-30 19:44:42,510 ["http-bio-8080"-exec-3] [ERROR] [o.s.web.servlet.tags.form.InputTag] Neither BindingResult nor plain target object for bean name 'tbl_shop_env' available as request attributejava.lang.IllegalStateException: Neither BindingResult nor plain target object for bean name 'tbl_shop_env' available as request attribute
+	at org.springframework.web.servlet.support.BindStatus.<init>(BindStatus.java:141) ~[spring-webmvc-3.2.4.RELEASE.jar:3.2.4.RELEASE]
+	at org.springframework.web.servlet.tags.form.AbstractDataBoundFormElementTag.getBindStatus(AbstractDataBoundFormElementTag.java:179) ~[spring-webmvc-3.2.4.RELEASE.jar:3.2.4.RELEASE]
+	at org.springframework.web.servlet.tags.form.AbstractDataBoundFormElementTag.getPropertyPath(AbstractDataBoundFormElementTag.java:199) ~[spring-webmvc-3.2.4.RELEASE.jar:3.2.4.RELEASE]
+	at org.springframework.web.servlet.tags.form.AbstractDataBoundFormElementTag.getName(AbstractDataBoundFormElementTag.java:165) ~[spring-webmvc-3.2.4.RELEASE.jar:3.2.4.RELEASE]
+	at org.springframework.web.servlet.tags.form.AbstractDataBoundFormElementTag.autogenerateId(AbstractDataBoundFormElementTag.java:152) ~[spring-webmvc-3.2.4.RELEASE.jar:3.2.4.RELEASE]
+	at org.springframework.web.servlet.tags.form.AbstractDataBoundFormElementTag.resolveId(AbstractDataBoundFormElementTag.java:143) ~[spring-webmvc-3.2.4.RELEASE.jar:3.2.4.RELEASE]
+	at org.springframework.web.servlet.tags.form.AbstractDataBoundFormElementTag.writeDefaultAttributes(AbstractDataBoundFormElementTag.java:127) ~[spring-webmvc-3.2.4.RELEASE.jar:3.2.4.RELEASE]
+	at org.springframework.web.servlet.tags.form.AbstractHtmlElementTag.writeDefaultAttributes(AbstractHtmlElementTag.java:421) ~[spring-webmvc-3.2.4.RELEASE.jar:3.2.4.RELEASE]
+	at org.springframework.web.servlet.tags.form.InputTag.writeTagContent(InputTag.java:142) ~[spring-webmvc-3.2.4.RELEASE.jar:3.2.4.RELEASE]
+	at org.springframework.web.servlet.tags.form.AbstractFormTag.doStartTagInternal(AbstractFormTag.java:103) ~[spring-webmvc-3.2.4.RELEASE.jar:3.2.4.RELEASE]
+	at org.springframework.web.servlet.tags.RequestContextAwareTag.doStartTag(RequestContextAwareTag.java:80) ~[spring-webmvc-3.2.4.RELEASE.jar:3.2.4.RELEASE]
+	at org.apache.jsp.WEB_002dINF.views.admin.shop_005fenv.updateForm_jsp._jspx_meth_form_005finput_005f0(updateForm_jsp.java:1200) [kalleryshop/:na]
+	at org.apache.jsp.WEB_002dINF.views.admin.shop_005fenv.updateForm_jsp._jspService(updateForm_jsp.java:206) [kalleryshop/:na]
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70) [jasper.jar:7.0.8]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722) [servlet-api.jar:na]
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:417) [jasper.jar:7.0.8]
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:391) [jasper.jar:7.0.8]
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:334) [jasper.jar:7.0.8]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722) [servlet-api.jar:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:306) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:672) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:463) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:402) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:329) [catalina.jar:7.0.8]
+	at org.springframework.web.servlet.view.InternalResourceView.renderMergedOutputModel(InternalResourceView.java:238) [spring-webmvc-3.2.4.RELEASE.jar:3.2.4.RELEASE]
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:263) [spring-webmvc-3.2.4.RELEASE.jar:3.2.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1208) [spring-webmvc-3.2.4.RELEASE.jar:3.2.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:992) [spring-webmvc-3.2.4.RELEASE.jar:3.2.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:939) [spring-webmvc-3.2.4.RELEASE.jar:3.2.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:856) [spring-webmvc-3.2.4.RELEASE.jar:3.2.4.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:936) [spring-webmvc-3.2.4.RELEASE.jar:3.2.4.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:827) [spring-webmvc-3.2.4.RELEASE.jar:3.2.4.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621) [servlet-api.jar:na]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:812) [spring-webmvc-3.2.4.RELEASE.jar:3.2.4.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722) [servlet-api.jar:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:306) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210) [catalina.jar:7.0.8]
+	at kr.co.redcore.filter.LoginAdminFilter.doFilter(LoginAdminFilter.java:98) [LoginAdminFilter.class:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:244) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210) [catalina.jar:7.0.8]
+	at com.navercorp.lucy.security.xss.servletfilter.XssEscapeServletFilter.doFilter(XssEscapeServletFilter.java:36) [lucy-xss-servlet-2.0.0.jar:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:244) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210) [catalina.jar:7.0.8]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:88) [spring-web-3.2.4.RELEASE.jar:3.2.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-3.2.4.RELEASE.jar:3.2.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:244) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210) [catalina.jar:7.0.8]
+	at com.opensymphony.sitemesh.webapp.SiteMeshFilter.obtainContent(SiteMeshFilter.java:129) [sitemesh-2.4.2.jar:na]
+	at com.opensymphony.sitemesh.webapp.SiteMeshFilter.doFilter(SiteMeshFilter.java:77) [sitemesh-2.4.2.jar:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:244) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:240) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:161) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:164) [catalina.jar:7.0.8]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100) [catalina.jar:7.0.8]
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:541) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118) [catalina.jar:7.0.8]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:383) [catalina.jar:7.0.8]
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:243) [tomcat-coyote.jar:7.0.8]
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:188) [tomcat-coyote.jar:7.0.8]
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:288) [tomcat-coyote.jar:7.0.8]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [na:1.7.0_45]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [na:1.7.0_45]
+	at java.lang.Thread.run(Unknown Source) [na:1.7.0_45]
+
+2017-07-30 19:45:37,793 [Thread-7] [DEBUG] [n.s.e.d.MulticastKeepaliveHeartbeatReceiver] dispose called
+2017-07-30 19:45:37,797 [Thread-7] [DEBUG] [n.s.e.d.RMICacheManagerPeerListener] rmiregistry unexported.
+2017-07-30 19:45:37,798 [Thread-7] [DEBUG] [n.s.e.d.RMICacheManagerPeerListener] 1 RMICachePeers unbound from registry in RMI listener
+2017-07-30 19:45:39,780 [Thread-8] [DEBUG] [n.s.e.config.ConfigurationFactory] Configuring ehcache from InputStream
+2017-07-30 19:45:39,788 [Thread-8] [DEBUG] [net.sf.ehcache.config.BeanHandler] Ignoring ehcache attribute xmlns:xsi
+2017-07-30 19:45:39,788 [Thread-8] [DEBUG] [net.sf.ehcache.config.BeanHandler] Ignoring ehcache attribute xsi:noNamespaceSchemaLocation
+2017-07-30 19:45:39,789 [Thread-8] [DEBUG] [n.s.e.config.DiskStoreConfiguration] Disk Store Path: C:\Users\myhome\AppData\Local\Temp\
+2017-07-30 19:45:39,797 [Thread-8] [DEBUG] [net.sf.ehcache.CacheManager] Creating new CacheManager with InputStream
+2017-07-30 19:45:39,798 [Thread-8] [DEBUG] [net.sf.ehcache.util.PropertyUtil] propertiesString is null.
+2017-07-30 19:45:39,802 [Thread-8] [DEBUG] [n.s.e.config.ConfigurationHelper] No CacheManagerEventListenerFactory class specified. Skipping...
+2017-07-30 19:45:39,803 [Thread-8] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for hostName: null
+2017-07-30 19:45:39,803 [Thread-8] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for port: 9000
+2017-07-30 19:45:39,803 [Thread-8] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for remoteObjectPort: null
+2017-07-30 19:45:39,803 [Thread-8] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for socketTimeoutMillis: 120000
+2017-07-30 19:45:39,806 [Thread-8] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for peerDiscovery: automatic
+2017-07-30 19:45:39,806 [Thread-8] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for hostName: null
+2017-07-30 19:45:39,806 [Thread-8] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for multicastGroupAddress: 230.0.0.100
+2017-07-30 19:45:39,806 [Thread-8] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for multicastGroupPort: 9000
+2017-07-30 19:45:39,806 [Thread-8] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for timeToLive: null
+2017-07-30 19:45:39,807 [Thread-8] [DEBUG] [n.s.e.d.RMICacheManagerPeerProviderFactory] No TTL set. Setting it to the default of 1, which means packets are limited to the same subnet.
+2017-07-30 19:45:39,815 [Thread-8] [DEBUG] [n.s.e.d.RMICacheManagerPeerListener] 0 RMICachePeers bound in registry for RMI listener
+2017-07-30 19:45:39,843 [Thread-8] [DEBUG] [net.sf.ehcache.util.PropertyUtil] propertiesString is null.
+2017-07-30 19:45:39,845 [Thread-8] [DEBUG] [net.sf.ehcache.Cache] No BootstrapCacheLoaderFactory class specified. Skipping...
+2017-07-30 19:45:39,845 [Thread-8] [DEBUG] [net.sf.ehcache.Cache] CacheWriter factory not configured. Skipping...
+2017-07-30 19:45:39,845 [Thread-8] [DEBUG] [n.s.e.config.ConfigurationHelper] No CacheExceptionHandlerFactory class specified. Skipping...
+2017-07-30 19:45:39,854 [Thread-8] [DEBUG] [net.sf.ehcache.store.MemoryStore] Initialized net.sf.ehcache.store.MemoryStore for tokens
+2017-07-30 19:45:39,926 [Thread-8] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Pass-Through Statistic: LOCAL_OFFHEAP_SIZE
+2017-07-30 19:45:39,926 [Thread-8] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Pass-Through Statistic: LOCAL_OFFHEAP_SIZE_BYTES
+2017-07-30 19:45:39,926 [Thread-8] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Pass-Through Statistic: LOCAL_DISK_SIZE
+2017-07-30 19:45:39,926 [Thread-8] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Pass-Through Statistic: LOCAL_DISK_SIZE_BYTES
+2017-07-30 19:45:39,927 [Thread-8] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Pass-Through Statistic: WRITER_QUEUE_LENGTH
+2017-07-30 19:45:39,927 [Thread-8] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Pass-Through Statistic: REMOTE_SIZE
+2017-07-30 19:45:39,927 [Thread-8] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Pass-Through Statistic: LAST_REJOIN_TIMESTAMP
+2017-07-30 19:45:39,934 [Thread-8] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: OFFHEAP_GET
+2017-07-30 19:45:39,934 [Thread-8] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: OFFHEAP_PUT
+2017-07-30 19:45:39,934 [Thread-8] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: OFFHEAP_REMOVE
+2017-07-30 19:45:39,934 [Thread-8] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: DISK_GET
+2017-07-30 19:45:39,934 [Thread-8] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: DISK_PUT
+2017-07-30 19:45:39,935 [Thread-8] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: DISK_REMOVE
+2017-07-30 19:45:39,935 [Thread-8] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: XA_COMMIT
+2017-07-30 19:45:39,935 [Thread-8] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: XA_ROLLBACK
+2017-07-30 19:45:39,935 [Thread-8] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: XA_RECOVERY
+2017-07-30 19:45:39,935 [Thread-8] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: CLUSTER_EVENT
+2017-07-30 19:45:39,935 [Thread-8] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: NONSTOP
+2017-07-30 19:45:39,938 [Thread-8] [DEBUG] [net.sf.ehcache.Cache] Initialised cache: tokens
+2017-07-30 19:45:39,938 [Thread-8] [DEBUG] [n.s.e.d.RMICacheManagerPeerListener] Adding to RMI listener
+2017-07-30 19:45:39,944 [Thread-8] [DEBUG] [n.s.e.d.RMICacheManagerPeerListener] 1 RMICachePeers bound in registry for RMI listener
+2017-07-30 19:45:39,944 [Thread-8] [DEBUG] [n.s.e.config.ConfigurationHelper] CacheDecoratorFactory not configured. Skipping for 'tokens'.
+2017-07-30 19:45:39,944 [Thread-8] [DEBUG] [n.s.e.config.ConfigurationHelper] CacheDecoratorFactory not configured for defaultCache. Skipping for 'tokens'.
+2017-07-30 19:45:40,046 [Thread-8] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Scanned package: 'kr.co.redcore.domain' for aliases
+2017-07-30 19:45:40,048 [Thread-8] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Scanned package: 'kr.co.redcore.domain.view' for aliases
+2017-07-30 19:45:40,062 [Thread-8] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed configuration file: 'class path resource [mybatis/mybatis-config.xml]'
+2017-07-30 19:45:40,388 [Thread-8] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_auth_num.xml]'
+2017-07-30 19:45:40,401 [Thread-8] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_cate_mst.xml]'
+2017-07-30 19:45:40,413 [Thread-8] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_cate_prd.xml]'
+2017-07-30 19:45:40,421 [Thread-8] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_common_code.xml]'
+2017-07-30 19:45:40,425 [Thread-8] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_common_code_group.xml]'
+2017-07-30 19:45:40,439 [Thread-8] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_member.xml]'
+2017-07-30 19:45:40,443 [Thread-8] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_member_access_log.xml]'
+2017-07-30 19:45:40,447 [Thread-8] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_member_point.xml]'
+2017-07-30 19:45:40,451 [Thread-8] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_opt_group.xml]'
+2017-07-30 19:45:40,456 [Thread-8] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_prd_detail.xml]'
+2017-07-30 19:45:40,464 [Thread-8] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_prd_mst.xml]'
+2017-07-30 19:45:40,468 [Thread-8] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_prd_opt.xml]'
+2017-07-30 19:45:40,897 [Thread-8] [INFO ] [org.hibernate.validator.util.Version] Hibernate Validator 4.2.0.Final
+2017-07-30 19:45:40,901 [Thread-8] [DEBUG] [o.h.v.e.r.DefaultTraversableResolver] Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+2017-07-30 19:45:40,902 [Thread-8] [DEBUG] [o.h.v.xml.ValidationXmlParser] Trying to load META-INF/validation.xml for XML based Validator configuration.
+2017-07-30 19:45:40,903 [Thread-8] [DEBUG] [o.h.v.xml.ValidationXmlParser] No META-INF/validation.xml found. Using annotation based configuration only
+2017-07-30 19:45:44,813 [Multicast Heartbeat Sender Thread] [DEBUG] [n.s.ehcache.distribution.PayloadUtil] Cache peers for this CacheManager to be advertised: //192.168.219.173:9000/tokens
+2017-07-30 19:45:50,445 ["http-bio-8080"-exec-10] [DEBUG] [kr.co.redcore.aop.ControllerAspect] @@@@@@@@@@@@@ >>> Around Action Execution Time Start !! >>>
+2017-07-30 19:45:50,445 ["http-bio-8080"-exec-10] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ------------------- controller start -----------------------------------------------------
+2017-07-30 19:45:50,446 ["http-bio-8080"-exec-10] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ### Controller Before Advice Start !! ###
+2017-07-30 19:45:50,446 ["http-bio-8080"-exec-10] [DEBUG] [kr.co.redcore.aop.ControllerAspect] Controller Class => ShopEnvController
+2017-07-30 19:45:50,446 ["http-bio-8080"-exec-10] [DEBUG] [kr.co.redcore.aop.ControllerAspect] Controller Method => updateForm
+2017-07-30 19:45:50,446 ["http-bio-8080"-exec-10] [DEBUG] [kr.co.redcore.aop.ControllerAspect] /kalleryshop/admin/shop_env/updateForm.do
+2017-07-30 19:45:50,446 ["http-bio-8080"-exec-10] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ################################################################################
+2017-07-30 19:45:50,446 ["http-bio-8080"-exec-10] [DEBUG] [kr.co.redcore.aop.ControllerAspect] Params => 
+2017-07-30 19:45:50,446 ["http-bio-8080"-exec-10] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ################################################################################
+2017-07-30 19:45:50,557 ["http-bio-8080"-exec-10] [DEBUG] [T.insertTbl_member_access_log] ==>  Preparing: INSERT INTO tbl_member_access_log(member_seq, member_id, ip_addr, access_url, regby, regdate) VALUES (?, ?, ?, ?, ?, sysdate()) 
+2017-07-30 19:45:50,558 ["http-bio-8080"-exec-10] [DEBUG] [T.insertTbl_member_access_log] ==> Parameters: 1(Long), admin@gmail.com(String), 0:0:0:0:0:0:0:1(String), /kalleryshop/admin/shop_env/updateForm.do(String), admin@gmail.com(String)
+2017-07-30 19:45:50,604 ["http-bio-8080"-exec-10] [DEBUG] [kr.co.redcore.aop.ControllerAspect] URL => /kalleryshop/admin/shop_env/updateForm.do : access log insert !!!
+2017-07-30 19:45:50,605 ["http-bio-8080"-exec-10] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ### Controller Before Advice End !! ###
+2017-07-30 19:45:50,619 ["http-bio-8080"-exec-10] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ------------------- controller end -------------------------------------------------------
+2017-07-30 19:45:50,619 ["http-bio-8080"-exec-10] [DEBUG] [kr.co.redcore.aop.ControllerAspect] >>> class kr.co.redcore.controller.admin.ShopEnvController Execution time : 0.172
+2017-07-30 19:45:50,619 ["http-bio-8080"-exec-10] [DEBUG] [kr.co.redcore.aop.ControllerAspect] @@@@@@@@@@@@@ >>> Around Action Execution Time END !! >>>
+2017-07-30 19:45:50,702 ["http-bio-8080"-exec-10] [ERROR] [o.s.web.servlet.tags.form.ErrorsTag] Invalid property 'cp_bidz_num' of bean class [kr.co.redcore.domain.Tbl_shop_env]: Bean property 'cp_bidz_num' is not readable or has an invalid getter method: Does the return type of the getter match the parameter type of the setter?org.springframework.beans.NotReadablePropertyException: Invalid property 'cp_bidz_num' of bean class [kr.co.redcore.domain.Tbl_shop_env]: Bean property 'cp_bidz_num' is not readable or has an invalid getter method: Does the return type of the getter match the parameter type of the setter?
+	at org.springframework.beans.BeanWrapperImpl.getPropertyValue(BeanWrapperImpl.java:707) ~[spring-beans-3.2.4.RELEASE.jar:3.2.4.RELEASE]
+	at org.springframework.beans.BeanWrapperImpl.getPropertyValue(BeanWrapperImpl.java:699) ~[spring-beans-3.2.4.RELEASE.jar:3.2.4.RELEASE]
+	at org.springframework.validation.AbstractPropertyBindingResult.getActualFieldValue(AbstractPropertyBindingResult.java:99) ~[spring-context-3.2.4.RELEASE.jar:3.2.4.RELEASE]
+	at org.springframework.validation.AbstractBindingResult.getFieldValue(AbstractBindingResult.java:218) ~[spring-context-3.2.4.RELEASE.jar:3.2.4.RELEASE]
+	at org.springframework.web.servlet.support.BindStatus.<init>(BindStatus.java:120) ~[spring-webmvc-3.2.4.RELEASE.jar:3.2.4.RELEASE]
+	at org.springframework.web.servlet.tags.form.AbstractDataBoundFormElementTag.getBindStatus(AbstractDataBoundFormElementTag.java:179) ~[spring-webmvc-3.2.4.RELEASE.jar:3.2.4.RELEASE]
+	at org.springframework.web.servlet.tags.form.ErrorsTag.shouldRender(ErrorsTag.java:141) ~[spring-webmvc-3.2.4.RELEASE.jar:3.2.4.RELEASE]
+	at org.springframework.web.servlet.tags.form.AbstractHtmlElementBodyTag.writeTagContent(AbstractHtmlElementBodyTag.java:48) ~[spring-webmvc-3.2.4.RELEASE.jar:3.2.4.RELEASE]
+	at org.springframework.web.servlet.tags.form.AbstractFormTag.doStartTagInternal(AbstractFormTag.java:103) ~[spring-webmvc-3.2.4.RELEASE.jar:3.2.4.RELEASE]
+	at org.springframework.web.servlet.tags.RequestContextAwareTag.doStartTag(RequestContextAwareTag.java:80) ~[spring-webmvc-3.2.4.RELEASE.jar:3.2.4.RELEASE]
+	at org.apache.jsp.WEB_002dINF.views.admin.shop_005fenv.updateForm_jsp._jspService(updateForm_jsp.java:403) [kalleryshop/:na]
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70) [jasper.jar:7.0.8]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722) [servlet-api.jar:na]
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:417) [jasper.jar:7.0.8]
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:391) [jasper.jar:7.0.8]
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:334) [jasper.jar:7.0.8]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722) [servlet-api.jar:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:306) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:672) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:463) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:402) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:329) [catalina.jar:7.0.8]
+	at org.springframework.web.servlet.view.InternalResourceView.renderMergedOutputModel(InternalResourceView.java:238) [spring-webmvc-3.2.4.RELEASE.jar:3.2.4.RELEASE]
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:263) [spring-webmvc-3.2.4.RELEASE.jar:3.2.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1208) [spring-webmvc-3.2.4.RELEASE.jar:3.2.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:992) [spring-webmvc-3.2.4.RELEASE.jar:3.2.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:939) [spring-webmvc-3.2.4.RELEASE.jar:3.2.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:856) [spring-webmvc-3.2.4.RELEASE.jar:3.2.4.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:936) [spring-webmvc-3.2.4.RELEASE.jar:3.2.4.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:827) [spring-webmvc-3.2.4.RELEASE.jar:3.2.4.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621) [servlet-api.jar:na]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:812) [spring-webmvc-3.2.4.RELEASE.jar:3.2.4.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722) [servlet-api.jar:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:306) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210) [catalina.jar:7.0.8]
+	at kr.co.redcore.filter.LoginAdminFilter.doFilter(LoginAdminFilter.java:98) [LoginAdminFilter.class:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:244) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210) [catalina.jar:7.0.8]
+	at com.navercorp.lucy.security.xss.servletfilter.XssEscapeServletFilter.doFilter(XssEscapeServletFilter.java:36) [lucy-xss-servlet-2.0.0.jar:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:244) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210) [catalina.jar:7.0.8]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:88) [spring-web-3.2.4.RELEASE.jar:3.2.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-3.2.4.RELEASE.jar:3.2.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:244) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210) [catalina.jar:7.0.8]
+	at com.opensymphony.sitemesh.webapp.SiteMeshFilter.obtainContent(SiteMeshFilter.java:129) [sitemesh-2.4.2.jar:na]
+	at com.opensymphony.sitemesh.webapp.SiteMeshFilter.doFilter(SiteMeshFilter.java:77) [sitemesh-2.4.2.jar:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:244) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:240) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:161) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:164) [catalina.jar:7.0.8]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100) [catalina.jar:7.0.8]
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:541) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118) [catalina.jar:7.0.8]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:383) [catalina.jar:7.0.8]
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:243) [tomcat-coyote.jar:7.0.8]
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:188) [tomcat-coyote.jar:7.0.8]
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:166) [tomcat-coyote.jar:7.0.8]
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:288) [tomcat-coyote.jar:7.0.8]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [na:1.7.0_45]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [na:1.7.0_45]
+	at java.lang.Thread.run(Unknown Source) [na:1.7.0_45]
+
+2017-07-30 19:46:50,231 ["http-bio-8080"-exec-11] [DEBUG] [kr.co.redcore.aop.ControllerAspect] @@@@@@@@@@@@@ >>> Around Action Execution Time Start !! >>>
+2017-07-30 19:46:50,231 ["http-bio-8080"-exec-11] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ------------------- controller start -----------------------------------------------------
+2017-07-30 19:46:50,231 ["http-bio-8080"-exec-11] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ### Controller Before Advice Start !! ###
+2017-07-30 19:46:50,231 ["http-bio-8080"-exec-11] [DEBUG] [kr.co.redcore.aop.ControllerAspect] Controller Class => ShopEnvController
+2017-07-30 19:46:50,231 ["http-bio-8080"-exec-11] [DEBUG] [kr.co.redcore.aop.ControllerAspect] Controller Method => updateForm
+2017-07-30 19:46:50,231 ["http-bio-8080"-exec-11] [DEBUG] [kr.co.redcore.aop.ControllerAspect] /kalleryshop/admin/shop_env/updateForm.do
+2017-07-30 19:46:50,231 ["http-bio-8080"-exec-11] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ################################################################################
+2017-07-30 19:46:50,231 ["http-bio-8080"-exec-11] [DEBUG] [kr.co.redcore.aop.ControllerAspect] Params => 
+2017-07-30 19:46:50,231 ["http-bio-8080"-exec-11] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ################################################################################
+2017-07-30 19:46:50,282 ["http-bio-8080"-exec-11] [DEBUG] [T.insertTbl_member_access_log] ==>  Preparing: INSERT INTO tbl_member_access_log(member_seq, member_id, ip_addr, access_url, regby, regdate) VALUES (?, ?, ?, ?, ?, sysdate()) 
+2017-07-30 19:46:50,282 ["http-bio-8080"-exec-11] [DEBUG] [T.insertTbl_member_access_log] ==> Parameters: 1(Long), admin@gmail.com(String), 0:0:0:0:0:0:0:1(String), /kalleryshop/admin/shop_env/updateForm.do(String), admin@gmail.com(String)
+2017-07-30 19:46:50,325 ["http-bio-8080"-exec-11] [DEBUG] [kr.co.redcore.aop.ControllerAspect] URL => /kalleryshop/admin/shop_env/updateForm.do : access log insert !!!
+2017-07-30 19:46:50,325 ["http-bio-8080"-exec-11] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ### Controller Before Advice End !! ###
+2017-07-30 19:46:50,325 ["http-bio-8080"-exec-11] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ------------------- controller end -------------------------------------------------------
+2017-07-30 19:46:50,325 ["http-bio-8080"-exec-11] [DEBUG] [kr.co.redcore.aop.ControllerAspect] >>> class kr.co.redcore.controller.admin.ShopEnvController Execution time : 0.094
+2017-07-30 19:46:50,325 ["http-bio-8080"-exec-11] [DEBUG] [kr.co.redcore.aop.ControllerAspect] @@@@@@@@@@@@@ >>> Around Action Execution Time END !! >>>
+2017-07-30 19:47:20,892 ["http-bio-8080"-exec-9] [DEBUG] [kr.co.redcore.aop.ControllerAspect] @@@@@@@@@@@@@ >>> Around Action Execution Time Start !! >>>
+2017-07-30 19:47:20,892 ["http-bio-8080"-exec-9] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ------------------- controller start -----------------------------------------------------
+2017-07-30 19:47:20,892 ["http-bio-8080"-exec-9] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ### Controller Before Advice Start !! ###
+2017-07-30 19:47:20,892 ["http-bio-8080"-exec-9] [DEBUG] [kr.co.redcore.aop.ControllerAspect] Controller Class => PrdManagerController
+2017-07-30 19:47:20,892 ["http-bio-8080"-exec-9] [DEBUG] [kr.co.redcore.aop.ControllerAspect] Controller Method => searchList
+2017-07-30 19:47:20,892 ["http-bio-8080"-exec-9] [DEBUG] [kr.co.redcore.aop.ControllerAspect] /kalleryshop/admin/prd_manager/searchList.do
+2017-07-30 19:47:20,892 ["http-bio-8080"-exec-9] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ################################################################################
+2017-07-30 19:47:20,893 ["http-bio-8080"-exec-9] [DEBUG] [kr.co.redcore.aop.ControllerAspect] Params => 
+2017-07-30 19:47:20,893 ["http-bio-8080"-exec-9] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ################################################################################
+2017-07-30 19:47:20,945 ["http-bio-8080"-exec-9] [DEBUG] [T.insertTbl_member_access_log] ==>  Preparing: INSERT INTO tbl_member_access_log(member_seq, member_id, ip_addr, access_url, regby, regdate) VALUES (?, ?, ?, ?, ?, sysdate()) 
+2017-07-30 19:47:20,946 ["http-bio-8080"-exec-9] [DEBUG] [T.insertTbl_member_access_log] ==> Parameters: 1(Long), admin@gmail.com(String), 0:0:0:0:0:0:0:1(String), /kalleryshop/admin/prd_manager/searchList.do(String), admin@gmail.com(String)
+2017-07-30 19:47:20,992 ["http-bio-8080"-exec-9] [DEBUG] [kr.co.redcore.aop.ControllerAspect] URL => /kalleryshop/admin/prd_manager/searchList.do : access log insert !!!
+2017-07-30 19:47:20,993 ["http-bio-8080"-exec-9] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ### Controller Before Advice End !! ###
+2017-07-30 19:47:21,117 ["http-bio-8080"-exec-9] [DEBUG] [T.getPageHelperCntByParamMap] ==>  Preparing: SELECT COUNT(*) FROM tbl_prd_mst tpm, tbl_member tm WHERE tpm.member_seq = tm.member_seq 
+2017-07-30 19:47:21,118 ["http-bio-8080"-exec-9] [DEBUG] [T.getPageHelperCntByParamMap] ==> Parameters: 
+2017-07-30 19:47:21,172 ["http-bio-8080"-exec-9] [DEBUG] [T.getPageHelperListByParamMapEtc] ==>  Preparing: SELECT tpm.prd_mst_seq, tpm.member_seq, tm.member_id, tpm.prd_name, tpm.prd_status, tpm.prd_summary, tpm.prd_content, tpm.tag_name, tpd.prd_in_price, tpd.prd_mk_price, tpd.prd_sl_price, ifnull(tpm.memo, '') AS memo, tpm.regby, date_format(tpm.regdate, '%Y%m%d') AS regdate, tpm.uptby, date_format(tpm.uptdate, '%Y%m%d') AS uptdate FROM tbl_prd_mst tpm, (SELECT prd_mst_seq FROM tbl_prd_mst tpm, tbl_member tm WHERE tpm.member_seq = tm.member_seq LIMIT ?, ?) sub, (SELECT * FROM tbl_prd_detail WHERE prd_detail_seq IN (SELECT max(prd_detail_seq) AS prd_detail_seq FROM tbl_prd_detail GROUP BY prd_mst_seq)) tpd, tbl_member tm WHERE tpm.prd_mst_seq = sub.prd_mst_seq AND tpm.prd_mst_seq = tpd.prd_mst_seq AND tpm.member_seq = tm.member_seq ORDER BY tpm.prd_mst_seq DESC 
+2017-07-30 19:47:21,172 ["http-bio-8080"-exec-9] [DEBUG] [T.getPageHelperListByParamMapEtc] ==> Parameters: 0(Integer), 10(Integer)
+2017-07-30 19:47:21,201 ["http-bio-8080"-exec-9] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ------------------- controller end -------------------------------------------------------
+2017-07-30 19:47:21,202 ["http-bio-8080"-exec-9] [DEBUG] [kr.co.redcore.aop.ControllerAspect] >>> class kr.co.redcore.controller.admin.PrdManagerController Execution time : 0.309
+2017-07-30 19:47:21,202 ["http-bio-8080"-exec-9] [DEBUG] [kr.co.redcore.aop.ControllerAspect] @@@@@@@@@@@@@ >>> Around Action Execution Time END !! >>>
+2017-07-30 19:47:21,317 ["http-bio-8080"-exec-9] [DEBUG] [T.getVw_common_codeByParamMap] ==>  Preparing: SELECT tcc.*, tccg.code_group_name FROM tbl_common_code_group tccg, tbl_common_code tcc WHERE tccg.code_group_id = tcc.code_group_id AND tcc.code_id = ? AND tcc.code_group_id = ? AND tcc.code_locale = ? 
+2017-07-30 19:47:21,318 ["http-bio-8080"-exec-9] [DEBUG] [T.getVw_common_codeByParamMap] ==> Parameters: A(String), PRD_STATUS(String), ko(String)
+2017-07-30 19:47:22,815 ["http-bio-8080"-exec-1] [DEBUG] [kr.co.redcore.aop.ControllerAspect] @@@@@@@@@@@@@ >>> Around Action Execution Time Start !! >>>
+2017-07-30 19:47:22,815 ["http-bio-8080"-exec-1] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ------------------- controller start -----------------------------------------------------
+2017-07-30 19:47:22,815 ["http-bio-8080"-exec-1] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ### Controller Before Advice Start !! ###
+2017-07-30 19:47:22,815 ["http-bio-8080"-exec-1] [DEBUG] [kr.co.redcore.aop.ControllerAspect] Controller Class => PrdManagerController
+2017-07-30 19:47:22,816 ["http-bio-8080"-exec-1] [DEBUG] [kr.co.redcore.aop.ControllerAspect] Controller Method => registForm
+2017-07-30 19:47:22,816 ["http-bio-8080"-exec-1] [DEBUG] [kr.co.redcore.aop.ControllerAspect] /kalleryshop/admin/prd_manager/registForm.do
+2017-07-30 19:47:22,816 ["http-bio-8080"-exec-1] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ################################################################################
+2017-07-30 19:47:22,816 ["http-bio-8080"-exec-1] [DEBUG] [kr.co.redcore.aop.ControllerAspect] Params => 
+2017-07-30 19:47:22,816 ["http-bio-8080"-exec-1] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ################################################################################
+2017-07-30 19:47:22,869 ["http-bio-8080"-exec-1] [DEBUG] [T.insertTbl_member_access_log] ==>  Preparing: INSERT INTO tbl_member_access_log(member_seq, member_id, ip_addr, access_url, regby, regdate) VALUES (?, ?, ?, ?, ?, sysdate()) 
+2017-07-30 19:47:22,870 ["http-bio-8080"-exec-1] [DEBUG] [T.insertTbl_member_access_log] ==> Parameters: 1(Long), admin@gmail.com(String), 0:0:0:0:0:0:0:1(String), /kalleryshop/admin/prd_manager/registForm.do(String), admin@gmail.com(String)
+2017-07-30 19:47:22,910 ["http-bio-8080"-exec-1] [DEBUG] [kr.co.redcore.aop.ControllerAspect] URL => /kalleryshop/admin/prd_manager/registForm.do : access log insert !!!
+2017-07-30 19:47:22,910 ["http-bio-8080"-exec-1] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ### Controller Before Advice End !! ###
+2017-07-30 19:47:22,947 ["http-bio-8080"-exec-1] [DEBUG] [T.getTbl_opt_groupListByAll] ==>  Preparing: SELECT * FROM tbl_opt_group 
+2017-07-30 19:47:22,947 ["http-bio-8080"-exec-1] [DEBUG] [T.getTbl_opt_groupListByAll] ==> Parameters: 
+2017-07-30 19:47:22,963 ["http-bio-8080"-exec-1] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ------------------- controller end -------------------------------------------------------
+2017-07-30 19:47:22,963 ["http-bio-8080"-exec-1] [DEBUG] [kr.co.redcore.aop.ControllerAspect] >>> class kr.co.redcore.controller.admin.PrdManagerController Execution time : 0.148
+2017-07-30 19:47:22,963 ["http-bio-8080"-exec-1] [DEBUG] [kr.co.redcore.aop.ControllerAspect] @@@@@@@@@@@@@ >>> Around Action Execution Time END !! >>>
+2017-07-30 19:47:23,378 ["http-bio-8080"-exec-1] [DEBUG] [T.getVw_common_codeListByParamMap] ==>  Preparing: SELECT * FROM tbl_common_code WHERE code_group_id = ? AND code_locale = ? ORDER BY orderby ASC 
+2017-07-30 19:47:23,378 ["http-bio-8080"-exec-1] [DEBUG] [T.getVw_common_codeListByParamMap] ==> Parameters: PRD_STATUS(String), ko(String)
+2017-07-30 19:47:23,435 ["http-bio-8080"-exec-1] [DEBUG] [T.getVw_common_codeListByParamMap] ==>  Preparing: SELECT * FROM tbl_common_code WHERE code_group_id = ? AND code_locale = ? ORDER BY orderby ASC 
+2017-07-30 19:47:23,436 ["http-bio-8080"-exec-1] [DEBUG] [T.getVw_common_codeListByParamMap] ==> Parameters: IS_OPT_USE(String), ko(String)
+2017-07-30 19:47:23,712 ["http-bio-8080"-exec-13] [DEBUG] [kr.co.redcore.aop.ControllerAspect] @@@@@@@@@@@@@ >>> Around Action Execution Time Start !! >>>
+2017-07-30 19:47:23,712 ["http-bio-8080"-exec-13] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ------------------- controller start -----------------------------------------------------
+2017-07-30 19:47:23,712 ["http-bio-8080"-exec-13] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ### Controller Before Advice Start !! ###
+2017-07-30 19:47:23,712 ["http-bio-8080"-exec-13] [DEBUG] [kr.co.redcore.aop.ControllerAspect] Controller Class => ExternallApiController
+2017-07-30 19:47:23,713 ["http-bio-8080"-exec-13] [DEBUG] [kr.co.redcore.aop.ControllerAspect] Controller Method => getCategoryList
+2017-07-30 19:47:23,713 ["http-bio-8080"-exec-13] [DEBUG] [kr.co.redcore.aop.ControllerAspect] /kalleryshop/api/external/getCategoryList.do
+2017-07-30 19:47:23,713 ["http-bio-8080"-exec-13] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ################################################################################
+2017-07-30 19:47:23,713 ["http-bio-8080"-exec-13] [DEBUG] [kr.co.redcore.aop.ControllerAspect] Params => 
+2017-07-30 19:47:23,713 ["http-bio-8080"-exec-13] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ################################################################################
+2017-07-30 19:47:23,770 ["http-bio-8080"-exec-13] [DEBUG] [T.insertTbl_member_access_log] ==>  Preparing: INSERT INTO tbl_member_access_log(member_seq, member_id, ip_addr, access_url, regby, regdate) VALUES (?, ?, ?, ?, ?, sysdate()) 
+2017-07-30 19:47:23,771 ["http-bio-8080"-exec-13] [DEBUG] [T.insertTbl_member_access_log] ==> Parameters: 1(Long), admin@gmail.com(String), 0:0:0:0:0:0:0:1(String), /kalleryshop/api/external/getCategoryList.do(String), admin@gmail.com(String)
+2017-07-30 19:47:23,815 ["http-bio-8080"-exec-13] [DEBUG] [kr.co.redcore.aop.ControllerAspect] URL => /kalleryshop/api/external/getCategoryList.do : access log insert !!!
+2017-07-30 19:47:23,815 ["http-bio-8080"-exec-13] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ### Controller Before Advice End !! ###
+2017-07-30 19:47:23,865 ["http-bio-8080"-exec-13] [DEBUG] [Tbl_cate_mst.getJsTreeTypeListByAll] ==>  Preparing: SELECT cate_mst_seq AS id, if(cate_mst_seq_up = '0', '#', cate_mst_seq_up) AS parent, cate_name AS text FROM tbl_cate_mst ORDER BY cate_mst_seq_up ASC, cate_mst_seq ASC 
+2017-07-30 19:47:23,865 ["http-bio-8080"-exec-13] [DEBUG] [Tbl_cate_mst.getJsTreeTypeListByAll] ==> Parameters: 
+2017-07-30 19:47:23,943 ["http-bio-8080"-exec-13] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ------------------- controller end -------------------------------------------------------
+2017-07-30 19:47:23,943 ["http-bio-8080"-exec-13] [DEBUG] [kr.co.redcore.aop.ControllerAspect] >>> class kr.co.redcore.controller.api.ExternallApiController Execution time : 0.231
+2017-07-30 19:47:23,943 ["http-bio-8080"-exec-13] [DEBUG] [kr.co.redcore.aop.ControllerAspect] @@@@@@@@@@@@@ >>> Around Action Execution Time END !! >>>
+2017-07-30 19:47:23,944 ["http-bio-8080"-exec-13] [DEBUG] [kr.co.redcore.domain.api.JsonView] result data >>>> [  {    "id": 1,    "text": "카테고리1",    "parent": "#"  },  {    "id": 2,    "text": "카테고리2",    "parent": "#"  },  {    "id": 7,    "text": "카테고리3",    "parent": "#"  },  {    "id": 8,    "text": "카테고리4",    "parent": "#"  },  {    "id": 9,    "text": "카테고리5",    "parent": "#"  },  {    "id": 3,    "text": "카테고리1-1",    "parent": "1"  },  {    "id": 4,    "text": "카테고리1-2",    "parent": "1"  },  {    "id": 12,    "text": "카테고리1-3",    "parent": "1"  },  {    "id": 5,    "text": "카테고리2-1",    "parent": "2"  },  {    "id": 6,    "text": "카테고리2-2",    "parent": "2"  }]
+2017-07-30 19:47:28,815 ["http-bio-8080"-exec-13] [DEBUG] [kr.co.redcore.aop.ControllerAspect] @@@@@@@@@@@@@ >>> Around Action Execution Time Start !! >>>
+2017-07-30 19:47:28,815 ["http-bio-8080"-exec-13] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ------------------- controller start -----------------------------------------------------
+2017-07-30 19:47:28,815 ["http-bio-8080"-exec-13] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ### Controller Before Advice Start !! ###
+2017-07-30 19:47:28,815 ["http-bio-8080"-exec-13] [DEBUG] [kr.co.redcore.aop.ControllerAspect] Controller Class => ShopEnvController
+2017-07-30 19:47:28,815 ["http-bio-8080"-exec-13] [DEBUG] [kr.co.redcore.aop.ControllerAspect] Controller Method => updateForm
+2017-07-30 19:47:28,815 ["http-bio-8080"-exec-13] [DEBUG] [kr.co.redcore.aop.ControllerAspect] /kalleryshop/admin/shop_env/updateForm.do
+2017-07-30 19:47:28,816 ["http-bio-8080"-exec-13] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ################################################################################
+2017-07-30 19:47:28,816 ["http-bio-8080"-exec-13] [DEBUG] [kr.co.redcore.aop.ControllerAspect] Params => 
+2017-07-30 19:47:28,816 ["http-bio-8080"-exec-13] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ################################################################################
+2017-07-30 19:47:28,870 ["http-bio-8080"-exec-13] [DEBUG] [T.insertTbl_member_access_log] ==>  Preparing: INSERT INTO tbl_member_access_log(member_seq, member_id, ip_addr, access_url, regby, regdate) VALUES (?, ?, ?, ?, ?, sysdate()) 
+2017-07-30 19:47:28,871 ["http-bio-8080"-exec-13] [DEBUG] [T.insertTbl_member_access_log] ==> Parameters: 1(Long), admin@gmail.com(String), 0:0:0:0:0:0:0:1(String), /kalleryshop/admin/shop_env/updateForm.do(String), admin@gmail.com(String)
+2017-07-30 19:47:28,915 ["http-bio-8080"-exec-13] [DEBUG] [kr.co.redcore.aop.ControllerAspect] URL => /kalleryshop/admin/shop_env/updateForm.do : access log insert !!!
+2017-07-30 19:47:28,915 ["http-bio-8080"-exec-13] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ### Controller Before Advice End !! ###
+2017-07-30 19:47:28,916 ["http-bio-8080"-exec-13] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ------------------- controller end -------------------------------------------------------
+2017-07-30 19:47:28,916 ["http-bio-8080"-exec-13] [DEBUG] [kr.co.redcore.aop.ControllerAspect] >>> class kr.co.redcore.controller.admin.ShopEnvController Execution time : 0.101
+2017-07-30 19:47:28,916 ["http-bio-8080"-exec-13] [DEBUG] [kr.co.redcore.aop.ControllerAspect] @@@@@@@@@@@@@ >>> Around Action Execution Time END !! >>>
+2017-07-30 22:51:20,694 [Multicast Heartbeat Sender Thread] [DEBUG] [n.s.e.d.MulticastKeepaliveHeartbeatSender] Error on multicast socketjava.net.SocketException: Network is unreachable: Datagram send failed
+	at java.net.TwoStacksPlainDatagramSocketImpl.send(Native Method) ~[na:1.7.0_45]
+	at java.net.DatagramSocket.send(Unknown Source) ~[na:1.7.0_45]
+	at net.sf.ehcache.distribution.MulticastKeepaliveHeartbeatSender$MulticastServerThread.run(MulticastKeepaliveHeartbeatSender.java:144) ~[ehcache-2.9.0.jar:2.9.0]
+

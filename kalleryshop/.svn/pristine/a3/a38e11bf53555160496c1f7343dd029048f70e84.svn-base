@@ -1,0 +1,99 @@
+package kr.co.redcore.controller;
+
+import java.io.File;
+import java.util.List;
+import java.util.Properties;
+
+import javax.servlet.http.HttpServletRequest;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.i18n.LocaleContextHolder;
+import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
+import org.springframework.web.multipart.MultipartFile;
+
+import kr.co.redcore.GlobalConstants;
+import kr.co.redcore.exception.ImageFileTypeException;
+import kr.co.redcore.util.file.UserFile;
+import kr.co.redcore.util.security.StringEncrypter;
+import kr.co.redcore.util.string.UserString;
+import net.sf.jmimemagic.Magic;
+import net.sf.jmimemagic.MagicMatch;
+
+@Controller
+public class BaseController {
+	private static final Logger logger = LoggerFactory.getLogger(BaseController.class);
+	
+	@Autowired
+	private Properties configProp;
+	
+	public boolean validateTokenBindResult(HttpServletRequest req, BindingResult bindingResult) throws Exception {
+		String tokenError = (String) req.getAttribute(GlobalConstants.TOKEN_ERROR_KEY);
+		if (bindingResult.hasErrors() || (tokenError != null)) {
+			if (tokenError != null) {
+				// 토큰에러(중복토큰)가 발생했을때, 다시 등록폼으로 이동
+				logger.debug(">>>>>>> " + tokenError);
+				bindingResult.rejectValue("common_error", "error_token");
+			} else {
+				// Validate 에러가 발생했을때, 다시 등록폼으로 이동
+				List<ObjectError> list = bindingResult.getAllErrors();
+				for (ObjectError oe : list) {
+					logger.error("ObjectError: " + oe);
+				}
+			}
+			
+			return false;
+		} else {
+			return true;
+		}
+	}
+	
+	public String uploadFile(MultipartFile mf, String subPath) throws Exception  {
+		// 파일업로드 처리
+		String subPathFileName = new String();
+		String realPathFileName = new String();
+		if((mf != null) && !mf.isEmpty()) {
+			// 파일이 존재한다면
+			File realPath = new File(configProp.get("upload_path") + UserFile.getFileSeparater() + subPath);
+			if(!realPath.exists()) realPath.mkdir(); // 해당디렉토리가 없으면 생성
+			
+			if(!checkImageFile(mf.getBytes())) {
+				// 파일이 이미지 타입이 아닌경우
+				throw new ImageFileTypeException("this file is not image-file");
+			} else {
+				// 파일이 이미지 타입인 경우
+				logger.debug("tbl_app_manager.getApp_img_icon().getName() >>> " + mf.getName());
+				logger.debug("tbl_app_manager.getApp_img_icon().getOriginalFilename() >>> " + mf.getOriginalFilename());
+				logger.debug("mf.getOriginalFilename().lastIndexOf(\".\") >>> " + mf.getOriginalFilename().substring(mf.getOriginalFilename().lastIndexOf(".")));
+				
+				String newFileName = new StringEncrypter().md5(mf.getOriginalFilename() + System.currentTimeMillis()) + mf.getOriginalFilename().substring(mf.getOriginalFilename().lastIndexOf("."));
+				subPathFileName = subPath + UserFile.getFileSeparater() + newFileName;
+				realPathFileName = realPath + UserFile.getFileSeparater() + newFileName;
+				logger.debug(">>>>>>> realPathFileName : " + realPathFileName);
+				mf.transferTo(new File(realPathFileName));
+				
+				UserString userString = new UserString();
+				return userString.replace(subPathFileName, UserFile.getFileSeparater(), "/");
+			}
+		} else {
+			//throw new Exception("MultipartFile is null...");
+			return null;
+		}
+	}
+	
+	private boolean checkImageFile(byte[] fileData) throws Exception  {
+	    Magic parser = new Magic();	    
+	    MagicMatch match = parser.getMagicMatch(fileData);
+	    if (match.getMimeType().contains("image")) {
+	    	return true;
+	    } else {
+	    	return false;
+	    }
+    }
+	
+	public String getSubImagePath(String filePath) throws Exception {
+		return GlobalConstants.UPLOAD_PATH_IMAGE + System.getProperty("file.separator") +  filePath;
+	}
+}

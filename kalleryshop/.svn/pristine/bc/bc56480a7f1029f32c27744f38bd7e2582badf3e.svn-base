@@ -1,0 +1,214 @@
+package kr.co.redcore.service;
+
+import java.util.List;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import kr.co.redcore.GlobalConstants;
+import kr.co.redcore.domain.Tbl_cate_prd;
+import kr.co.redcore.domain.Tbl_prd_detail;
+import kr.co.redcore.domain.Tbl_prd_mst;
+import kr.co.redcore.domain.Tbl_prd_opt;
+import kr.co.redcore.domain.view.Vw_prd_mst;
+import kr.co.redcore.exception.Member_id_not_existException;
+import kr.co.redcore.mapper.Tbl_cate_prdMapper;
+import kr.co.redcore.mapper.Tbl_memberMapper;
+import kr.co.redcore.mapper.Tbl_prd_detailMapper;
+import kr.co.redcore.mapper.Tbl_prd_mstMapper;
+import kr.co.redcore.mapper.Tbl_prd_optMapper;
+import kr.co.redcore.util.PageHelper;
+import kr.co.redcore.util.ParamMap;
+
+@Service
+public class ProductService extends PageObject {
+	private static final Logger logger = LoggerFactory.getLogger(ProductService.class);
+
+	@Autowired
+	private Tbl_prd_mstMapper tbl_prd_mstMapper;
+	
+	@Autowired
+	private Tbl_prd_detailMapper tbl_prd_detailMapper;	
+
+	@Autowired
+	private Tbl_prd_optMapper tbl_prd_optMapper;
+	
+	@Autowired
+	private Tbl_cate_prdMapper tbl_cate_prdMapper;	
+	
+	@Autowired
+	private Tbl_memberMapper tbl_memberMapper;
+	
+	public Vw_prd_mst getVw_prd_mstByPrd_mst_seq(long prd_mst_seq) throws Exception {
+		return tbl_prd_mstMapper.getVw_prd_mstByPrd_mst_seq(prd_mst_seq);
+	}
+	
+	public Tbl_prd_detail getTbl_prd_detailLastByPrd_mst_seq(long prd_mst_seq) throws Exception {
+		return tbl_prd_detailMapper.getTbl_prd_detailLastByPrd_mst_seq(prd_mst_seq);
+	}
+	
+	public List getTbl_prd_optLastListByPrd_mst_seq(long prd_mst_seq) throws Exception {
+		return tbl_prd_optMapper.getTbl_prd_optLastListByPrd_mst_seq(prd_mst_seq);
+	}
+	
+	@Override
+	public PageHelper getPageHelperByParamEtc(ParamMap paramMap, PageHelper pageHelper) throws Exception {
+		// TODO Auto-generated method stub
+		pageHelper.setTotalRows(tbl_prd_mstMapper.getPageHelperCntByParamMap(paramMap));
+		pageHelper.setList(tbl_prd_mstMapper.getPageHelperListByParamMapEtc(pageHelper.getStartRow() - 1, pageHelper.getPageSize(), paramMap));
+
+		return pageHelper;
+	}
+	
+	@Transactional(rollbackFor = {Exception.class})
+	public long insertVw_prd_mst(Vw_prd_mst vw_prd_mst) throws Exception {
+		long memberCount = tbl_memberMapper.getTbl_memberCntByMember_id(vw_prd_mst.getMember_id());
+		if(memberCount <= 0) {
+			// 아이디가 없을 경우
+			throw new Member_id_not_existException(vw_prd_mst.getMember_id());
+		}
+		
+		Tbl_prd_mst tbl_prd_mst = new Tbl_prd_mst();
+		tbl_prd_mst.setMember_seq(vw_prd_mst.getMember_seq());
+		tbl_prd_mst.setPrd_name(vw_prd_mst.getPrd_name());
+		tbl_prd_mst.setPrd_status(vw_prd_mst.getPrd_status());
+		tbl_prd_mst.setPrd_content(vw_prd_mst.getPrd_content());
+		tbl_prd_mst.setIs_opt_use(vw_prd_mst.getIs_opt_use());
+		tbl_prd_mst.setTag_name(vw_prd_mst.getTag_name());
+		tbl_prd_mst.setImg_main_path(vw_prd_mst.getImg_main_path());
+		tbl_prd_mst.setImg_thum_path(vw_prd_mst.getImg_thum_path());
+		tbl_prd_mst.setImg_sub1_path(vw_prd_mst.getImg_sub1_path());
+		tbl_prd_mst.setImg_sub2_path(vw_prd_mst.getImg_sub2_path());
+		tbl_prd_mst.setRegby(vw_prd_mst.getRegby());
+		tbl_prd_mst.setUptby(vw_prd_mst.getUptby());
+		long prd_mst_seq = tbl_prd_mstMapper.insertTbl_prd_mst(tbl_prd_mst);
+		
+		logger.debug("insertVw_prd_mst >>> " + prd_mst_seq);
+		
+		Tbl_prd_detail tbl_prd_detail = new Tbl_prd_detail();
+		tbl_prd_detail.setPrd_mst_seq(prd_mst_seq);
+		tbl_prd_detail.setPrd_in_price(vw_prd_mst.getPrd_in_price());
+		tbl_prd_detail.setPrd_mk_price(vw_prd_mst.getPrd_mk_price());
+		tbl_prd_detail.setPrd_sl_price(vw_prd_mst.getPrd_sl_price());
+		tbl_prd_detail.setRegby(vw_prd_mst.getRegby());		
+		tbl_prd_detailMapper.insertTbl_prd_detail(tbl_prd_detail);
+		
+		if(vw_prd_mst.getCateList() != null) {
+			for(int i = 0; i < vw_prd_mst.getCateList().size(); i++) {
+				String cate_mst_seq = (String)vw_prd_mst.getCateList().get(i);
+				
+				Tbl_cate_prd tbl_cate_prd = new Tbl_cate_prd();
+				tbl_cate_prd.setCate_mst_seq(Long.parseLong(cate_mst_seq));
+				tbl_cate_prd.setPrd_mst_seq(prd_mst_seq);
+				
+				tbl_cate_prdMapper.insertTbl_cate_prd(tbl_cate_prd);
+			}
+		}
+		
+		if(vw_prd_mst.getIs_opt_use().equals("Y") && vw_prd_mst.getOpt_group_idList() != null) {
+			for(int i = 0; i < vw_prd_mst.getOpt_group_idList().size(); i++) {
+				String opt_group_id = (String)vw_prd_mst.getOpt_group_idList().get(i);
+				String prd_opt_id = (String)vw_prd_mst.getPrd_opt_idList().get(i);
+				String prd_opt_name = (String)vw_prd_mst.getPrd_opt_nameList().get(i);
+				float prd_opt_in_price = vw_prd_mst.getPrd_opt_in_priceList().get(i) != null ? Float.parseFloat((String)vw_prd_mst.getPrd_opt_in_priceList().get(i)) : (float)0.0;
+				float prd_opt_sl_price = vw_prd_mst.getPrd_opt_sl_priceList().get(i) != null ? Float.parseFloat((String)vw_prd_mst.getPrd_opt_sl_priceList().get(i)) : (float)0.0;
+				int orderby = (int)(vw_prd_mst.getOrderbyList().get(i) != null ? Integer.parseInt((String)vw_prd_mst.getOrderbyList().get(i)) : (int)1);
+
+				Tbl_prd_opt tbl_prd_opt = new Tbl_prd_opt();
+				tbl_prd_opt.setPrd_mst_seq(prd_mst_seq);
+				tbl_prd_opt.setOpt_group_id(opt_group_id);
+				tbl_prd_opt.setPrd_opt_id(prd_opt_id);
+				tbl_prd_opt.setPrd_opt_name(prd_opt_name);
+				tbl_prd_opt.setPrd_opt_in_price(prd_opt_in_price);
+				tbl_prd_opt.setPrd_opt_sl_price(prd_opt_sl_price);
+				tbl_prd_opt.setOrderby(orderby);
+				tbl_prd_opt.setIs_del(GlobalConstants.IS_VALID_N);
+				tbl_prd_opt.setRegby(vw_prd_mst.getRegby());
+				tbl_prd_optMapper.insertTbl_prd_opt(tbl_prd_opt);
+			}
+		}
+		
+		return prd_mst_seq;
+	}
+	
+	@Transactional(rollbackFor = {Exception.class})
+	public long updateVw_prd_mst(Vw_prd_mst vw_prd_mst) throws Exception {
+		long memberCount = tbl_memberMapper.getTbl_memberCntByMember_id(vw_prd_mst.getMember_id());
+		if(memberCount <= 0) {
+			// 아이디가 없을 경우
+			throw new Member_id_not_existException(vw_prd_mst.getMember_id());
+		}
+		
+		Tbl_prd_mst tbl_prd_mst = new Tbl_prd_mst();
+		tbl_prd_mst.setPrd_mst_seq(vw_prd_mst.getPrd_mst_seq());
+		tbl_prd_mst.setMember_seq(vw_prd_mst.getMember_seq());
+		tbl_prd_mst.setPrd_name(vw_prd_mst.getPrd_name());
+		tbl_prd_mst.setPrd_status(vw_prd_mst.getPrd_status());
+		tbl_prd_mst.setPrd_content(vw_prd_mst.getPrd_content());
+		tbl_prd_mst.setIs_opt_use(vw_prd_mst.getIs_opt_use());
+		tbl_prd_mst.setTag_name(vw_prd_mst.getTag_name());
+		tbl_prd_mst.setImg_main_path(vw_prd_mst.getImg_main_path());
+		tbl_prd_mst.setImg_thum_path(vw_prd_mst.getImg_thum_path());
+		tbl_prd_mst.setImg_sub1_path(vw_prd_mst.getImg_sub1_path());
+		tbl_prd_mst.setImg_sub2_path(vw_prd_mst.getImg_sub2_path());
+		tbl_prd_mst.setRegby(vw_prd_mst.getRegby());
+		tbl_prd_mst.setUptby(vw_prd_mst.getUptby());
+		tbl_prd_mstMapper.updateTbl_prd_mst(tbl_prd_mst);
+		
+		logger.debug("updateTbl_prd_mst >>> " + vw_prd_mst.getPrd_mst_seq());
+		
+		Tbl_prd_detail tbl_prd_detailOld = tbl_prd_detailMapper.getTbl_prd_detailLastByPrd_mst_seq(vw_prd_mst.getPrd_mst_seq());
+		
+		if((tbl_prd_detailOld.getPrd_in_price() != vw_prd_mst.getPrd_in_price()) || 
+						(tbl_prd_detailOld.getPrd_mk_price() != vw_prd_mst.getPrd_mk_price()) ||
+						(tbl_prd_detailOld.getPrd_sl_price() != vw_prd_mst.getPrd_sl_price())) {		
+			Tbl_prd_detail tbl_prd_detailNew = new Tbl_prd_detail();
+			tbl_prd_detailNew.setPrd_mst_seq(vw_prd_mst.getPrd_mst_seq());
+			tbl_prd_detailNew.setPrd_in_price(vw_prd_mst.getPrd_in_price());
+			tbl_prd_detailNew.setPrd_mk_price(vw_prd_mst.getPrd_mk_price());
+			tbl_prd_detailNew.setPrd_sl_price(vw_prd_mst.getPrd_sl_price());		
+			tbl_prd_detailNew.setRegby(vw_prd_mst.getRegby());
+			tbl_prd_detailMapper.insertTbl_prd_detail(tbl_prd_detailNew);
+		}
+		
+		tbl_cate_prdMapper.deleteTbl_cate_prdByPrd_mst_seq(vw_prd_mst.getPrd_mst_seq());
+		if(vw_prd_mst.getCateList() != null) {
+			for(int i = 0; i < vw_prd_mst.getCateList().size(); i++) {
+				String cate_mst_seq = (String)vw_prd_mst.getCateList().get(i);
+				
+				Tbl_cate_prd tbl_cate_prd = new Tbl_cate_prd();
+				tbl_cate_prd.setCate_mst_seq(Long.parseLong(cate_mst_seq));
+				tbl_cate_prd.setPrd_mst_seq(vw_prd_mst.getPrd_mst_seq());
+				
+				tbl_cate_prdMapper.insertTbl_cate_prd(tbl_cate_prd);
+			}
+		}
+		
+//		if(vw_prd_mst.getIs_opt_use().equals("Y") && vw_prd_mst.getOpt_group_idList() != null) {
+//			for(int i = 0; i < vw_prd_mst.getOpt_group_idList().size(); i++) {
+//				String opt_group_id = (String)vw_prd_mst.getOpt_group_idList().get(i);
+//				String prd_opt_id = (String)vw_prd_mst.getPrd_opt_idList().get(i);
+//				String prd_opt_name = (String)vw_prd_mst.getPrd_opt_nameList().get(i);
+//				float prd_opt_in_price = vw_prd_mst.getPrd_opt_in_priceList().get(i) != null ? Float.parseFloat((String)vw_prd_mst.getPrd_opt_in_priceList().get(i)) : (float)0.0;
+//				float prd_opt_sl_price = vw_prd_mst.getPrd_opt_sl_priceList().get(i) != null ? Float.parseFloat((String)vw_prd_mst.getPrd_opt_sl_priceList().get(i)) : (float)0.0;
+//				int orderby = (int)(vw_prd_mst.getOrderbyList().get(i) != null ? Integer.parseInt((String)vw_prd_mst.getOrderbyList().get(i)) : (int)1);
+//
+//				Tbl_prd_opt tbl_prd_opt = new Tbl_prd_opt();
+//				tbl_prd_opt.setPrd_mst_seq(prd_mst_seq);
+//				tbl_prd_opt.setOpt_group_id(opt_group_id);
+//				tbl_prd_opt.setPrd_opt_id(prd_opt_id);
+//				tbl_prd_opt.setPrd_opt_name(prd_opt_name);
+//				tbl_prd_opt.setPrd_opt_in_price(prd_opt_in_price);
+//				tbl_prd_opt.setPrd_opt_sl_price(prd_opt_sl_price);
+//				tbl_prd_opt.setOrderby(orderby);
+//				tbl_prd_opt.setIs_del(GlobalConstants.IS_VALID_N);
+//				tbl_prd_opt.setRegby(vw_prd_mst.getRegby());
+//				tbl_prd_optMapper.insertTbl_prd_opt(tbl_prd_opt);
+//			}
+//		}
+		
+		return vw_prd_mst.getPrd_mst_seq();
+	}	
+}

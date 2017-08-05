@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Tbl_cate_mst">
+	<select id="getJsTreeTypeListByAll" resultType="HashMap">
+		<![CDATA[
+		SELECT cate_mst_seq AS id,
+		       if(cate_mst_seq_up = '0', '#', cate_mst_seq_up) AS parent,
+		       cate_name AS text
+		  FROM tbl_cate_mst
+		ORDER BY cate_mst_seq_up ASC, cate_mst_seq ASC
+		]]>
+	</select>
+
+	<select id="getTbl_cate_mstListByAll" resultType="Tbl_cate_mst">
+		<![CDATA[
+		SELECT *
+		  FROM tbl_cate_mst
+		ORDER BY cate_mst_seq_up ASC, cate_mst_seq ASC	
+		]]>
+	</select>
+
+	<insert id="insertTbl_cate_mst" parameterType="Tbl_cate_mst">
+		<![CDATA[
+		INSERT INTO tbl_cate_mst(cate_mst_seq_up,
+		                         cate_name,
+		                         regby,
+		                         regdate,
+		                         uptby,
+		                         uptdate)
+		VALUES (#{cate_mst_seq_up},
+		        #{cate_name},
+		        #{regby},
+		        sysdate(),
+		        #{uptby},
+		        sysdate())
+		]]>
+	</insert>
+	
+	<update id="updateTbl_cate_mstForCate_name" parameterType="HashMap">
+		<![CDATA[
+		UPDATE tbl_cate_mst
+		   SET cate_name = #{cate_name},
+		       uptdate = sysdate()
+		 WHERE cate_mst_seq = #{cate_mst_seq}
+		]]>
+	</update>
+</mapper>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Tbl_common_code">
+	<cache/>
+	<select id="getVw_common_codeByParamMap" parameterType="HashMap" resultType="Vw_common_code" useCache="true">
+		<![CDATA[
+		SELECT tcc.*, tccg.code_group_name
+		  FROM tbl_common_code_group tccg, tbl_common_code tcc
+		 WHERE     tccg.code_group_id = tcc.code_group_id
+		       AND tcc.code_id = #{code_id}
+		       AND tcc.code_group_id = #{code_group_id}
+		       AND tcc.code_locale = #{code_locale}
+		]]>
+	</select>
+	
+	<select id="getVw_common_codeListByParamMap" parameterType="HashMap" resultType="Vw_common_code" useCache="true">
+		<![CDATA[
+		SELECT *
+		  FROM tbl_common_code
+		 WHERE     code_group_id = #{code_group_id}
+		       AND code_locale = #{code_locale}
+		ORDER BY orderby ASC
+		]]>
+	</select>
+</mapper>

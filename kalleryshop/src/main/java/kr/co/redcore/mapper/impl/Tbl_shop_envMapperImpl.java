@@ -1,0 +1,39 @@
+package kr.co.redcore.mapper.impl;
+
+import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.List;
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import kr.co.redcore.domain.Tbl_prd_detail;
+import kr.co.redcore.domain.Tbl_prd_mst;
+import kr.co.redcore.domain.Tbl_prd_opt;
+import kr.co.redcore.domain.Tbl_shop_env;
+import kr.co.redcore.mapper.Tbl_prd_mstMapper;
+import kr.co.redcore.mapper.Tbl_prd_optMapper;
+import kr.co.redcore.mapper.Tbl_shop_envMapper;
+import kr.co.redcore.util.ParamMap;
+
+@Repository
+public class Tbl_shop_envMapperImpl implements Tbl_shop_envMapper {
+	@Autowired
+	private SqlSessionTemplate sqlSession;
+	
+	public long getTbl_shop_envCntByShop_id(String shop_id) throws SQLException {
+		return sqlSession.selectOne("Tbl_shop_env.getTbl_shop_envCntByShop_id", shop_id);
+	}
+	
+	public Tbl_shop_env getTbl_shop_envByShop_id(String shop_id) throws SQLException {
+		return sqlSession.selectOne("Tbl_shop_env.getTbl_shop_envByShop_id", shop_id);
+	}
+	
+	public long insertTbl_shop_env(Tbl_shop_env tbl_shop_env) throws SQLException {
+		return sqlSession.insert("Tbl_shop_env.insertTbl_shop_env", tbl_shop_env);		
+	}
+	
+	public long updateTbl_shop_env(Tbl_shop_env tbl_shop_env) throws SQLException {
+		return sqlSession.update("Tbl_shop_env.updateTbl_shop_env", tbl_shop_env);	
+	}
+}

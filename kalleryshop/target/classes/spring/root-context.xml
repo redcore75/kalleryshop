@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+	
+	<tx:annotation-driven transaction-manager="transactionManager"/>
+	<util:properties id="configProp" location="classpath:properties/config.properties"/>
+	
+	<!-- ehcache설정 -->	  	
+	<bean id="ehCacheManager" class="org.springframework.cache.ehcache.EhCacheCacheManager">
+  		<property name="cacheManager">
+  			<bean class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">
+  				<property name="configLocation" value="classpath:spring/ehcache.xml"/>
+  				<property name="shared" value="true" />
+			</bean>
+  		</property>
+ 	</bean>
+	
+	<!-- 메시지설정 -->
+ 	<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+	    <property name="basenames">
+	        <list>
+	            <value>classpath:messages/messages</value>
+	        </list>
+	    </property>
+		<property name="cacheSeconds" value="5" />
+		<property name="fileEncodings" value="UTF-8" />
+		<property name="defaultEncoding" value="UTF-8" />
+	</bean>   
+
+	<!-- 이메일설정 -->
+    <bean id="mailSender" class ="org.springframework.mail.javamail.JavaMailSenderImpl" >
+        <property name="host" value="smtp.gmail.com" />
+        <property name="port" value="587" />
+        <property name="defaultEncoding" value="utf-8"/>
+        <property name="username" value="xmerce5290@gmail.com" />
+        <property name="password" value="07082245290" />
+       
+        <property name="javaMailProperties">
+            <props>
+            	<prop key="mail.transport.protocol">smtp</prop>
+                <prop key="mail.smtp.starttls.enable">true</prop>
+                <prop key="mail.smtp.auth">true</prop>
+                <prop key="mail.debug">false</prop>
+            </props>
+        </property>
+    </bean>
+</beans>

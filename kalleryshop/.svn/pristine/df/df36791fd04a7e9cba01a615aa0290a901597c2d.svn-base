@@ -1,0 +1,27 @@
+package kr.co.redcore.controller.front;
+
+import java.util.Map;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
+
+import kr.co.redcore.controller.BaseController;
+
+@Controller
+public class IndexController extends BaseController {
+	private static final Logger logger = LoggerFactory.getLogger(IndexController.class);
+	
+	@RequestMapping(value = "/front/main/index.do")
+	public ModelAndView index(HttpSession session, HttpServletRequest req, HttpServletResponse res, @RequestParam Map<String, Object> params) throws Exception {		
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("front/main/index");
+		
+		return mv;
+	}
+}

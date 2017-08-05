@@ -1,0 +1,125 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ include file="/WEB-INF/views/common/common.jsp"%>
+<%
+Logger logger = LoggerFactory.getLogger(getClass());
+ParamMap paramMap = (ParamMap) request.getAttribute("paramMap");
+%>
+<head>	 				
+	<script type="text/javascript"> 
+		$(document).ready(function(){			
+			$("#jstree_demo_div").jstree({
+				"core" : {
+					"themes" : {
+						"variant" : "large"
+					},
+					"data": {
+						"url": "${pageContext.request.contextPath}/api/external/getCategoryList.do",
+						"dataType": "json",
+					},
+				},
+				"checkbox" : {
+					"keep_selected_style" : false
+				},
+			});
+			
+			$("#jstree_demo_div").on("changed.jstree", function(e, data){
+				$("#catePrdList").html("");
+				
+			    var i, j;
+			    for(i = 0, j = data.selected.length; i < j; i++) {
+			    	console.log(data.instance.get_node(data.selected[i]).id + ' ' + data.instance.get_node(data.selected[i]).text);
+			    	
+					$.ajax({
+						url:"${pageContext.request.contextPath}/api/external/getProductList.do?cate_mst_seq=" + data.instance.get_node(data.selected[i]).id,
+						type:"GET",
+						data: {},
+						dataType:"json",
+						cache:false,
+						success:function(data){
+							if(data.result_code == 0000) {
+								for(i = 0; i < data.result_data.length; i++) {
+									//console.log(data.result_data[i].cate_mst_seq + ' ' + data.result_data[i].prd_mst_seq);
+									
+									var obj = new Object();
+									obj['cate_mst_seq'] = data.result_data[i].cate_mst_seq;
+									obj['prd_mst_seq'] = data.result_data[i].prd_mst_seq;
+									obj['prd_name'] = data.result_data[i].prd_name;
+									obj['prd_in_price'] = data.result_data[i].prd_in_price;
+									obj['prd_sl_price'] = data.result_data[i].prd_sl_price;
+									$('#catePrdListData').tmpl(obj).appendTo("#catePrdList");
+								}
+							} else {
+								alert('<spring:message code="common.st.카테고리가존재하지않습니다" />');
+							}
+						},
+						error : function(request, status, error) {
+							alert("code : " + request.status + "\r\nmessage : " + request.responseText + "\r\nerror : " + error);
+						}
+					});
+			    }
+			});
+		});
+	</script>
+	
+	<script id="catePrdListData" type="text/x-jquery-tmpl">
+		<tr>
+			<input type="hidden" name="cate_mst_id" value="{{= cate_mst_id}}"/>
+			<input type="hidden" name="prd_mst_seq" value="{{= prd_mst_seq}}"/>
+			<td>{{= prd_mst_seq}}</td>
+			<td>{{= prd_name}}</td>
+			<td>{{= prd_in_price}}</td>
+			<td>{{= prd_sl_price}}</td>
+			<td><button id="delCatePrdList" type="button" class="btn  btn-flat">-</button></td>
+		</tr>
+	</script>
+</head>
+<body>
+
+	<div class="content">
+   		<div class="box box-default">
+      		<div class="box-header with-border">
+       			<h3 class="box-title"><spring:message code="common.wd.카테고리관리" /> > <spring:message code="common.wd.카테고리상품리스트" /></h3>
+      		</div>
+      		<!-- /.box-header -->
+      		<div class="box-body">
+       			<div class="row">
+          			<div class="col-md-3">
+						<div id="jstree_demo_div">
+						</div>
+           			</div>
+           			<!-- /.col -->
+           			<div class="col-md-9">
+							<div class="box-body no-padding">
+								<table class="table">
+									<tbody>
+										<tr>
+											<th width="10%">상품번호</th>
+											<th width="30%">상품명</th>
+											<th>상품매입가</th>
+											<th>상품판매가</th>
+											<th>삭제</th>
+										</tr>
+										<tbody id="catePrdList"></tbody>
+									</tbody>
+								</table>
+							</div>						
+					</div>
+            		<!-- /.col -->
+				</div>
+			</div>
+        	<!-- /.box-body -->
+      	</div>
+      	<!-- /.box -->
+      	
+		<div class="row">
+			<div class="col-md-12">
+				<div align="right">
+					<button type="button" id="btnRegist" class="btn btn-default btn-flat"><spring:message code="common.wd.등록하기" /></button>
+					<button type="button" id="btnUpdate" class="btn btn-default btn-flat"><spring:message code="common.wd.저장하기" /></button></a>
+				</div>
+			</div>
+		</div>	      	
+	</div>
+	<!-- /.content -->
+
+</body>

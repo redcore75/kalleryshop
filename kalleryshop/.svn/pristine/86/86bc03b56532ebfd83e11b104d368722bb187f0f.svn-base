@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Tbl_prd_mst">
+	<select id="getPageHelperCntByParamMap" parameterType="HashMap" resultType="Long">
+		<![CDATA[
+		SELECT COUNT(*)
+		  FROM tbl_prd_mst tpm, tbl_member tm
+		 WHERE tpm.member_seq = tm.member_seq
+		]]><trim>
+			<if test="sch_member_id != null and sch_member_id != ''">
+				AND tm.member_id = #{sch_member_id}
+			</if>
+			<if test="sch_prd_name != null and sch_prd_name != ''">
+				AND tpm.prd_name LIKE CONCAT('%', #{sch_prd_name}, '%')
+			</if>
+			<if test="sch_start_date != null and sch_start_date != ''">
+				<![CDATA[ AND tpm.regdate >= STR_TO_DATE(#{sch_start_date}, '%Y%m%d') ]]>
+			</if>
+			<if test="sch_end_date != null and sch_end_date != ''">
+				<![CDATA[ AND tpm.regdate < STR_TO_DATE(#{sch_end_date}, '%Y%m%d') ]]>
+			</if>
+		</trim><![CDATA[
+		]]>
+	</select>
+	
+	<select id="getPageHelperListByParamMapEtc" parameterType="HashMap" resultType="Vw_prd_mst">
+		<![CDATA[
+		SELECT tpm.prd_mst_seq,
+		       tpm.member_seq,
+		       tm.member_id,
+		       tpm.prd_name,
+		       tpm.prd_status,
+		       tpm.prd_content,
+		       tpm.tag_name,
+		       tpd.prd_in_price,
+		       tpd.prd_mk_price,
+		       tpd.prd_sl_price,    
+		       --ifnull(tpm.memo, '') AS memo,		       
+		       tpm.regby,
+		       date_format(tpm.regdate, '%Y%m%d') AS regdate,
+		       tpm.uptby,
+		       date_format(tpm.uptdate, '%Y%m%d') AS uptdate
+		  FROM tbl_prd_mst tpm,
+		       (SELECT prd_mst_seq
+		          FROM tbl_prd_mst tpm, tbl_member tm
+		         WHERE tpm.member_seq = tm.member_seq
+				]]><trim>
+					<if test="sch_member_id != null and sch_member_id != ''">
+						AND tm.member_id = #{sch_member_id}
+					</if>
+					<if test="sch_prd_name != null and sch_prd_name != ''">
+						AND tpm.prd_name LIKE CONCAT('%', #{sch_prd_name}, '%')
+					</if>
+					<if test="sch_start_date != null and sch_start_date != ''">
+						<![CDATA[ AND tpm.regdate >= STR_TO_DATE(#{sch_start_date}, '%Y%m%d') ]]>
+					</if>
+					<if test="sch_end_date != null and sch_end_date != ''">
+						<![CDATA[ AND tpm.regdate < STR_TO_DATE(#{sch_end_date}, '%Y%m%d') ]]>
+					</if>
+				</trim><![CDATA[
+		        ORDER BY prd_mst_seq DESC
+		         LIMIT #{start}, #{size}) AS sub,
+		       (SELECT max(prd_detail_seq) as prd_detail_seq, 
+		               prd_mst_seq, 
+		               prd_in_price, 
+		               prd_mk_price, 
+		               prd_sl_price
+			      FROM tbl_prd_detail
+			     GROUP BY prd_detail_seq, 
+			              prd_mst_seq, 
+			              prd_in_price, 
+			              prd_mk_price, 
+			              prd_sl_price) tpd,
+			   tbl_member tm
+		 WHERE     tpm.prd_mst_seq = sub.prd_mst_seq
+		       AND tpm.prd_mst_seq = tpd.prd_mst_seq
+		       AND tpm.member_seq = tm.member_seq
+		]]>
+	</select>
+	
+	<insert id="insertTbl_prd_mst" parameterType="Tbl_prd_mst">
+    	<selectKey keyProperty="prd_mst_seq" resultType="Long" order="AFTER">
+        	SELECT last_insert_id()
+    	</selectKey>
+		<![CDATA[
+		INSERT INTO tbl_prd_mst(member_seq,
+		                        prd_name,
+		                        prd_status,
+		                        prd_content,
+		                        tag_name,
+		                        img_main_path,
+		                        img_thum_path,
+		                        img_sub1_path,
+		                        img_sub2_path,
+		                        memo,		                        
+		                        regby,
+		                        regdate,
+		                        uptby,
+		                        uptdate)
+		VALUES (#{member_seq},
+		        #{prd_name},
+		        #{prd_status},
+		        #{prd_content},
+		        #{tag_name},
+		        #{img_main_path},
+		        #{img_thum_path},
+		        #{img_sub1_path},
+		        #{img_sub2_path},
+		        #{memo},		        
+		        #{regby},
+		        sysdate(),
+		        #{uptby},
+		        sysdate())
+		]]>
+	</insert>
+</mapper>

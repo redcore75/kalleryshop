@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<property>
+	<count>1</count>
+	<datasource name="default">
+		<jndiName>jdbc/redcore</jndiName>
+		<driverClassName>com.mysql.jdbc.Driver</driverClassName>
+		<connectURI>jdbc:mysql://52.78.108.8:3306/kalleryshop?characterEncoding=utf8</connectURI>
+		<schema>kalleryshop</schema>
+		<username>kalleryshop</username>
+		<password>kalleryshop</password>
+		<initialSize>20</initialSize>
+		<maxActive>200</maxActive>
+		<maxIdle>5</maxIdle>
+		<validationQuery>select 1 from dual</validationQuery>
+		<testOnBorrow>true</testOnBorrow>
+		<removeAbandoned>true</removeAbandoned>
+		<removeAbandonedTimeout>60</removeAbandonedTimeout>
+		<logAbandoned>false</logAbandoned>
+	</datasource>
+</property>
+
+<!--
+<property>
+	<count>1</count>
+	<datasource name="default">
+		<jndiName>jdbc/xmerce</jndiName>
+		<driverClassName>oracle.jdbc.driver.OracleDriver</driverClassName>
+		<connectURI>jdbc:oracle:thin:@10.52.16.193:1521/SCDEVDB</connectURI>
+		<schema>xmerce</schema>
+		<username>xmerce</username>
+		<password>xmerce</password>
+		<initialSize>20</initialSize>
+		<maxActive>200</maxActive>
+		<maxIdle>5</maxIdle>
+		<validationQuery>select 1 from dual</validationQuery>
+		<testOnBorrow>true</testOnBorrow>
+		<removeAbandoned>true</removeAbandoned>
+		<removeAbandonedTimeout>60</removeAbandonedTimeout>
+		<logAbandoned>false</logAbandoned>
+	</datasource>	
+</property>
+-->

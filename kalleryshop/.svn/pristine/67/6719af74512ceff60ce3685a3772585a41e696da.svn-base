@@ -1,0 +1,59 @@
+package kr.co.redcore.domain.view;
+
+import java.util.ArrayList;
+import javax.validation.constraints.Min;
+import kr.co.redcore.domain.Tbl_prd_mst;
+
+public class Vw_prd_mst extends Tbl_prd_mst {
+	private String member_id;
+	private ArrayList cateList;
+
+	@Min(value = 0)
+	private float prd_in_price;
+
+	@Min(value = 0)
+	private float prd_mk_price;
+
+	@Min(value = 0)
+	private float prd_sl_price;
+
+	public String getMember_id() {
+		return member_id;
+	}
+
+	public void setMember_id(String member_id) {
+		this.member_id = member_id;
+	}
+
+	public float getPrd_in_price() {
+		return prd_in_price;
+	}
+
+	public void setPrd_in_price(float prd_in_price) {
+		this.prd_in_price = prd_in_price;
+	}
+
+	public float getPrd_mk_price() {
+		return prd_mk_price;
+	}
+
+	public void setPrd_mk_price(float prd_mk_price) {
+		this.prd_mk_price = prd_mk_price;
+	}
+
+	public float getPrd_sl_price() {
+		return prd_sl_price;
+	}
+
+	public void setPrd_sl_price(float prd_sl_price) {
+		this.prd_sl_price = prd_sl_price;
+	}
+
+	public ArrayList getCateList() {
+		return cateList;
+	}
+
+	public void setCateList(ArrayList cateList) {
+		this.cateList = cateList;
+	}
+}

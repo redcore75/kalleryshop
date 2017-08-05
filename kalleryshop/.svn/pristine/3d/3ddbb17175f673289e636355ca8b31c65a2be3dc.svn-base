@@ -1,0 +1,42 @@
+package kr.co.redcore;
+
+public class GlobalConstants {
+	public static final String AES_KEY = "kr.co.redcore";
+	public static final String AES_IVT = "E5173DCA57A9D66E6DA5C0DA69D644AB";	
+	
+	public static final String VIEW_LOCALE_TAG = "{{LC}}";
+	public static final String VIEW_TEMPLATE_TAG = "{{TP}}";
+	
+	public static String UPLOAD_PATH_IMAGE = "image";
+	public static String UPLOAD_PATH_IMAGE_PRD = "prd";
+	public static String UPLOAD_PATH_IMAGE_USR = "usr";
+	
+	public static String ADMIN_LOGININFO_KEY = "ADMIN_LOGININFO_KEY";
+	public static String FRONT_LOGININFO_KEY = "FRONT_LOGININFO_KEY";
+	public static String TOKEN_ERROR_KEY = "TOKEN_ERROR";
+	
+	public static final String IS_VALID_Y = "Y";
+	public static final String IS_VALID_N = "N";
+    
+    public static final String API_RESULT_SUCCESS = "0000";// 성공.
+    public static final String API_RESULT_FAIL = "9999";// 실패.	
+    public static final String API_FORMAT_JSON = "json";
+	
+	public static final String MEMBER_TYPE_ADMIN = "A";
+	public static final String MEMBER_TYPE_FRONT = "F";
+	
+	public static final long MEBMER_LEVEL_Z_TMP = 0;//휴면사용자
+	public static final long MEBMER_LEVEL_A_SPR = 1;//슈퍼관리자
+	public static final long MEBMER_LEVEL_F_NOR = 11;//회원(보통)
+	
+	public static final String AUTH_TYPE_MEM_EAMIL = "ME";//회원등록시 이메일 인증번호
+	public static final String AUTH_TYPE_PSS_EAMIL = "PS";//비밀번호찾기시 이메일 인증번호
+	
+	public static final String POINT_BUY = "PB";//포인트구매
+	public static final String POINT_USE = "PU";//포인트사용
+	
+	public static final String PRD_STATUS_REQ = "R"; //판매요청
+	public static final String PRD_STATUS_APT = "A"; //판매허가
+	public static final String PRD_STATUS_CNL = "C"; //판매불가
+	public static final String PRD_STATUS_END = "E"; //판매종료
+}

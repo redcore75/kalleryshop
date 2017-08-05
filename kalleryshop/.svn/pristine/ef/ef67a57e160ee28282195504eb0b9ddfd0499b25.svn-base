@@ -1,0 +1,111 @@
+package kr.co.redcore.controller.api;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+import java.util.Properties;
+import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import org.json.JSONObject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
+import org.springframework.context.support.ReloadableResourceBundleMessageSource;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.View;
+import kr.co.redcore.GlobalConstants;
+import kr.co.redcore.controller.BaseController;
+import kr.co.redcore.domain.Tbl_member;
+import kr.co.redcore.domain.api.JsonView;
+import kr.co.redcore.domain.api.ResultInternal;
+import kr.co.redcore.service.CategoryService;
+import kr.co.redcore.service.member.MemberService;
+import kr.co.redcore.util.string.ConvertUtil;
+
+@Controller
+public class ExternallApiController extends BaseController {
+	private static final Logger logger = LoggerFactory.getLogger(ExternallApiController.class);
+	
+	@Autowired
+	private MessageSource messageSource;	
+	
+	@Autowired
+	private MemberService memberService;
+
+	@Autowired
+	private CategoryService categoryService;	
+	
+	@RequestMapping(value = "/api/external/checkMemberId.do")
+	public View checkMemberId(HttpSession session, HttpServletRequest req, HttpServletResponse res, @RequestParam Map<String, Object> params, ModelMap modelMap) throws Exception {
+		String member_id = (String) params.get("member_id");
+
+		long memberCount = memberService.getTbl_memberCntByMember_id(member_id);
+		ResultInternal resultInternal = new ResultInternal();
+		if(memberCount > 0) {
+			resultInternal.setResult_code(GlobalConstants.API_RESULT_SUCCESS);
+		} else {
+			resultInternal.setResult_code(GlobalConstants.API_RESULT_FAIL);
+		}
+		
+		modelMap.put(GlobalConstants.API_FORMAT_JSON, ConvertUtil.generateJson(resultInternal));
+		
+		return new JsonView();
+	}
+	
+	@RequestMapping(value = "/api/external/checkMemberNickName.do")
+	public View checkMemberNickName(HttpSession session, HttpServletRequest req, HttpServletResponse res, @RequestParam Map<String, Object> params, ModelMap modelMap) throws Exception {
+		String member_nick_name = (String) params.get("member_nick_name");
+
+		long memberCount = memberService.getTbl_memberCntByMember_nick_name(member_nick_name);
+		ResultInternal resultInternal = new ResultInternal();
+		if(memberCount > 0) {
+			resultInternal.setResult_code(GlobalConstants.API_RESULT_SUCCESS);
+		} else {
+			resultInternal.setResult_code(GlobalConstants.API_RESULT_FAIL);
+		}
+		
+		modelMap.put(GlobalConstants.API_FORMAT_JSON, ConvertUtil.generateJson(resultInternal));
+		
+		return new JsonView();
+	}
+	
+	@RequestMapping(value = "/api/external/getMemberSeq.do")
+	public View getMemberName(HttpSession session, HttpServletRequest req, HttpServletResponse res, @RequestParam Map<String, Object> params, ModelMap modelMap) throws Exception {
+		String member_id = (String) params.get("member_id");
+
+		Tbl_member tbl_member = memberService.getTbl_memberByMember_id(member_id);
+		ResultInternal resultInternal = new ResultInternal();
+		if(tbl_member != null) {
+			resultInternal.setResult_code(GlobalConstants.API_RESULT_SUCCESS);
+			
+			HashMap result_data = new HashMap();
+			result_data.put("member_seq", tbl_member.getMember_seq());
+			result_data.put("member_id", tbl_member.getMember_id());
+			
+			resultInternal.setResult_data(result_data);
+		} else {
+			resultInternal.setResult_code(GlobalConstants.API_RESULT_FAIL);
+		}
+		
+		modelMap.put(GlobalConstants.API_FORMAT_JSON, ConvertUtil.generateJson(resultInternal));
+		
+		return new JsonView();
+	}
+	
+	@RequestMapping(value = "/api/external/getCategoryList.do")
+	public View getCategoryList(HttpSession session, HttpServletRequest req, HttpServletResponse res, @RequestParam Map<String, Object> params, ModelMap modelMap) throws Exception {
+		List cateList = categoryService.getJsTreeTypeListByAll();
+
+		// jstree에 맞게 ResultInternal 객체를 사용하지 않음
+		modelMap.put(GlobalConstants.API_FORMAT_JSON, ConvertUtil.generateJson(cateList));
+		
+		return new JsonView();
+	}
+}

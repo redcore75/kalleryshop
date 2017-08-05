@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Tbl_prd_detail">	
+	<select id="getVw_prd_mstByPrd_mst_seq" parameterType="Long" resultType="Vw_prd_mst">
+		<![CDATA[
+		SELECT tpm.prd_mst_seq,
+			   tpm.member_seq,
+			   tm.member_id,
+		       tpm.prd_name,		       
+		       tpm.prd_status,
+		       tpm.prd_summary,
+		       tpm.prd_content,
+		       tpm.is_opt_use,
+		       tpm.tag_name,
+		       tpm.img_main_path,
+		       tpm.img_thum_path,
+		       tpm.img_sub1_path,
+		       tpm.img_sub2_path,
+		       ifnull(tpm.memo, '') AS memo,
+		       tpm.regby,
+		       date_format(tpm.regdate, '%Y%m%d') AS regdate,
+		       tpm.uptby,
+		       date_format(tpm.uptdate, '%Y%m%d') AS uptdate
+		  FROM (SELECT max(tpd.prd_detail_seq)
+		          FROM tbl_prd_detail tpd
+		         WHERE tpd.prd_mst_seq = #{prd_mst_seq}
+		        GROUP BY prd_detail_seq) 
+		          
+		  
+		  tbl_prd_detail tpd, tbl_member tm
+		 WHERE tpm.member_id = tm.member_id 
+		   AND tpm.prd_mst_seq = #{prd_mst_seq}
+		]]>
+	</select>
+	
+	<insert id="insertTbl_prd_detail" parameterType="Tbl_prd_detail">
+		<![CDATA[
+		INSERT INTO tbl_prd_detail(prd_mst_seq,
+		                           prd_in_price,
+		                           prd_mk_price,
+		                           prd_sl_price,
+		                           regby,
+		                           regdate)
+		VALUES (#{prd_mst_seq},
+		        #{prd_in_price},
+		        #{prd_mk_price},
+		        #{prd_sl_price},
+		        #{regby},
+		        sysdate())
+		]]>
+	</insert>
+</mapper>

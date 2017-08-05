@@ -1,0 +1,9 @@
+package kr.co.redcore.mapper;
+
+import java.sql.SQLException;
+import kr.co.redcore.domain.Tbl_prd_opt;
+
+public interface Tbl_prd_optMapper {
+	public Tbl_prd_opt getTbl_prd_optLastByPrd_mst_seqEtc(long prd_mst_seq, String opt_group_id, String opt_opt_id) throws SQLException;
+	public long insertTbl_prd_opt(Tbl_prd_opt tbl_prd_opt) throws SQLException;
+}

@@ -1,0 +1,178 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ include file="/WEB-INF/views/common/common.jsp"%>
+<%
+Logger logger = LoggerFactory.getLogger(getClass());
+ParamMap paramMap = (ParamMap) request.getAttribute("paramMap");
+%>
+<head>	 				
+	<script type="text/javascript"> 
+		$(document).ready(function(){			
+			$("#jstree_demo_div").jstree({
+				"core" : {
+					"multiple" : false,
+					"themes" : {
+						"variant" : "large"
+					},
+					"data": {
+						"url": "${pageContext.request.contextPath}/api/external/getCategoryList.do",
+						"dataType": "json",
+					},
+				},
+				"checkbox" : {
+					"keep_selected_style" : false
+				},
+			});
+			
+			$("#jstree_demo_div").on("changed.jstree", function(e, data){
+		    	//console.log(data.instance.get_node(data.selected[0]).id + ' ' + data.instance.get_node(data.selected[0]).text);
+		    	$("#cate_mst_seq_up").val(data.instance.get_node(data.selected[0]).parent);
+		    	if(data.instance.get_node(data.selected[0]).parent === "#") {
+		    		$("#cate_root_flag").prop("checked", true);
+		    	} else {
+		    		$("#cate_root_flag").prop("checked", false);
+		    	}
+				$("#cate_mst_seq").val(data.instance.get_node(data.selected[0]).id);
+				$("#cate_name").val(data.instance.get_node(data.selected[0]).text);
+			});
+			
+			$("#btnRegist").click(function(){
+				var postData = 
+					"cate_root_flag=" + $("#cate_root_flag").is(":checked") + 
+					"&cate_mst_seq_up=" + $("#cate_mst_seq_up").val() + 
+					"&cate_mst_seq=" + $("#cate_mst_seq").val() +
+					"&cate_name=" + $("#cate_name").val();
+				
+				var cate_name = $("#cate_name").val();
+				var cate_mst_seq = $("#cate_mst_seq").val();
+				if(cate_name == "") {
+					alert('<spring:message code="common.st.카테고리명을입력하세요" />');
+				} else if(cate_mst_seq.length <= 0) {
+					alert('<spring:message code="common.st.카테고리를선택하세요" />');					
+				} else {
+					$.ajax({
+						url:"${pageContext.request.contextPath}/api/internal/regCategory.do",
+						type:"POST",
+						data: postData,
+						dataType:"json",
+						cache:false,
+						success:function(data){
+							if(data.result_code == 0000) {								
+								alert('<spring:message code="common.st.카테고리등록을성공했습니다" />');
+								$('#jstree_demo_div').jstree(true).refresh();
+							} else {
+								alert('<spring:message code="common.st.카테고리등록을실패했습니다" />');
+							}
+						},
+						error : function(request, status, error) {
+							alert("code : " + request.status + "\r\nmessage : " + request.responseText + "\r\nerror : " + error);
+						}
+					});
+				}
+			});
+			
+			$("#btnUpdate").click(function(){
+				var postData = 
+					"cate_root_flag=" + $("#cate_root_flag").is(":checked") +
+					"&cate_mst_seq_up=" + $("#cate_mst_seq_up").val() + 
+					"&cate_mst_seq=" + $("#cate_mst_seq").val() +
+					"&cate_name=" + $("#cate_name").val();
+				
+				var cate_name = $("#cate_name").val();
+				var cate_mst_seq = $("#cate_mst_seq").val();
+				if(cate_name == "") {
+					alert('<spring:message code="common.st.카테고리명을입력하세요" />');
+				} else if(cate_mst_seq.length <= 0) {
+					alert('<spring:message code="common.st.카테고리를선택하세요" />');					
+				} else {
+					$.ajax({
+						url:"${pageContext.request.contextPath}/api/internal/uptCategory.do",
+						type:"POST",
+						data: postData,
+						dataType:"json",
+						cache:false,
+						success:function(data){
+							if(data.result_code == 0000) {
+								alert('<spring:message code="common.st.카테고리수정을성공했습니다" />');
+								$('#jstree_demo_div').jstree(true).refresh();
+							} else {
+								alert('<spring:message code="common.st.카테고리수정을실패했습니다" />');
+							}
+						},
+						error : function(request, status, error) {
+							alert("code : " + request.status + "\r\nmessage : " + request.responseText + "\r\nerror : " + error);
+						}
+					});
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+
+	<div class="content">
+   		<div class="box box-default">
+      		<div class="box-header with-border">
+       			<h3 class="box-title"><spring:message code="common.wd.카테고리관리" /> > <spring:message code="common.wd.카테고리리스트" /></h3>
+      		</div>
+      		<!-- /.box-header -->
+      		<div class="box-body">
+       			<div class="row">
+          			<div class="col-md-3">
+						<div id="jstree_demo_div">
+						</div>
+           			</div>
+           			<!-- /.col -->
+           			<div class="col-md-9">
+       					<div class="box-body">
+       						<div class="row">
+       							<div class="col-md-12">
+           							<div class="form-group">
+										<div class="row">
+											<div class="col-md-2"><label><spring:message code="common.wd.상위카테고리번호"/></label></div>
+											<div class="col-md-6"><input id="cate_mst_seq_up" name="cate_mst_seq_up" type="text" class="form-control" maxlength="20" style="width: 100%;" readonly="true"/></div>
+											<div class="col-md-4"><input id="cate_root_flag" name="cate_root_flag" type="checkbox"/> <spring:message code="common.wd.ROOT여부"/></div>							
+										</div>
+           							</div>
+           						</div>
+           					</div>
+       						<div class="row">
+       							<div class="col-md-12">
+           							<div class="form-group">
+										<div class="row">								
+											<div class="col-md-2"><label><spring:message code="common.wd.현재카테고리번호"/></label></div>
+											<div class="col-md-10"><input id="cate_mst_seq" name="cate_mst_seq" type="text" class="form-control" maxlength="20" style="width: 100%;" readonly="true"/></div>							
+										</div>
+           							</div>
+           						</div>
+           					</div>           					
+           					<div class="row">
+            					<div class="col-md-12">
+	            					<div class="form-group">
+										<div class="row">
+											<div class="col-md-2"><label><spring:message code="common.wd.카테고리명"/></label></div>
+											<div class="col-md-10"><input id="cate_name" name="cate_name" type="text" class="form-control" maxlength="100" style="width: 100%;"/></div>
+										</div>
+	              					</div>
+            					</div>
+           					</div>
+						</div>						
+					</div>
+            		<!-- /.col -->
+				</div>
+			</div>
+        	<!-- /.box-body -->
+      	</div>
+      	<!-- /.box -->
+      	
+		<div class="row">
+			<div class="col-md-12">
+				<div align="right">
+					<button type="button" id="btnRegist" class="btn btn-default btn-flat"><spring:message code="common.wd.등록하기" /></button>
+					<button type="button" id="btnUpdate" class="btn btn-default btn-flat"><spring:message code="common.wd.수정하기" /></button></a>
+				</div>
+			</div>
+		</div>	      	
+	</div>
+	<!-- /.content -->
+
+</body>

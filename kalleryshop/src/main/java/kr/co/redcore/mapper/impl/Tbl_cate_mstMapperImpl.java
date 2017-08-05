@@ -1,0 +1,40 @@
+package kr.co.redcore.mapper.impl;
+
+import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.List;
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import kr.co.redcore.domain.Tbl_cate_mst;
+import kr.co.redcore.mapper.Tbl_cate_mstMapper;
+
+@Repository
+public class Tbl_cate_mstMapperImpl implements Tbl_cate_mstMapper {	
+	@Autowired
+	private SqlSessionTemplate sqlSession;
+	
+	public List getJsTreeTypeListByAll() throws SQLException {
+		return sqlSession.selectList("Tbl_cate_mst.getJsTreeTypeListByAll");
+	}
+	
+	public List getTbl_cate_mstListByAll() throws SQLException {
+		return sqlSession.selectList("Tbl_cate_mst.getTbl_cate_mstListByAll");
+	}
+	
+	public List getVw_cate_mstListByPrd_mst_seq(long prd_mst_seq) throws SQLException {
+		return sqlSession.selectList("Tbl_cate_mst.getVw_cate_mstListByPrd_mst_seq", prd_mst_seq);
+	}
+	
+	public int insertTbl_cate_mst(Tbl_cate_mst tbl_cate_mst) throws SQLException {
+		return sqlSession.insert("Tbl_cate_mst.insertTbl_cate_mst", tbl_cate_mst);
+	}
+	
+	public int updateTbl_cate_mstForCate_name(long cate_mst_seq, String cate_name) throws SQLException {
+		HashMap param = new HashMap();
+		param.put("cate_mst_seq", cate_mst_seq);
+		param.put("cate_name", cate_name);
+		
+		return sqlSession.insert("Tbl_cate_mst.updateTbl_cate_mstForCate_name", param);
+	}
+}

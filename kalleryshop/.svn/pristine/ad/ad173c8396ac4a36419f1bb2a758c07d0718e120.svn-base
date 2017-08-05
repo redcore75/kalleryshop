@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Tbl_prd_detail">	
+	<select id="getTbl_prd_detailLastByPrd_mst_seq" parameterType="Long" resultType="Tbl_prd_detail">
+		<![CDATA[
+		SELECT tpd.prd_detail_seq,
+			   tpd.prd_mst_seq,
+			   tpd.prd_in_price,
+			   tpd.prd_mk_price,
+			   tpd.prd_sl_price,
+		       tpd.regby,
+		       date_format(tpd.regdate, '%Y%m%d') AS regdate
+		  FROM tbl_prd_detail tpd,
+		       (SELECT max(tpd.prd_detail_seq) AS prd_detail_seq
+		          FROM tbl_prd_detail tpd
+		         WHERE tpd.prd_mst_seq = #{prd_mst_seq}
+		        GROUP BY prd_detail_seq) sub
+		 WHERE tpd.prd_detail_seq = sub.prd_detail_seq
+		]]>
+	</select>
+	
+	<insert id="insertTbl_prd_detail" parameterType="Tbl_prd_detail">
+		<![CDATA[
+		INSERT INTO tbl_prd_detail(prd_mst_seq,
+		                           prd_in_price,
+		                           prd_mk_price,
+		                           prd_sl_price,
+		                           regby,
+		                           regdate)
+		VALUES (#{prd_mst_seq},
+		        #{prd_in_price},
+		        #{prd_mk_price},
+		        #{prd_sl_price},
+		        #{regby},
+		        sysdate())
+		]]>
+	</insert>
+</mapper>

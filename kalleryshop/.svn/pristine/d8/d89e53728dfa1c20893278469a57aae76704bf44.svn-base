@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Tbl_member">
+	<select id="getTbl_memberCntByMember_id" parameterType="String" resultType="Long">
+		<![CDATA[
+		SELECT count(*)
+		  FROM tbl_member
+		 WHERE member_id = #{member_id}
+		]]>
+	</select>
+
+	<select id="getTbl_memberCntByMember_nick_name" parameterType="String" resultType="Long">
+		<![CDATA[
+		SELECT count(*)
+		  FROM tbl_member
+		 WHERE member_nick_name = #{member_nick_name}
+		]]>
+	</select>
+
+	<select id="getTbl_memberCntByMember_idEtc" parameterType="HashMap" resultType="Long">
+		<![CDATA[
+		SELECT count(*)
+		  FROM tbl_member
+		 WHERE member_id = #{member_id} AND member_type = #{member_type}
+		]]>
+	</select>
+
+	<select id="getTbl_memberByMember_id" parameterType="String" resultType="Tbl_member">
+		<![CDATA[
+		SELECT member_seq,
+			   member_level_seq,		       
+		       member_id,
+		       member_name,
+		       member_nick_name,
+		       password,
+		       member_type,
+		       ifnull(email_addr, '') AS email_addr,		       
+		       ifnull(mobile_num, '') AS mobile_num,
+		       birthday,
+		       curr_point,
+		       is_valid,
+		       is_del,
+		       ifnull(memo, '') AS memo,		       
+		       regby,
+		       date_format(regdate, '%Y%m%d') AS regdate,
+		       uptby,
+		       date_format(uptdate, '%Y%m%d') AS uptdate
+		  FROM tbl_member
+		 WHERE member_id = #{member_id}
+		]]>
+	</select>
+
+	<select id="getTbl_memberByMember_idEtc" parameterType="HashMap" resultType="Tbl_member">
+		<![CDATA[
+		SELECT member_seq,
+			   member_level_seq,		       
+		       member_id,
+		       member_name,
+		       member_nick_name,
+		       password,
+		       member_type,
+		       ifnull(email_addr, '') AS email_addr,
+		       ifnull(mobile_num, '') AS mobile_num,
+		       birthday,
+		       curr_point,		       
+		       is_valid,
+		       is_del,
+		       ifnull(memo, '') AS memo,		       
+		       regby,
+		       date_format(regdate, '%Y%m%d') AS regdate,
+		       uptby,
+		       date_format(uptdate, '%Y%m%d') AS uptdate
+		  FROM tbl_member
+		 WHERE member_id = #{member_id} AND password = #{password}
+		]]>
+	</select>
+	
+	<select id="getPageHelperCntByParamMap" parameterType="HashMap" resultType="Long">
+		<![CDATA[
+		SELECT COUNT(*)
+		  FROM tbl_member
+		 WHERE IS_DEL != 'Y'		 
+		]]><trim>
+			<if test="sch_member_id != null and sch_member_id != ''">
+				AND member_id = #{sch_member_id}
+			</if>
+			<if test="sch_member_name != null and sch_member_name != ''">
+				AND member_name LIKE CONCAT('%', #{sch_member_name}, '%')
+			</if>
+			<if test="sch_member_type != null and sch_member_type != ''">
+				AND member_type = #{sch_member_type}
+			</if>
+			<if test="sch_start_date != null and sch_start_date != ''">
+				<![CDATA[ AND regdate >= STR_TO_DATE(#{sch_start_date}, '%Y%m%d') ]]>
+			</if>
+			<if test="sch_end_date != null and sch_end_date != ''">
+				<![CDATA[ AND regdate < STR_TO_DATE(#{sch_end_date}, '%Y%m%d') ]]>
+			</if>
+		</trim><![CDATA[
+		]]>
+	</select>
+	
+	<select id="getPageHelperListByParamMapEtc" parameterType="HashMap" resultType="Vw_member">
+		<![CDATA[
+		SELECT tm.member_seq,
+		       tm.member_level_seq,
+		       tml.level_name,		
+		       tm.member_id,
+		       tm.member_name,
+		       member_nick_name,
+		       tm.password,
+		       tm.member_type,
+		       ifnull(tm.email_addr, '') AS email_addr,
+		       ifnull(tm.mobile_num, '') AS mobile_num,
+		       birthday,
+		       tm.curr_point,
+		       tm.is_valid,
+		       tm.is_del,		       
+		       ifnull(tm.memo, '') AS memo,		       
+		       tm.regby,
+		       date_format(tm.regdate, '%Y%m%d') AS regdate,
+		       tm.uptby,
+		       date_format(tm.uptdate, '%Y%m%d') AS uptdate
+		  FROM tbl_member tm,
+		       (SELECT member_seq
+		          FROM tbl_member
+		         WHERE IS_DEL != 'Y'
+				]]><trim>
+					<if test="sch_member_id != null and sch_member_id != ''">
+						AND member_id = #{sch_member_id}
+					</if>
+					<if test="sch_member_name != null and sch_member_name != ''">
+						AND member_name LIKE CONCAT('%', #{sch_member_name}, '%')
+					</if>
+					<if test="sch_member_type != null and sch_member_type != ''">
+						AND member_type = #{sch_member_type}
+					</if>
+					<if test="sch_start_date != null and sch_start_date != ''">
+						<![CDATA[ AND regdate >= STR_TO_DATE(#{sch_start_date}, '%Y%m%d') ]]>
+					</if>
+					<if test="sch_end_date != null and sch_end_date != ''">
+						<![CDATA[ AND regdate < STR_TO_DATE(#{sch_end_date}, '%Y%m%d') ]]>
+					</if>
+				</trim><![CDATA[
+		        ORDER BY member_seq DESC
+		         LIMIT #{start}, #{size}) AS sub,
+		       tbl_member_level tml
+		 WHERE     tm.member_seq = sub.member_seq
+		       AND tm.member_level_seq = tml.member_level_seq
+		]]>
+	</select>
+	
+	<insert id="insertTbl_member" parameterType="Tbl_member">
+		<![CDATA[
+		INSERT INTO tbl_member(member_id,
+							   member_level_seq,
+		                       member_name,
+		                       member_nick_name,
+		                       member_type,
+		                       password,		                       
+		                       email_addr,		                       
+		                       mobile_num,
+		                       birthday,
+		                       curr_point,
+		                       term_agree1,
+		                       term_agree2,
+		                       term_agree3,
+		                       auth_num,
+		                       is_valid,
+		                       is_del,
+		                       memo,
+		                       mac_addr,
+		                       regby,
+		                       regdate,
+		                       uptby,
+		                       uptdate)
+		VALUES (#{member_id},
+				#{member_level_seq},		
+		        #{member_name},
+		        #{member_nick_name},
+		        #{member_type},
+		        #{password},		        
+		        #{email_addr},		        		        
+		        #{mobile_num},
+		        #{birthday},
+		        #{curr_point},
+		        #{term_agree1},
+		        #{term_agree2},
+		        #{term_agree3},
+		        #{auth_num},
+		        #{is_valid},
+		        #{is_del},
+		        #{memo},
+		        #{mac_addr},
+		        #{regby},
+		        sysdate(),
+		        #{uptby},
+		        sysdate())
+		]]>
+	</insert>
+	
+	<update id="updateTbl_member" parameterType="Tbl_member">
+		<![CDATA[
+		UPDATE tbl_member
+		   SET member_level_seq = #{member_level_seq},
+		       member_name = #{member_name},
+		       member_nick_name = #{member_nick_name},
+		       password = #{password},
+		       email_addr = #{email_addr},		       
+		       mobile_num = #{mobile_num},
+		       birthday = #{birthday},
+		       curr_point = #{curr_point},
+		       is_valid = #{is_valid},
+		       is_del = #{is_del},
+		       memo = #{memo},
+		       uptby = #{uptby},
+		       uptdate = sysdate()
+		 WHERE member_seq = #{member_seq}
+		]]>
+	</update>
+	
+	<update id="updateTbl_memberForInfo" parameterType="Tbl_member">
+		<![CDATA[
+		UPDATE tbl_member
+		   SET member_name = #{member_name},
+		       member_nick_name = #{member_nick_name},
+		       password = #{password},
+		       birthday = #{birthday},
+		       uptby = #{uptby},
+		       uptdate = sysdate()
+		 WHERE member_id = #{member_id}
+		]]>
+	</update>
+	
+	<update id="updateTbl_memberForPassword" parameterType="HashMap">
+		<![CDATA[
+		UPDATE tbl_member
+		   SET password = #{password},
+		       uptby = #{uptby},
+		       uptdate = sysdate()
+		 WHERE member_id = #{member_id}
+		]]>
+	</update>
+	
+	<update id="updateTbl_memberForCurr_point" parameterType="HashMap">
+		<![CDATA[
+		UPDATE tbl_member
+		   SET curr_point = #{curr_point},
+		       uptby = #{uptby},
+		       uptdate = sysdate()
+		 WHERE member_id = #{member_id}
+		]]>
+	</update>
+</mapper>

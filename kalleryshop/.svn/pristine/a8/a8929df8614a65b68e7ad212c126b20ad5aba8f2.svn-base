@@ -1,0 +1,218 @@
+package kr.co.redcore.domain;
+
+import javax.validation.constraints.Min;
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotBlank;
+import org.springframework.web.multipart.MultipartFile;
+
+public class Tbl_prd_mst extends BaseObject {
+	private long prd_mst_seq;
+	
+	@NotBlank
+	private String member_seq;
+	
+	@NotBlank
+	private String prd_name;
+	
+	private String prd_status;
+	private String prd_content;
+
+	private String main_img_path;
+	private String main_img_name;
+	private MultipartFile main_img_file;
+
+	private String thum_img_path;
+	private String thum_img_name;
+	private MultipartFile thum_img_file;
+
+	private String sub1_img_path;
+	private String sub1_img_name;
+	private MultipartFile sub1_img_file;
+
+	private String sub2_img_path;
+	private String sub2_img_name;
+	private MultipartFile sub2_img_file;
+
+	private String tag_name;
+	private String regby;
+	private String regdate;
+	private String uptby;
+	private String uptdate;
+
+	public long getPrd_mst_seq() {
+		return prd_mst_seq;
+	}
+
+	public void setPrd_mst_seq(long prd_mst_seq) {
+		this.prd_mst_seq = prd_mst_seq;
+	}
+
+	public String getMember_seq() {
+		return member_seq;
+	}
+
+	public void setMember_seq(String member_seq) {
+		this.member_seq = member_seq;
+	}
+
+	public String getPrd_name() {
+		return prd_name;
+	}
+
+	public void setPrd_name(String prd_name) {
+		this.prd_name = prd_name;
+	}
+
+	public String getPrd_status() {
+		return prd_status;
+	}
+
+	public void setPrd_status(String prd_status) {
+		this.prd_status = prd_status;
+	}
+
+	public String getPrd_content() {
+		return prd_content;
+	}
+
+	public void setPrd_content(String prd_content) {
+		this.prd_content = prd_content;
+	}
+
+	public String getMain_img_path() {
+		return main_img_path;
+	}
+
+	public void setMain_img_path(String main_img_path) {
+		this.main_img_path = main_img_path;
+	}
+
+	public String getMain_img_name() {
+		return main_img_name;
+	}
+
+	public void setMain_img_name(String main_img_name) {
+		this.main_img_name = main_img_name;
+	}
+
+	public MultipartFile getMain_img_file() {
+		return main_img_file;
+	}
+
+	public void setMain_img_file(MultipartFile main_img_file) {
+		this.main_img_file = main_img_file;
+	}
+
+	public String getThum_img_path() {
+		return thum_img_path;
+	}
+
+	public void setThum_img_path(String thum_img_path) {
+		this.thum_img_path = thum_img_path;
+	}
+
+	public String getThum_img_name() {
+		return thum_img_name;
+	}
+
+	public void setThum_img_name(String thum_img_name) {
+		this.thum_img_name = thum_img_name;
+	}
+
+	public MultipartFile getThum_img_file() {
+		return thum_img_file;
+	}
+
+	public void setThum_img_file(MultipartFile thum_img_file) {
+		this.thum_img_file = thum_img_file;
+	}
+
+	public String getSub1_img_path() {
+		return sub1_img_path;
+	}
+
+	public void setSub1_img_path(String sub1_img_path) {
+		this.sub1_img_path = sub1_img_path;
+	}
+
+	public String getSub1_img_name() {
+		return sub1_img_name;
+	}
+
+	public void setSub1_img_name(String sub1_img_name) {
+		this.sub1_img_name = sub1_img_name;
+	}
+
+	public MultipartFile getSub1_img_file() {
+		return sub1_img_file;
+	}
+
+	public void setSub1_img_file(MultipartFile sub1_img_file) {
+		this.sub1_img_file = sub1_img_file;
+	}
+
+	public String getSub2_img_path() {
+		return sub2_img_path;
+	}
+
+	public void setSub2_img_path(String sub2_img_path) {
+		this.sub2_img_path = sub2_img_path;
+	}
+
+	public String getSub2_img_name() {
+		return sub2_img_name;
+	}
+
+	public void setSub2_img_name(String sub2_img_name) {
+		this.sub2_img_name = sub2_img_name;
+	}
+
+	public MultipartFile getSub2_img_file() {
+		return sub2_img_file;
+	}
+
+	public void setSub2_img_file(MultipartFile sub2_img_file) {
+		this.sub2_img_file = sub2_img_file;
+	}
+
+	public String getTag_name() {
+		return tag_name;
+	}
+
+	public void setTag_name(String tag_name) {
+		this.tag_name = tag_name;
+	}
+
+	public String getRegby() {
+		return regby;
+	}
+
+	public void setRegby(String regby) {
+		this.regby = regby;
+	}
+
+	public String getRegdate() {
+		return regdate;
+	}
+
+	public void setRegdate(String regdate) {
+		this.regdate = regdate;
+	}
+
+	public String getUptby() {
+		return uptby;
+	}
+
+	public void setUptby(String uptby) {
+		this.uptby = uptby;
+	}
+
+	public String getUptdate() {
+		return uptdate;
+	}
+
+	public void setUptdate(String uptdate) {
+		this.uptdate = uptdate;
+	}
+
+}

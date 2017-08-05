@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Tbl_prd_opt">
+	<select id="getTbl_prd_optLastListByPrd_mst_seq" parameterType="Long" resultType="Tbl_prd_opt">
+		<![CDATA[
+		SELECT tpo.prd_opt_seq,
+		       tpo.prd_mst_seq,
+		       tpo.opt_group_id,
+		       tpo.prd_opt_id,
+		       tpo.prd_opt_name,
+		       tpo.prd_opt_in_price,
+		       tpo.prd_opt_sl_price,
+		       tpo.orderby,
+		       tpo.regby,
+		       date_format(tpo.regdate, '%Y%m%d') AS regdate
+		  FROM tbl_prd_opt tpo,
+		       (SELECT tpo.prd_opt_seq
+		          FROM tbl_prd_opt tpo
+		         WHERE tpo.prd_mst_seq = #{prd_mst_seq}) sub
+		 WHERE tpo.prd_opt_seq = sub.prd_opt_seq
+		]]>
+	</select>
+	
+	<insert id="insertTbl_prd_opt" parameterType="Tbl_prd_opt">
+		<![CDATA[
+		INSERT INTO tbl_prd_opt(prd_mst_seq,
+								prd_opt_group_id,		
+		                        opt_group_id,
+		                        prd_opt_id,
+		                        prd_opt_name,
+		                        prd_opt_in_price,
+		                        prd_opt_sl_price,
+		                        orderby,
+		                        is_del,
+		                        regby,
+		                        regdate)
+		VALUES (#{prd_mst_seq},
+				#{prd_opt_group_id},
+		        #{opt_group_id},
+		        #{prd_opt_id},
+		        #{prd_opt_name},
+		        #{prd_opt_in_price},
+		        #{prd_opt_sl_price},
+		        #{orderby},
+		        #{is_del},
+		        #{regby},
+		        sysdate())
+		]]>
+	</insert>
+</mapper>

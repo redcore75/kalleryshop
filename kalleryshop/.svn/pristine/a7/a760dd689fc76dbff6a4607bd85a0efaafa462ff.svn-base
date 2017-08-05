@@ -1,0 +1,37 @@
+package kr.co.redcore.controller;
+
+import java.util.List;
+import javax.servlet.http.HttpServletRequest;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.context.i18n.LocaleContextHolder;
+import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
+import kr.co.redcore.GlobalConstants;
+
+@Controller
+public class BaseController {
+	private static final Logger logger = LoggerFactory.getLogger(BaseController.class);
+	
+	public boolean validateTokenBindResult(HttpServletRequest req, BindingResult bindingResult) throws Exception {
+		String tokenError = (String) req.getAttribute(GlobalConstants.TOKEN_ERROR_KEY);
+		if (bindingResult.hasErrors() || (tokenError != null)) {
+			if (tokenError != null) {
+				// 토큰에러(중복토큰)가 발생했을때, 다시 등록폼으로 이동
+				logger.debug(">>>>>>> " + tokenError);
+				bindingResult.rejectValue("common_error", "error_token");
+			} else {
+				// Validate 에러가 발생했을때, 다시 등록폼으로 이동
+				List<ObjectError> list = bindingResult.getAllErrors();
+				for (ObjectError oe : list) {
+					logger.error("ObjectError: " + oe);
+				}
+			}
+			
+			return false;
+		} else {
+			return true;
+		}
+	}
+}

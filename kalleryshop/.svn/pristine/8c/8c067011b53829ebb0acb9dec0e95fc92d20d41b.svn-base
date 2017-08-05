@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Tbl_cate_prd">
+	<select id="getTbl_cate_prdListByPrd_mst_seq" parameterType="Long" resultType="Tbl_cate_prd">
+		<![CDATA[
+		SELECT cate_mst_seq,
+			   prd_mst_seq
+		  FROM tbl_cate_prd
+		 WHERE prd_mst_seq = #{prd_mst_seq}
+		]]>
+	</select>
+		
+	<insert id="insertTbl_cate_prd" parameterType="Tbl_cate_prd">
+		<![CDATA[
+		INSERT INTO tbl_cate_prd(cate_mst_seq,
+		                         prd_mst_seq)
+		VALUES (#{cate_mst_seq},
+		        #{prd_mst_seq})
+		]]>
+	</insert>
+	
+	<update id="deleteTbl_cate_prdByPrd_mst_seq" parameterType="Long">
+		<![CDATA[
+		DELETE tbl_cate_prd
+		 WHERE prd_mst_seq = #{prd_mst_seq}
+		]]>
+	</update>
+</mapper>

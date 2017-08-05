@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Tbl_member_point">
+	<insert id="insertTbl_member_point" parameterType="Tbl_member_point">
+		<![CDATA[
+		INSERT INTO tbl_member_point(member_seq,
+		                             member_id,
+		                             use_type,
+		                             use_point,
+		                             prev_point,
+		                             curr_point,
+		                             regby,
+		                             regdate)
+		VALUES (#{member_seq},
+		        #{member_id},
+		        #{use_type},
+		        #{use_point},
+		        #{prev_point},
+		        #{curr_point},
+		        #{regby},
+		        sysdate())
+		]]>
+	</insert>
+</mapper>
