@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Tbl_auth_num">
+	<select id="getTbl_auth_numMaxByAuth_keyEtc" parameterType="HashMap" resultType="Tbl_auth_num">
+		<![CDATA[
+		SELECT *
+		  FROM tbl_auth_num
+		 WHERE auth_num_seq IN (SELECT max(auth_num_seq)
+		                          FROM tbl_auth_num
+		                         WHERE auth_key = #{auth_key} AND auth_type = #{auth_type})
+		]]>
+	</select>
+
+	<insert id="insertTbl_auth_num" parameterType="Tbl_auth_num">
+		<![CDATA[
+		INSERT INTO tbl_auth_num(auth_type,
+		                         auth_key,
+		                         auth_num,
+		                         regby,
+		                         regdate)
+		VALUES (#{auth_type},
+		        #{auth_key},
+		        #{auth_num},
+		        #{regby},
+		        sysdate())
+		]]>
+	</insert>
+</mapper>

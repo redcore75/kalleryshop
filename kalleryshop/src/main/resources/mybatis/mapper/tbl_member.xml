@@ -82,7 +82,7 @@
 		<![CDATA[
 		SELECT COUNT(*)
 		  FROM tbl_member
-		 WHERE IS_DEL != 'Y'		 
+		 WHERE 1 = 1
 		]]><trim>
 			<if test="sch_member_id != null and sch_member_id != ''">
 				AND member_id = #{sch_member_id}
@@ -128,7 +128,7 @@
 		  FROM tbl_member tm,
 		       (SELECT member_seq
 		          FROM tbl_member
-		         WHERE IS_DEL != 'Y'
+		         WHERE 1 = 1
 				]]><trim>
 					<if test="sch_member_id != null and sch_member_id != ''">
 						AND member_id = #{sch_member_id}

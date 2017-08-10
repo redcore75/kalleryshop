@@ -1,0 +1,367 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ include file="/WEB-INF/views/common/common.jsp"%>
+<%
+Logger logger = LoggerFactory.getLogger(getClass());
+ParamMap paramMap = (ParamMap) request.getAttribute("paramMap");
+%>
+<head>
+  	<script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+  	<script>tinymce.init({ selector:'textarea#prd_content' });</script>
+	<script type="text/javascript">		
+		$(document).ready(function(){						
+			$("#btnSubmit").click(function(){
+				$("#btnSubmit").attr("disabled", true);
+				$("#updateForm").submit();
+			});
+		});
+	</script>
+</head>
+<body>
+
+	<div class="content">
+  		<form:form modelAttribute="tbl_shop_env" class="form-signin" id="updateForm" name="updateForm" method="post" action="update.do">
+  			<cf:token/>
+      		<div class="box box-default">
+        		<div class="box-header with-border">
+          			<h3 class="box-title"><spring:message code="common.wd.기본설정" /> > <spring:message code="common.wd.기본정보" /></h3>
+        		</div>
+        		<!-- /.box-header -->
+        		<div class="box-body">
+          			<div class="row">
+            			<div class="col-md-6">
+              				<div class="form-group">
+								<div class="row">
+									<div class="col-md-2"><label><spring:message code="common.wd.쇼핑몰ID" /></label></div>
+									<div class="col-md-10">
+										<form:errors path="shop_id" cssClass="text-red" element="div"/>
+										<div class="row">
+											<div class="col-md-6">
+												<form:input path="shop_id" type="text" class="form-control" maxlength="10" style="width: 100%;" readonly="true"/>
+											</div>
+											<div class="col-md-6">
+												<button type="button" class="btn btn-info btn-flat" data-toggle="modal" data-target="#popSchShopId"><spring:message code="common.wd.찾기" /></button>
+											</div>
+										</div>
+									</div>
+								</div>
+              				</div>
+            			</div>
+            			<!-- /.col -->
+            			<div class="col-md-6">
+	              			<div class="form-group">
+								<div class="row">
+									<div class="col-md-2"><label><spring:message code="common.wd.쇼핑몰명" /></label></div>
+									<div class="col-md-10">
+										<form:errors path="shop_name" cssClass="text-red" element="div"/>
+										<form:input path="shop_name" type="text" class="form-control" maxlength="100" style="width: 100%;" readonly="true"/>
+									</div>
+								</div>
+	              			</div>
+            			</div>
+            			<!-- /.col -->
+					</div>
+          			<div class="row">
+            			<div class="col-md-6">
+              				<div class="form-group">
+								<div class="row">
+									<div class="col-md-2"><label><spring:message code="common.wd.쇼핑몰제목" /></label></div>
+									<div class="col-md-10">
+										<form:errors path="shop_title" cssClass="text-red" element="div"/>
+										<form:input path="shop_title" type="text" class="form-control" maxlength="200" style="width: 100%;"/>
+									</div>
+								</div>
+              				</div>
+            			</div>
+            			<!-- /.col -->
+            			<div class="col-md-6">
+	              			<div class="form-group">
+								<div class="row">
+									<div class="col-md-2"><label><spring:message code="common.wd.통신판매신고번호" /></label></div>
+									<div class="col-md-10">
+										<form:errors path="shop_lic_num" cssClass="text-red" element="div"/>
+										<form:input path="shop_lic_num" type="text" class="form-control" maxlength="20" style="width: 100%;"/>
+									</div>
+								</div>
+	              			</div>
+            			</div>
+            			<!-- /.col -->
+					</div>
+					<div class="row">
+            			<div class="col-md-12"><hr/></div>
+					</div>
+          			<div class="row">
+            			<div class="col-md-6">
+              				<div class="form-group">
+								<div class="row">
+									<div class="col-md-2"><label><spring:message code="common.wd.회사명" /></label></div>
+									<div class="col-md-10">
+										<form:errors path="cp_name" cssClass="text-red" element="div"/>
+										<form:input path="cp_name" type="text" class="form-control" maxlength="100" style="width: 100%;"/>
+									</div>
+								</div>
+              				</div>
+            			</div>
+            			<!-- /.col -->
+            			<div class="col-md-6">
+	              			<div class="form-group">
+								<div class="row">
+									<div class="col-md-2"><label><spring:message code="common.wd.사업자번호" /></label></div>
+									<div class="col-md-10">
+										<form:errors path="cp_bidz_num" cssClass="text-red" element="div"/>
+										<form:input path="cp_bidz_num" type="text" class="form-control" maxlength="10" style="width: 100%;"/>
+									</div>
+								</div>
+	              			</div>
+            			</div>
+            			<!-- /.col -->
+					</div>
+          			<div class="row">
+            			<div class="col-md-6">
+              				<div class="form-group">
+								<div class="row">
+									<div class="col-md-1"><label><spring:message code="common.wd.대표자명" /></label></div>
+									<div class="col-md-10">
+										<form:errors path="cp_ceo_name" cssClass="text-red" element="div"/>
+										<form:input path="cp_ceo_name" type="text" class="form-control" maxlength="100" style="width: 100%;"/>
+									</div>
+								</div>
+              				</div>
+            			</div>
+            			<div class="col-md-6">
+              				<div class="form-group">
+								<div class="row">
+									<div class="col-md-1"><label><spring:message code="common.wd.대표자이메일" /></label></div>
+									<div class="col-md-10">
+										<form:errors path="cp_ceo_email_addr" cssClass="text-red" element="div"/>
+										<form:input path="cp_ceo_email_addr" type="text" class="form-control" maxlength="30" style="width: 100%;"/>
+									</div>
+								</div>
+              				</div>
+            			</div>
+					</div>
+          			<div class="row">
+            			<div class="col-md-6">
+              				<div class="form-group">
+								<div class="row">
+									<div class="col-md-2"><label><spring:message code="common.wd.업태" /></label></div>
+									<div class="col-md-10">
+										<form:errors path="cp_biz_type" cssClass="text-red" element="div"/>									
+										<form:input path="cp_biz_type" type="text" class="form-control" maxlength="50" style="width: 100%;"/>
+									</div>
+								</div>
+              				</div>
+            			</div>
+            			<!-- /.col -->
+            			<div class="col-md-6">
+	              			<div class="form-group">
+								<div class="row">
+									<div class="col-md-2"><label><spring:message code="common.wd.종목" /></label></div>
+									<div class="col-md-10">
+										<form:errors path="cp_biz_part" cssClass="text-red" element="div"/>
+										<form:input path="cp_biz_part" type="text" class="form-control" maxlength="50" style="width: 100%;"/>
+									</div>
+								</div>
+	              			</div>
+            			</div>
+            			<!-- /.col -->
+					</div>
+					<!-- /.row -->					
+          			<div class="row">
+            			<div class="col-md-12">
+              				<div class="form-group">
+								<div class="row">
+									<div class="col-md-1"><label><spring:message code="common.wd.우편번호" /></label></div>
+									<div class="col-md-11">
+										<form:errors path="cp_zipcode" cssClass="text-red" element="div"/>									
+										<form:input path="cp_zipcode" type="text" class="form-control" maxlength="5" style="width: 100%;"/>
+									</div>
+								</div>
+              				</div>
+            			</div>
+            		</div>
+          			<div class="row">
+            			<div class="col-md-6">
+              				<div class="form-group">
+								<div class="row">
+									<div class="col-md-2"><label><spring:message code="common.wd.주소1" /></label></div>
+									<div class="col-md-10">
+										<form:errors path="cp_address1" cssClass="text-red" element="div"/>									
+										<form:input path="cp_address1" type="text" class="form-control" maxlength="200" style="width: 100%;"/>
+									</div>
+								</div>
+              				</div>
+            			</div>
+            			<div class="col-md-6">
+              				<div class="form-group">
+								<div class="row">
+									<div class="col-md-2"><label><spring:message code="common.wd.주소2" /></label></div>
+									<div class="col-md-10">
+										<form:errors path="cp_address2" cssClass="text-red" element="div"/>									
+										<form:input path="cp_address2" type="text" class="form-control" maxlength="200" style="width: 100%;"/>
+									</div>
+								</div>
+              				</div>
+            			</div>            			
+            		</div>
+            		
+            		<div class="row">
+            			<!-- /.col -->
+            			<div class="col-md-6">
+	              			<div class="form-group">
+								<div class="row">
+									<div class="col-md-2"><label><spring:message code="common.wd.대표전화" /></label></div>
+									<div class="col-md-10">
+										<form:errors path="cp_phone_num" cssClass="text-red" element="div"/>
+										<form:input path="cp_address2" type="text" class="form-control" maxlength="12" style="width: 100%;"/>
+									</div>
+								</div>
+	              			</div>
+            			</div>
+            			<div class="col-md-6">
+	              			<div class="form-group">
+								<div class="row">
+									<div class="col-md-2"><label><spring:message code="common.wd.팩스번호" /></label></div>
+									<div class="col-md-10">
+										<form:errors path="cp_fax_num" cssClass="text-red" element="div"/>
+										<form:input path="cp_fax_num" type="text" class="form-control" maxlength="12" style="width: 100%;"/>
+									</div>
+								</div>
+	              			</div>
+            			</div>
+            			<!-- /.col -->
+					</div>
+					<div class="row">
+            			<div class="col-md-12">
+              				<div class="form-group">
+								<div class="row">
+									<div class="col-md-1"><label><spring:message code="common.wd.회사소개" /></label></div>
+									<div class="col-md-10">
+										<form:errors path="cp_intro_txt" cssClass="text-red" element="div"/>
+										<form:textarea path="cp_intro_txt" rows="5" class="form-control" style="width: 100%;"/>
+									</div>
+								</div>
+              				</div>
+            			</div>
+            		</div>					
+					<div class="row">
+            			<div class="col-md-12">
+              				<div class="form-group">
+								<div class="row">
+									<div class="col-md-1"><label><spring:message code="common.wd.옵션사용여부" /></label></div>
+									<div class="col-md-10">
+										<form:errors path="is_opt_use" cssClass="text-red" element="div"/>
+										<cf:common_code_radio code_group_id="IS_OPT_USE" tag_name="is_opt_use" tag_id="is_opt_use" tag_value="${vw_prd_mst.is_opt_use}"></cf:common_code_radio>
+									</div>
+								</div>
+              				</div>
+            			</div>
+            		</div>
+					<div class="row" id="optionListArea">
+            			<div class="col-md-12">
+							<div class="box-body no-padding">
+								<table class="table">
+									<tbody>
+										<tr>
+											<th width="10%">옵션그룹</th>
+											<th>옵션아이디</th>
+											<th width="30%">옵션명</th>
+											<th>매입가</th>
+											<th>판매가</th>
+											<th>정열순서</th>
+											<th>추가</th>
+											<th>삭제</th>
+										</tr>
+										<tbody id="optionList">
+											<c:forEach var="tbl_prd_opt" items="${tbl_prd_optList}" varStatus="status">
+												<tr>
+													<td>
+														<select name="opt_group_idList" style="width: 100%;" class="form-control">
+															<c:forEach var="tbl_opt_group" items="${tbl_opt_groupList}" varStatus="status">
+																<option value="${tbl_opt_group.opt_group_id}" ${tbl_opt_group.opt_group_id eq tbl_prd_opt.opt_group_id ? 'selected' : ''}>${tbl_opt_group.opt_group_name}</option>
+															</c:forEach>
+														</select>
+													</td>
+													<td><input type="text" name="prd_opt_idList" value="${tbl_prd_opt.prd_opt_id}" maxlength="10" style="width: 100%;" class="form-control"/></td>
+													<td><input type="text" name="prd_opt_nameList" value="${tbl_prd_opt.prd_opt_name}" maxlength="100" style="width: 100%;" class="form-control"/></td>
+													<td><input type="text" name="prd_opt_in_priceList" value="${tbl_prd_opt.prd_opt_in_price}" maxlength="11" style="width: 100%;" class="form-control"/></td>
+													<td><input type="text" name="prd_opt_sl_priceList" value="${tbl_prd_opt.prd_opt_sl_price}" maxlength="11" style="width: 100%;" class="form-control"/></td>
+													<td><input type="text" name="orderbyList" value="${tbl_prd_opt.orderby}" maxlength="1" style="width: 100%;" class="form-control"/></td>			
+													<td><button id="addOptionList" type="button" class="btn  btn-flat">+</button></td>
+													<td><button id="delOptionList" type="button" class="btn  btn-flat">-</button></td>
+												</tr>
+											</c:forEach>
+										</tbody>
+									</tbody>
+								</table>
+							</div>
+            			</div>
+            		</div>					
+					<!-- /.row -->
+          			<div class="row">
+            			<div class="col-md-12">
+              				<div class="form-group">
+								<div class="row">
+									<div class="col-md-1"><label><spring:message code="common.wd.상품요약" /></label></div>
+									<div class="col-md-11">
+										<form:errors path="prd_summary" cssClass="text-red" element="div"/>
+										<form:textarea path="prd_summary" rows="2" class="form-control" style="width: 100%;"/>
+									</div>
+								</div>
+              				</div>
+            			</div>
+					</div>
+					<!-- /.row -->
+          			<div class="row">
+            			<div class="col-md-12"> 
+              				<div class="form-group">
+								<div class="row">
+									<div class="col-md-12"><label><spring:message code="common.wd.상품설명" /></label></div>
+									<div class="col-md-12">
+										<form:errors path="prd_content" cssClass="text-red" element="div"/>
+										<form:textarea path="prd_content" rows="10" class="form-control" style="width: 100%;"/>
+									</div>
+								</div>
+              				</div>
+            			</div>
+					</div>
+					<!-- /.row -->
+				</div>
+        		<!-- /.box-body -->
+      		</div>
+      		<!-- /.box -->
+		</form:form>
+		
+		<div class="row">
+			<div class="col-md-12">
+				<div align="right">
+					<button type="submit" id="btnSubmit" class="btn btn-default btn-flat"><spring:message code="common.wd.수정하기" /></button>
+					<a href="searchList.do"><button type="button" class="btn btn-default btn-flat"><spring:message code="common.wd.목록으로" /></button></a>
+				</div>
+			</div>
+		</div>		
+	</div>
+	<!-- /.content -->
+	
+	<div class="modal" id="popSchMemberId" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title"><spring:message code="common.wd.회원아이디검색" /></h4>
+				</div>
+				<div class="modal-body">
+          			<div class="row">
+						<div class="col-md-2"><label><spring:message code="common.wd.회원아이디" /></label></div>
+						<div class="col-md-8">										
+							<input id="schMemberId" type="text" class="form-control" maxlength="100" style="width: 100%;"/>
+						</div>
+						<div class="col-md-2"><button id="popBtnMemberId" class="btn btn-default btn-flat" style="width: 100%;"><spring:message code="common.wd.찾기" /></button></div>
+					</div>
+				</div>
+					<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+  	</div>
+</body>

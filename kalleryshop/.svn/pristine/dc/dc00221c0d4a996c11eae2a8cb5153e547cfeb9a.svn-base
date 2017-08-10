@@ -1,0 +1,38 @@
+package kr.co.redcore.mapper.impl;
+
+import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.List;
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import kr.co.redcore.domain.Tbl_banner_mgr;
+import kr.co.redcore.mapper.Tbl_banner_mgrMapper;
+import kr.co.redcore.util.ParamMap;
+
+@Repository
+public class Tbl_banner_mgrMapperImpl implements Tbl_banner_mgrMapper {
+	@Autowired
+	private SqlSessionTemplate sqlSession;
+	
+	public long getPageHelperCntByParamMap(ParamMap paramMap) throws SQLException {
+		return sqlSession.selectOne("Tbl_banner_mgr.getPageHelperCntByParamMap", paramMap);
+	}
+	
+	public List getPageHelperListByParamMapEtc(long start, long size, ParamMap paramMap) throws SQLException {
+		paramMap.put("start", (int)start);
+		paramMap.put("size", (int)size);
+		
+		return sqlSession.selectList("Tbl_banner_mgr.getPageHelperListByParamMapEtc", paramMap);
+	}	
+
+	@Override
+	public int insertTbl_banner_mgr(Tbl_banner_mgr tbl_banner_mgr) throws SQLException {
+		return sqlSession.insert("Tbl_banner_mgr.insertTbl_banner_mgr", tbl_banner_mgr);
+	}
+
+	@Override
+	public int updateTbl_banner_mgr(Tbl_banner_mgr tbl_banner_mgr) throws SQLException {
+		return sqlSession.update("Tbl_banner_mgr.updateTbl_banner_mgr", tbl_banner_mgr);
+	}
+}

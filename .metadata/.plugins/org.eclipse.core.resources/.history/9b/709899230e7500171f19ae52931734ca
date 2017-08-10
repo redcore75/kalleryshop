@@ -1,0 +1,320 @@
+package kr.co.redcore.controller.admin;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
+import org.springframework.context.support.ReloadableResourceBundleMessageSource;
+import org.springframework.context.support.ResourceBundleMessageSource;
+import org.springframework.dao.DuplicateKeyException;
+import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.support.SessionStatus;
+import org.springframework.web.servlet.ModelAndView;
+import kr.co.redcore.GlobalConstants;
+import kr.co.redcore.annotation.CheckToken;
+import kr.co.redcore.controller.BaseController;
+import kr.co.redcore.domain.Tbl_cate_prd;
+import kr.co.redcore.domain.Tbl_member;
+import kr.co.redcore.domain.Tbl_prd_detail;
+import kr.co.redcore.domain.Tbl_prd_opt;
+import kr.co.redcore.domain.view.Vw_member;
+import kr.co.redcore.domain.view.Vw_prd_mst;
+import kr.co.redcore.exception.ImageFileTypeException;
+import kr.co.redcore.exception.Member_id_dupException;
+import kr.co.redcore.exception.Member_id_not_existException;
+import kr.co.redcore.service.CategoryService;
+import kr.co.redcore.service.OptGroupService;
+import kr.co.redcore.service.ProductService;
+import kr.co.redcore.service.member.LoginService;
+import kr.co.redcore.service.member.MemberService;
+import kr.co.redcore.util.PageHelper;
+import kr.co.redcore.util.ParamMap;
+
+@Controller
+@SessionAttributes(value = { "vw_prd_mst" })
+public class ShopEnvController extends BaseController {
+	private static final Logger logger = LoggerFactory.getLogger(ShopEnvController.class);
+	
+	@Autowired
+	private LoginService loginService;
+	
+	@Autowired
+	private CategoryService categoryService;	
+	
+	@Autowired
+	private ProductService productService;
+	
+	@Autowired
+	private OptGroupService optionService;
+	
+	@Autowired
+	MessageSource messageSource;
+	
+	@InitBinder
+	public void initBinder(WebDataBinder dataBinder) {
+		// WebDataBinder에서 수정불가능한 필드를 나열한다.
+		dataBinder.setDisallowedFields("prd_mst_seq");
+	}
+
+	@RequestMapping(value = "/admin/prd_manager/searchList.do")
+	public ModelAndView searchList(HttpSession session, HttpServletRequest req, HttpServletResponse res, @RequestParam Map<String, Object> params) throws Exception {
+		ParamMap paramMap = new ParamMap();
+		paramMap.put("sch_member_id", params.get("sch_member_id"));
+		paramMap.put("sch_prd_name", params.get("sch_prd_name"));
+		paramMap.put("sch_start_date", params.get("sch_start_date"));
+		paramMap.put("sch_end_date", params.get("sch_end_date"));
+
+		PageHelper pageHelper;
+		if (params.get("curr_page") != null && !params.get("curr_page").equals("")) {
+			pageHelper = new PageHelper(Long.parseLong((String) params.get("curr_page")), PageHelper.DEFAULT_GROUP_SIZE, PageHelper.DEFAULT_PAGE_SIZE);
+		} else {
+			pageHelper = new PageHelper(PageHelper.DEFAULT_CURR_PAGE, PageHelper.DEFAULT_GROUP_SIZE, PageHelper.DEFAULT_PAGE_SIZE);
+		}
+		productService.getPageHelperByParamEtc(paramMap, pageHelper);
+
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("admin/prd_manager/searchList");
+		mv.addObject("paramMap", paramMap);
+		mv.addObject("pageHelper", pageHelper);
+
+		return mv;
+	}
+
+	@RequestMapping(value = "/admin/prd_manager/registForm.do")
+	public ModelAndView registForm(HttpSession session, HttpServletRequest req, HttpServletResponse res, @RequestParam Map<String, Object> params) throws Exception {
+		ModelAndView mv = new ModelAndView();
+
+		Vw_prd_mst vw_prd_mst = new Vw_prd_mst();
+		List tbl_opt_groupList = optionService.getTbl_opt_groupListByAll();
+		
+		mv.setViewName("admin/prd_manager/registForm");
+		mv.addObject("vw_prd_mst", vw_prd_mst);
+		mv.addObject("tbl_opt_groupList", tbl_opt_groupList);
+
+		return mv;
+	}
+
+	@CheckToken
+	@RequestMapping(value = "/admin/prd_manager/regist.do", method = RequestMethod.POST)
+	public ModelAndView regist(HttpSession session, HttpServletRequest req, HttpServletResponse res, @RequestParam Map<String, Object> params, @ModelAttribute @Valid Vw_prd_mst vw_prd_mst, BindingResult bindingResult, SessionStatus status) throws Exception {
+		ModelAndView mv = new ModelAndView();
+
+		List tbl_opt_groupList = optionService.getTbl_opt_groupListByAll();
+		if (!super.validateTokenBindResult(req, bindingResult)) {
+			mv.setViewName("admin/prd_manager/registForm");
+			mv.addObject("tbl_opt_groupList", tbl_opt_groupList);
+		} else {
+			logger.debug("vw_prd_mst.getMember_seq()      >>> " + vw_prd_mst.getMember_seq());
+			logger.debug("vw_prd_mst.getMember_id()       >>> " + vw_prd_mst.getMember_id());
+			logger.debug("vw_prd_mst.getPrd_name()        >>> " + vw_prd_mst.getPrd_name());
+			logger.debug("vw_prd_mst.getImg_main_file()   >>> " + vw_prd_mst.getImg_main_file() != null ? vw_prd_mst.getImg_main_file().getOriginalFilename() : "is null");
+			logger.debug("vw_prd_mst.getImg_thum_file()   >>> " + vw_prd_mst.getImg_thum_file() != null ? vw_prd_mst.getImg_thum_file().getOriginalFilename() : "is null");
+			logger.debug("vw_prd_mst.getImg_sub1_file()   >>> " + vw_prd_mst.getImg_sub1_file() != null ? vw_prd_mst.getImg_sub1_file().getOriginalFilename() : "is null");
+			logger.debug("vw_prd_mst.getImg_sub2_file()   >>> " + vw_prd_mst.getImg_sub2_file() != null ? vw_prd_mst.getImg_sub2_file().getOriginalFilename() : "is null");
+
+			// 파일업로드 처리
+			try {
+				vw_prd_mst.setImg_main_path(uploadFile(vw_prd_mst.getImg_main_file(), getSubImagePath(GlobalConstants.UPLOAD_PATH_IMAGE_PRD)));
+			} catch (ImageFileTypeException ex) {
+				bindingResult.rejectValue("img_main_file", "error.image_file_type");
+				mv.setViewName("admin/prd_manager/registForm");
+				mv.addObject("tbl_opt_groupList", tbl_opt_groupList);
+				return mv;
+			} catch (Exception ex) {
+				bindingResult.rejectValue("img_main_file", "error.upload_file");
+				mv.setViewName("admin/prd_manager/registForm");
+				mv.addObject("tbl_opt_groupList", tbl_opt_groupList);
+				return mv;
+			}
+
+			// 파일업로드 처리
+			try {
+				vw_prd_mst.setImg_thum_path(uploadFile(vw_prd_mst.getImg_thum_file(), getSubImagePath(GlobalConstants.UPLOAD_PATH_IMAGE_PRD)));
+			} catch (ImageFileTypeException ex) {
+				bindingResult.rejectValue("img_thum_file", "error.image_file_type");
+				mv.setViewName("admin/prd_manager/registForm");
+				mv.addObject("tbl_opt_groupList", tbl_opt_groupList);
+				return mv;
+			} catch (Exception ex) {
+				bindingResult.rejectValue("img_thum_file", "error.upload_file");
+				mv.setViewName("admin/prd_manager/registForm");
+				mv.addObject("tbl_opt_groupList", tbl_opt_groupList);
+				return mv;
+			}
+
+			// 파일업로드 처리
+			try {
+				vw_prd_mst.setImg_sub1_path(uploadFile(vw_prd_mst.getImg_sub1_file(), getSubImagePath(GlobalConstants.UPLOAD_PATH_IMAGE_PRD)));
+			} catch (ImageFileTypeException ex) {
+				bindingResult.rejectValue("img_sub1_file", "error.image_file_type");
+				mv.setViewName("admin/prd_manager/registForm");
+				mv.addObject("tbl_opt_groupList", tbl_opt_groupList);
+				return mv;
+			} catch (Exception ex) {
+				bindingResult.rejectValue("img_sub1_file", "error.upload_file");
+				mv.setViewName("admin/prd_manager/registForm");
+				mv.addObject("tbl_opt_groupList", tbl_opt_groupList);
+				return mv;
+			}
+
+			// 파일업로드 처리
+			try {
+				vw_prd_mst.setImg_sub2_path(uploadFile(vw_prd_mst.getImg_sub2_file(), getSubImagePath(GlobalConstants.UPLOAD_PATH_IMAGE_PRD)));
+			} catch (ImageFileTypeException ex) {
+				bindingResult.rejectValue("img_sub2_file", "error.image_file_type");
+				mv.setViewName("admin/prd_manager/registForm");
+				mv.addObject("tbl_opt_groupList", tbl_opt_groupList);
+				return mv;
+			} catch (Exception ex) {
+				bindingResult.rejectValue("img_sub2_file", "error.upload_file");
+				mv.setViewName("admin/prd_manager/registForm");
+				mv.addObject("tbl_opt_groupList", tbl_opt_groupList);
+				return mv;
+			}
+
+			vw_prd_mst.setRegby(loginService.getLoginInfo(req, GlobalConstants.ADMIN_LOGININFO_KEY).getMember_id());
+			vw_prd_mst.setUptby(loginService.getLoginInfo(req, GlobalConstants.ADMIN_LOGININFO_KEY).getMember_id());
+			productService.insertVw_prd_mst(vw_prd_mst);
+				
+			status.setComplete();
+			mv.setViewName("admin/prd_manager/registDone");
+		}
+
+		return mv;
+	}
+	
+	@RequestMapping(value = "/admin/prd_manager/updateForm.do")
+	public ModelAndView updateForm(HttpSession session, HttpServletRequest req, HttpServletResponse res, @RequestParam Map<String, Object> params) throws Exception {
+		String prd_mst_seq = (String) params.get("prd_mst_seq");
+		String curr_page = (String) params.get("curr_page");
+		
+		// 상품 데이타 가져오기
+		Vw_prd_mst vw_prd_mst = productService.getVw_prd_mstByPrd_mst_seq(Long.parseLong(prd_mst_seq));
+		Tbl_prd_detail tbl_prd_detail = productService.getTbl_prd_detailLastByPrd_mst_seq(Long.parseLong(prd_mst_seq));
+		vw_prd_mst.setPrd_in_price(tbl_prd_detail.getPrd_in_price());
+		vw_prd_mst.setPrd_mk_price(tbl_prd_detail.getPrd_mk_price());
+		vw_prd_mst.setPrd_sl_price(tbl_prd_detail.getPrd_sl_price());			
+		
+		// 카테고리 데이타 가져오기
+		List vw_cate_mstList = categoryService.getVw_cate_mstListByPrd_mst_seq(Long.parseLong(prd_mst_seq));	
+		
+		// 상품옵션 데이타 가져오기		
+		List tbl_opt_groupList = optionService.getTbl_opt_groupListByAll();
+		List tbl_prd_optList = productService.getTbl_prd_optLastListByPrd_mst_seq(Long.parseLong(prd_mst_seq));
+		
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("admin/prd_manager/updateForm");
+		mv.addObject("vw_prd_mst", vw_prd_mst);
+		mv.addObject("vw_cate_mstList", vw_cate_mstList);		
+		mv.addObject("tbl_opt_groupList", tbl_opt_groupList);		
+		mv.addObject("tbl_prd_optList", tbl_prd_optList);
+		mv.addObject("curr_page", curr_page);
+		
+		return mv;
+	}
+	
+	@CheckToken
+	@RequestMapping(value = "/admin/prd_manager/update.do", method = RequestMethod.POST)
+	public ModelAndView update(HttpSession session, HttpServletRequest req, HttpServletResponse res, @RequestParam Map<String, Object> params, @ModelAttribute @Valid Vw_prd_mst vw_prd_mst, BindingResult bindingResult, SessionStatus status) throws Exception {
+		ModelAndView mv = new ModelAndView();
+
+		List tbl_opt_groupList = optionService.getTbl_opt_groupListByAll();
+		if (!super.validateTokenBindResult(req, bindingResult)) {
+			mv.setViewName("admin/prd_manager/updateForm");
+			mv.addObject("tbl_opt_groupList", tbl_opt_groupList);
+		} else {
+			logger.debug("vw_prd_mst.getMember_seq()      >>> " + vw_prd_mst.getMember_seq());
+			logger.debug("vw_prd_mst.getMember_id()       >>> " + vw_prd_mst.getMember_id());
+			logger.debug("vw_prd_mst.getPrd_name()        >>> " + vw_prd_mst.getPrd_name());
+			logger.debug("vw_prd_mst.getPrd_status()      >>> " + vw_prd_mst.getPrd_status());
+			logger.debug("vw_prd_mst.getImg_main_file()   >>> " + vw_prd_mst.getImg_main_file() != null ? vw_prd_mst.getImg_main_file().getOriginalFilename() : "is null");
+			logger.debug("vw_prd_mst.getImg_thum_file()   >>> " + vw_prd_mst.getImg_thum_file() != null ? vw_prd_mst.getImg_thum_file().getOriginalFilename() : "is null");
+			logger.debug("vw_prd_mst.getImg_sub1_file()   >>> " + vw_prd_mst.getImg_sub1_file() != null ? vw_prd_mst.getImg_sub1_file().getOriginalFilename() : "is null");
+			logger.debug("vw_prd_mst.getImg_sub2_file()   >>> " + vw_prd_mst.getImg_sub2_file() != null ? vw_prd_mst.getImg_sub2_file().getOriginalFilename() : "is null");
+
+			// 파일업로드 처리
+			try {
+				vw_prd_mst.setImg_main_path(uploadFile(vw_prd_mst.getImg_main_file(), getSubImagePath(GlobalConstants.UPLOAD_PATH_IMAGE_PRD)));
+			} catch (ImageFileTypeException ex) {
+				bindingResult.rejectValue("img_main_file", "error.image_file_type");
+				mv.setViewName("admin/prd_manager/updateForm");
+				mv.addObject("tbl_opt_groupList", tbl_opt_groupList);
+				return mv;
+			} catch (Exception ex) {
+				bindingResult.rejectValue("img_main_file", "error.upload_file");
+				mv.setViewName("admin/prd_manager/updateForm");
+				mv.addObject("tbl_opt_groupList", tbl_opt_groupList);
+				return mv;
+			}
+
+			// 파일업로드 처리
+			try {
+				vw_prd_mst.setImg_thum_path(uploadFile(vw_prd_mst.getImg_thum_file(), getSubImagePath(GlobalConstants.UPLOAD_PATH_IMAGE_PRD)));
+			} catch (ImageFileTypeException ex) {
+				bindingResult.rejectValue("img_thum_file", "error.image_file_type");
+				mv.setViewName("admin/prd_manager/updateForm");
+				mv.addObject("tbl_opt_groupList", tbl_opt_groupList);
+				return mv;
+			} catch (Exception ex) {
+				bindingResult.rejectValue("img_thum_file", "error.upload_file");
+				mv.setViewName("admin/prd_manager/updateForm");
+				mv.addObject("tbl_opt_groupList", tbl_opt_groupList);
+				return mv;
+			}
+
+			// 파일업로드 처리
+			try {
+				vw_prd_mst.setImg_sub1_path(uploadFile(vw_prd_mst.getImg_sub1_file(), getSubImagePath(GlobalConstants.UPLOAD_PATH_IMAGE_PRD)));
+			} catch (ImageFileTypeException ex) {
+				bindingResult.rejectValue("img_sub1_file", "error.image_file_type");
+				mv.setViewName("admin/prd_manager/updateForm");
+				mv.addObject("tbl_opt_groupList", tbl_opt_groupList);
+				return mv;
+			} catch (Exception ex) {
+				bindingResult.rejectValue("img_sub1_file", "error.upload_file");
+				mv.setViewName("admin/prd_manager/updateForm");
+				mv.addObject("tbl_opt_groupList", tbl_opt_groupList);
+				return mv;
+			}
+
+			// 파일업로드 처리
+			try {
+				vw_prd_mst.setImg_sub2_path(uploadFile(vw_prd_mst.getImg_sub2_file(), getSubImagePath(GlobalConstants.UPLOAD_PATH_IMAGE_PRD)));
+			} catch (ImageFileTypeException ex) {
+				bindingResult.rejectValue("img_sub2_file", "error.image_file_type");
+				mv.setViewName("admin/prd_manager/updateForm");
+				mv.addObject("tbl_opt_groupList", tbl_opt_groupList);
+				return mv;
+			} catch (Exception ex) {
+				bindingResult.rejectValue("img_sub2_file", "error.upload_file");
+				mv.setViewName("admin/prd_manager/updateForm");
+				mv.addObject("tbl_opt_groupList", tbl_opt_groupList);
+				return mv;
+			}
+
+			vw_prd_mst.setRegby(loginService.getLoginInfo(req, GlobalConstants.ADMIN_LOGININFO_KEY).getMember_id());
+			vw_prd_mst.setUptby(loginService.getLoginInfo(req, GlobalConstants.ADMIN_LOGININFO_KEY).getMember_id());
+			productService.updateVw_prd_mst(vw_prd_mst);
+			
+			status.setComplete();
+			mv.setViewName("admin/prd_manager/updateDone");
+		}
+
+		return mv;
+	}
+}

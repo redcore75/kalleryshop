@@ -1,0 +1,9 @@
+127.0.0.1 - - [06/Aug/2017:17:18:13 +0900] "GET / HTTP/1.1" 404 953
+0:0:0:0:0:0:0:1 - - [06/Aug/2017:17:18:14 +0900] "GET /kalleryshop/ HTTP/1.1" 404 950
+0:0:0:0:0:0:0:1 - - [06/Aug/2017:17:18:27 +0900] "GET /kalleryshop/admin/login/loginForm.do HTTP/1.1" 200 3901
+0:0:0:0:0:0:0:1 - - [06/Aug/2017:17:18:27 +0900] "GET /favicon.ico HTTP/1.1" 404 986
+0:0:0:0:0:0:0:1 - - [06/Aug/2017:17:18:31 +0900] "POST /kalleryshop/admin/login/login.do HTTP/1.1" 200 1936
+0:0:0:0:0:0:0:1 - - [06/Aug/2017:17:18:33 +0900] "GET /kalleryshop/admin/admin_member/searchList.do HTTP/1.1" 200 13168
+0:0:0:0:0:0:0:1 - - [06/Aug/2017:17:18:33 +0900] "GET /kalleryshop/resources/admin/js/common.js HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [06/Aug/2017:17:18:35 +0900] "GET /kalleryshop/admin/admin_member/searchList.do HTTP/1.1" 200 13168
+0:0:0:0:0:0:0:1 - - [06/Aug/2017:17:18:37 +0900] "GET /kalleryshop/admin/front_member/searchList.do HTTP/1.1" 200 13666

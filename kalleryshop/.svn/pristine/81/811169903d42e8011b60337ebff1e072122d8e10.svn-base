@@ -1,0 +1,15 @@
+package kr.co.redcore.mapper;
+
+import java.sql.SQLException;
+import java.util.List;
+
+import kr.co.redcore.domain.Tbl_banner_mgr;
+import kr.co.redcore.domain.Tbl_member;
+import kr.co.redcore.util.ParamMap;
+
+public interface Tbl_banner_mgrMapper {
+	public long getPageHelperCntByParamMap(ParamMap paramMap) throws SQLException;
+	public List getPageHelperListByParamMapEtc(long start, long size, ParamMap paramMap) throws SQLException;
+	public int insertTbl_banner_mgr(Tbl_banner_mgr tbl_banner_mgr) throws SQLException;
+	public int updateTbl_banner_mgr(Tbl_banner_mgr tbl_banner_mgr) throws SQLException;
+}
