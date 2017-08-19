@@ -130,9 +130,9 @@ ParamMap paramMap = (ParamMap) request.getAttribute("paramMap");
                 				<c:forEach items="${pageHelper.list}" var="list">
 	                				<tr>
 	                  					<td>${list.banner_mgr_seq}</td>
-	                  					<td>${list.banner_name}</td>
+	                  					<td><a href="updateForm.do?curr_page=${pageHelper.currPage}&banner_mgr_seq=${list.banner_mgr_seq}">${list.banner_name}</a></td>
 	                  					<td><cf:common_code_name code_group_id="BANNER_TYPE" code_id="${list.banner_type}" /></td>
-	                  					<td>${list.is_valid}</td>
+	                  					<td><cf:common_code_name code_group_id="IS_VALID" code_id="${list.is_valid}" /></td>
 	                  					<td>${list.regdate}</td>
 	                  					<td>${list.uptdate}</td>
 	                				</tr>

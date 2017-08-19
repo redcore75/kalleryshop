@@ -1,0 +1,31 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ include file="/WEB-INF/views/common/common.jsp"%>
+<%
+response.setContentType("text/html; charset=UTF-8"); 
+response.setHeader("Cache-Control", "no-cache");
+response.setHeader("Pragma", "no-cache");
+response.setDateHeader("Expires", 0);
+%>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/front/default/css/bootstrap.min.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/front/default/css/heroic-features.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/front/default/css/jquery.simplebanner.css"/>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/front/default/plugins/datepicker/datepicker3.css"/>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/front/default/css/common.css" />
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/jquery.validate.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/front/default/js/bootstrap.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/front/default/js/popper.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/front/default/js/bigSlide.js"></script>
+<script src="${pageContext.request.contextPath}/resources/front/default/js/jquery.simplebanner.js"></script>
+<script src="${pageContext.request.contextPath}/resources/front/default/js/jquery.ae.image.resize.js"></script>
+<script src="${pageContext.request.contextPath}/resources/front/default/plugins/datepicker/bootstrap-datepicker.js"></script>
+<script src="${pageContext.request.contextPath}/resources/front/default/plugins/datepicker/locales/bootstrap-datepicker.kr.js"></script>
+<script src="${pageContext.request.contextPath}/resources/front/default/js/common.js"></script>efault/plugins/datepicker/locales/bootstrap-datepicker.kr.js"></script>
+<script src="${pageContext.request.contextPath}/resources/front/default/js/common.js"></script>

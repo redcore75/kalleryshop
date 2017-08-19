@@ -1,0 +1,4 @@
+profiles.id = local
+upload_path =  D:\\project-java\\workspace\\kalleryshop\\kalleryshop\\src\\main\\webapp\\upload
+shop_id = kalleryshop
+shop_theme = default

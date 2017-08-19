@@ -25,6 +25,12 @@
 	<decorator name="front_main" page="front/mainLayer.jsp">
 		<pattern>/front/*</pattern>
 	</decorator>
+	
+	<decorator name="front_blank" page="front/blankLayer.jsp">
+		<pattern>/front/module/*</pattern>
+	</decorator>
+	<!--
 	<decorator name="front_top" page="front/topPage.jsp" />
-	<decorator name="front_bottom" page="front/bottomPage.jsp" />	
+	<decorator name="front_bottom" page="front/bottomPage.jsp" />
+	 -->
 </decorators>

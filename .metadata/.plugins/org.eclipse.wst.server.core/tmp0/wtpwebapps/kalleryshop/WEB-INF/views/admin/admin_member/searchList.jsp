@@ -36,7 +36,7 @@ ParamMap paramMap = (ParamMap) request.getAttribute("paramMap");
       		<div class="box box-default">
       			<!-- <spring:message code="error.send_email" />  -->
         		<div class="box-header with-border">
-          			<h3 class="box-title"><spring:message code="common.wd.시스템관리" /> > <spring:message code="common.wd.관리자리스트" /></h3>
+          			<h3 class="box-title"><spring:message code="common.wd.회원관리" /> > <spring:message code="common.wd.관리자리스트" /></h3>
         		</div>
         		<!-- /.box-header -->
         		<div class="box-body">

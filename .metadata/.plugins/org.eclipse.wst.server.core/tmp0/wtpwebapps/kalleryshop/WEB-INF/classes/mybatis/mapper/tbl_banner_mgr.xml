@@ -1,7 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="Tbl_banner_mgr">	
+<mapper namespace="Tbl_banner_mgr">
+	<select id="getTbl_banner_mgrByBanner_mgr_seq" parameterType="Long" resultType="Tbl_banner_mgr">
+		<![CDATA[
+		SELECT banner_mgr_seq,
+			   banner_name,
+			   banner_type,
+			   disp_time,
+			   is_valid,
+		       regby,
+		       date_format(regdate, '%Y%m%d') AS regdate,
+		       uptby,
+		       date_format(uptdate, '%Y%m%d') AS uptdate 		
+		  FROM tbl_banner_mgr
+		 WHERE banner_mgr_seq = #{banner_mgr_seq}
+		]]>
+	</select>
+
+	<select id="getTbl_banner_mgrListByBanner_name" parameterType="String" resultType="Tbl_banner_mgr">
+		<![CDATA[
+		SELECT banner_mgr_seq,
+			   banner_name,
+			   banner_type,
+			   disp_time,
+			   is_valid,
+		       regby,
+		       date_format(regdate, '%Y%m%d') AS regdate,
+		       uptby,
+		       date_format(uptdate, '%Y%m%d') AS uptdate
+		  FROM tbl_banner_mgr
+		 WHERE banner_name LIKE CONCAT('%', #{banner_name}, '%')
+		]]>
+	</select>
+
 	<select id="getPageHelperCntByParamMap" parameterType="HashMap" resultType="Long">
 		<![CDATA[
 		SELECT COUNT(*)
@@ -21,12 +53,12 @@
 		]]>
 	</select>
 	
-	<select id="getPageHelperListByParamMapEtc" parameterType="HashMap" resultType="Vw_member">
+	<select id="getPageHelperListByParamMapEtc" parameterType="HashMap" resultType="Tbl_banner_mgr">
 		<![CDATA[
 		SELECT tbm.banner_mgr_seq,
 			   tbm.banner_name,
 			   tbm.banner_type,
-			   tbm.wait_time,
+			   tbm.disp_time,
 			   tbm.is_valid,
 		       tbm.regby,
 		       date_format(tbm.regdate, '%Y%m%d') AS regdate,
@@ -57,7 +89,7 @@
 		<![CDATA[
 		INSERT INTO tbl_banner_mgr(banner_name, 
 							       banner_type, 
-							       wait_time, 
+							       disp_time, 
 							       is_valid,
 							       regby,
 							       regdate,
@@ -65,7 +97,7 @@
 							       uptdate)
 		VALUES (#{banner_name},
 				#{banner_type},		
-		        #{wait_time},
+		        #{disp_time},
 		        #{is_valid},
 		        #{regby},
 		        sysdate(),
@@ -79,7 +111,7 @@
 		UPDATE tbl_banner_mgr
 		   SET banner_name = #{banner_name},
 		       banner_type = #{banner_type},
-		       wait_time = #{wait_time},
+		       disp_time = #{disp_time},
 		       is_valid = #{is_valid},
 		       uptby = #{uptby},
 		       uptdate = sysdate()

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Tbl_banner">
+	<select id="getVw_bannerByBanner_seq" parameterType="Long" resultType="Vw_banner">
+		<![CDATA[
+		SELECT tb.banner_seq,
+			   tb.banner_mgr_seq,
+			   tbm.banner_name,
+			   tb.url_addr,
+			   tb.text_data,
+			   tb.img_path,
+			   tb.is_valid,
+		       tb.regby,
+		       date_format(tb.regdate, '%Y%m%d') AS regdate,
+		       tb.uptby,
+		       date_format(tb.uptdate, '%Y%m%d') AS uptdate
+		  FROM tbl_banner tb, tbl_banner_mgr tbm
+		 WHERE tb.banner_mgr_seq = tbm.banner_mgr_seq
+		   AND tb.banner_seq = #{banner_seq}
+		]]>
+	</select>
+	
+	<select id="getVw_bannerListByBanner_mgr_seq" parameterType="Long" resultType="Vw_banner">
+		<![CDATA[
+		SELECT tb.banner_seq,
+			   tb.banner_mgr_seq,
+			   tbm.banner_name,
+			   tb.url_addr,
+			   tb.text_data,
+			   tb.img_path,
+			   tb.is_valid,
+		       tb.regby,
+		       date_format(tb.regdate, '%Y%m%d') AS regdate,
+		       tb.uptby,
+		       date_format(tb.uptdate, '%Y%m%d') AS uptdate
+		  FROM tbl_banner tb, tbl_banner_mgr tbm
+		 WHERE tb.banner_mgr_seq = tbm.banner_mgr_seq
+		   AND tb.banner_mgr_seq = #{banner_mgr_seq}
+		]]>
+	</select>	
+	
+	<select id="getPageHelperCntByParamMap" parameterType="HashMap" resultType="Long">
+		<![CDATA[
+		SELECT COUNT(*)
+		  FROM tbl_banner tb, tbl_banner_mgr tbm
+		 WHERE tb.banner_mgr_seq = tbm.banner_mgr_seq
+		]]><trim>
+			<if test="sch_banner_mgr_seq != null and sch_banner_mgr_seq != ''">
+				AND tbm.banner_mgr_seq = #{sch_banner_mgr_seq}
+			</if>
+			<if test="sch_banner_name != null and sch_banner_name != ''">
+				AND tbm.banner_name LIKE CONCAT('%', #{sch_banner_name}, '%')
+			</if>
+			<if test="sch_start_date != null and sch_start_date != ''">
+				<![CDATA[ AND tb.regdate >= STR_TO_DATE(#{sch_start_date}, '%Y%m%d') ]]>
+			</if>
+			<if test="sch_end_date != null and sch_end_date != ''">
+				<![CDATA[ AND tb.regdate < STR_TO_DATE(#{sch_end_date}, '%Y%m%d') ]]>
+			</if>
+		</trim><![CDATA[
+		]]>
+	</select>
+	
+	<select id="getPageHelperListByParamMapEtc" parameterType="HashMap" resultType="Vw_banner">
+		<![CDATA[		
+		SELECT tb.banner_seq,
+		       tb.banner_mgr_seq,
+		       tbm.banner_name,
+		       tb.url_addr,
+		       tb.text_data,
+		       tb.img_path,
+		       tb.is_valid,
+		       tb.regby,
+		       date_format(tb.regdate, '%Y%m%d') AS regdate,
+		       tb.uptby,
+		       date_format(tb.uptdate, '%Y%m%d') AS uptdate
+		  FROM tbl_banner        tb,
+		       tbl_banner_mgr    tbm,
+		       (SELECT tb.banner_seq
+		          FROM tbl_banner tb, tbl_banner_mgr tbm
+		         WHERE tb.banner_mgr_seq = tbm.banner_mgr_seq
+				]]><trim>
+					<if test="sch_banner_mgr_seq != null and sch_banner_mgr_seq != ''">
+						AND tbm.banner_mgr_seq LIKE CONCAT('%', #{sch_banner_mgr_seq}, '%')
+					</if>
+					<if test="sch_banner_name != null and sch_banner_name != ''">
+						AND tbm.banner_name LIKE CONCAT('%', #{sch_banner_name}, '%')
+					</if>
+					<if test="sch_start_date != null and sch_start_date != ''">
+						<![CDATA[ AND tb.regdate >= STR_TO_DATE(#{sch_start_date}, '%Y%m%d') ]]>
+					</if>
+					<if test="sch_end_date != null and sch_end_date != ''">
+						<![CDATA[ AND tb.regdate < STR_TO_DATE(#{sch_end_date}, '%Y%m%d') ]]>
+					</if>
+				</trim><![CDATA[
+		         LIMIT 0, 10) sub 
+		 WHERE tb.banner_seq = sub.banner_seq 
+		   AND tb.banner_mgr_seq = tbm.banner_mgr_seq 
+		 ORDER BY tb.banner_seq DESC
+		]]>
+	</select>
+	
+	<insert id="insertTbl_banner" parameterType="Tbl_banner">
+		<![CDATA[
+		INSERT INTO tbl_banner(banner_mgr_seq, 
+							   url_addr,
+							   text_data,
+							   img_path,
+							   is_valid,
+							   regby,
+							   regdate,
+							   uptby,
+							   uptdate)
+		VALUES (#{banner_mgr_seq},
+				#{url_addr},		
+		        #{text_data},
+		        #{img_path},
+		        #{is_valid},
+		        #{regby},
+		        sysdate(),
+		        #{uptby},
+		        sysdate())
+		]]>
+	</insert>
+	
+	<update id="updateTbl_banner" parameterType="Tbl_banner">
+		<![CDATA[
+		UPDATE tbl_banner
+		   SET banner_mgr_seq = #{banner_mgr_seq},
+		       url_addr = #{url_addr},
+		       text_data = #{text_data},
+		       ]]><if test="img_path != null and img_path != ''">img_path = #{img_path},</if><![CDATA[
+		       is_valid = #{is_valid},
+		       uptby = #{uptby},
+		       uptdate = sysdate()
+		 WHERE banner_mgr_seq = #{banner_mgr_seq}
+		]]>
+	</update>
+</mapper>

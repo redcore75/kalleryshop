@@ -32,6 +32,9 @@
 			   cs_fax_num,
 			   cs_email_addr,
 			   cs_oper_dtime,
+			   sv_agreement,
+			   sv_private,
+			   sv_privateitem,
 			   regby,
 			   date_format(regdate, '%Y%m%d') AS regdate,
 			   uptby,
@@ -116,6 +119,19 @@
 		       cs_fax_num = #{cs_fax_num},
 		       cs_email_addr = #{cs_email_addr},
 		       cs_oper_dtime = #{cs_oper_dtime},
+			   uptby = #{uptby},
+			   uptdate = sysdate()
+		 WHERE shop_id = #{shop_id}
+		]]>
+	</update>	
+	
+	
+	<update id="updateTbl_shop_envForServTerm" parameterType="Tbl_shop_env">
+		<![CDATA[
+		UPDATE tbl_shop_env
+		   SET sv_agreement = #{sv_agreement},
+		       sv_private = #{sv_private},
+		       sv_privateitem = #{sv_privateitem},
 			   uptby = #{uptby},
 			   uptdate = sysdate()
 		 WHERE shop_id = #{shop_id}

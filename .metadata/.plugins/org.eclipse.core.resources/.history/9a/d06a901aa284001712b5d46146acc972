@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Tbl_shop_env">
+	<select id="getTbl_shop_envCntByShop_id" parameterType="String" resultType="Long">
+		<![CDATA[
+		SELECT count(*)
+		  FROM tbl_shop_env
+		 WHERE shop_id = #{shop_id}
+		]]>
+	</select>
+	
+	<select id="getTbl_shop_envByShop_id" parameterType="String" resultType="Tbl_shop_env">
+		<![CDATA[
+		SELECT shop_id,
+			   shop_name, 
+			   shop_title, 
+			   shop_lic_num, 
+			   cp_name, 
+			   cp_biz_num, 
+			   cp_ceo_name, 
+			   cp_biz_type,
+			   cp_biz_part,
+			   cp_ceo_email_addr,
+			   cp_zipcode,
+			   cp_address1,
+			   cp_address2,
+			   cp_phone_num,
+			   cp_fax_num,
+			   cp_intro_txt,
+			   cs_phone_num,
+			   cs_fax_num,
+			   cs_email_addr,
+			   cs_oper_dtime,
+			   sv_agreement,
+			   sv_private,
+			   sv_privateitem,
+			   regby,
+			   date_format(regdate, '%Y%m%d') AS regdate,
+			   uptby,
+			   date_format(uptdate, '%Y%m%d') AS uptdate	
+		  FROM tbl_shop_env
+		 WHERE shop_id = #{shop_id}
+		]]>
+	</select>
+	
+	<insert id="insertTbl_shop_env" parameterType="Tbl_shop_env">
+		<![CDATA[
+		INSERT INTO tbl_shop_env(shop_id,
+								 shop_name,
+		                         shop_title,
+		                         shop_lic_num,
+		                         cp_name,
+		                         cp_biz_num,
+		                         cp_ceo_name,
+		                         cp_biz_type,
+		                         cp_biz_part,
+		                         cp_ceo_email_addr,
+		                         cp_zipcode,
+		                         cp_address1,
+		                         cp_address2,
+		                         cp_phone_num,
+		                         cp_fax_num,
+		                         cp_intro_txt,
+		                         cs_phone_num,
+		                         cs_fax_num,
+		                         cs_email_addr,
+		                         cs_oper_dtime,
+		                         regby,
+		                         regdate,
+		                         uptby,
+		                         uptdate)
+		VALUES (#{shop_id},
+				#{shop_name},
+		        #{shop_title},
+		        #{shop_lic_num},		        
+		        #{cp_name},
+		        #{cp_biz_num},
+		        #{cp_ceo_name},
+		        #{cp_biz_type},
+		        #{cp_biz_part},
+		        #{cp_ceo_email_addr},		        
+		        #{cp_zipcode},
+		        #{cp_address1},
+		        #{cp_address2},
+		        #{cp_phone_num},
+		        #{cp_fax_num},
+		        #{cp_intro_txt},
+		        #{cs_phone_num},
+		        #{cs_fax_num},
+		        #{cs_email_addr},
+		        #{cs_oper_dtime},
+		        #{regby},
+		        sysdate(),
+		        #{uptby},
+		        sysdate())
+		]]>
+	</insert>
+	
+	<update id="updateTbl_shop_env" parameterType="Tbl_shop_env">
+		<![CDATA[
+		UPDATE tbl_shop_env
+		   SET shop_name = #{shop_name},
+		       shop_title = #{shop_title},
+		       shop_lic_num = #{shop_lic_num},		        
+		       cp_name = #{cp_name},
+		       cp_biz_num = #{cp_biz_num},
+		       cp_ceo_name = #{cp_ceo_name},
+		       cp_biz_type = #{cp_biz_type},
+		       cp_biz_part = #{cp_biz_part},
+		       cp_ceo_email_addr = #{cp_ceo_email_addr},		        
+		       cp_zipcode = #{cp_zipcode},
+		       cp_address1 = #{cp_address1},
+		       cp_address2 = #{cp_address2},
+		       cp_phone_num = #{cp_phone_num},
+		       cp_fax_num = #{cp_fax_num},
+		       cp_intro_txt = #{cp_intro_txt},
+		       cs_phone_num = #{cs_phone_num},
+		       cs_fax_num = #{cs_fax_num},
+		       cs_email_addr = #{cs_email_addr},
+		       cs_oper_dtime = #{cs_oper_dtime},
+			   uptby = #{uptby},
+			   uptdate = sysdate()
+		 WHERE shop_id = #{shop_id}
+		]]>
+	</update>	
+</mapper>

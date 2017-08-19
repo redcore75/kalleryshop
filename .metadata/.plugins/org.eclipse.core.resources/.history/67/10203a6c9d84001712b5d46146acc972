@@ -1,0 +1,94 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ include file="/WEB-INF/views/common/common.jsp"%>
+<%
+Logger logger = LoggerFactory.getLogger(getClass());
+ParamMap paramMap = (ParamMap) request.getAttribute("paramMap");
+%>
+<head>
+  	<script src="http://cdn.tinymce.com/4/tinymce.min.js"></script>
+  	<script>tinymce.init({ selector:'textarea#prd_content' });</script>
+	<script type="text/javascript">		
+		$(document).ready(function(){
+			$("#btnSubmit").click(function(){
+				$("#btnSubmit").attr("disabled", true);
+				$("#updateForm").submit();
+			});
+		});
+	</script>
+</head>
+<body>
+
+	<div class="content">
+  		<form:form modelAttribute="tbl_shop_env" class="form-signin" id="updateForm" name="updateForm" method="post" action="update.do">
+  			<cf:token/>
+      		<div class="box box-default">
+        		<div class="box-header with-border">
+          			<h3 class="box-title"><spring:message code="common.wd.기본설정" /> > <spring:message code="common.wd.기본정보" /></h3>
+        		</div>
+        		<!-- /.box-header -->
+        		<div class="box-body">
+          			<div class="row">
+            			<div class="col-md-6">
+              				<div class="form-group">
+								<div class="row">
+									<div class="col-md-2"><label><spring:message code="common.wd.쇼핑몰ID" /></label></div>
+									<div class="col-md-10">
+										<form:errors path="shop_id" cssClass="text-red" element="div"/>
+										<div class="row">
+											<div class="col-md-6">
+												<form:input path="shop_id" type="text" class="form-control" maxlength="20" style="width: 100%;" readonly="true"/>
+											</div>
+										</div>
+									</div>
+								</div>
+              				</div>
+            			</div>
+            			<!-- /.col -->
+            			<div class="col-md-6">
+	              			<div class="form-group">
+								<div class="row">
+									<div class="col-md-2"><label><spring:message code="common.wd.쇼핑몰명" /></label></div>
+									<div class="col-md-10">
+										<form:errors path="shop_name" cssClass="text-red" element="div"/>
+										<form:input path="shop_name" type="text" class="form-control" maxlength="100" style="width: 100%;"/>
+									</div>
+								</div>
+	              			</div>
+            			</div>
+            			<!-- /.col -->
+					</div>
+
+					<div class="row">
+            			<div class="col-md-12"><hr/></div>
+					</div>
+
+					<div class="row">
+            			<div class="col-md-12">
+              				<div class="form-group">
+								<div class="row">
+									<div class="col-md-1"><label><spring:message code="common.wd.회사소개" /></label></div>
+									<div class="col-md-11">
+										<form:errors path="cp_intro_txt" cssClass="text-red" element="div"/>
+										<form:textarea path="cp_intro_txt" rows="5" class="form-control" style="width: 100%;"/>
+									</div>
+								</div>
+              				</div>
+            			</div>
+            		</div>
+
+				</div>
+        		<!-- /.box-body -->
+      		</div>
+      		<!-- /.box -->
+		</form:form>
+		
+		<div class="row">
+			<div class="col-md-12">
+				<div align="right">
+					<button type="submit" id="btnSubmit" class="btn btn-default btn-flat"><spring:message code="common.wd.수정하기" /></button>					
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /.content -->
+</body>

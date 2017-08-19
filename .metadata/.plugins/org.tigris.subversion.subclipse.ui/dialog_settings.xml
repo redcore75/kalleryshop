@@ -1,15 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
+	<item value="D:\temp" key="ExportAction.lastLocation"/>
+	<item value="568" key="RevertDialog.location.x"/>
 	<item value="500" key="CommitDialog.weights.0"/>
 	<item value="500" key="CommitDialog.weights.1"/>
-	<item value="0" key="CommitDialog.location.y"/>
 	<item value="586" key="passwordStores.size.y"/>
-	<item value="285" key="CommitDialog.location.x"/>
+	<item value="0" key="RevertDialog.location.y"/>
 	<item value="1920" key="passwordStores.size.x"/>
+	<item value="D:\temp" key="ExportAction.lastLocation./kalleryshop/src/main/webapp/resources/admin/fonts"/>
+	<item value="287" key="HistoryTableProvider.SVNHistoryPage.Author"/>
+	<item value="D:\temp" key="ExportAction.lastLocation./kalleryshop/src/main/webapp/resources/front/default"/>
+	<item value="0" key="CommitDialog.location.y"/>
+	<item value="285" key="CommitDialog.location.x"/>
 	<item value="32" key="passwordStores.location.y"/>
 	<item value="0" key="passwordStores.location.x"/>
+	<item value="785" key="RevertDialog.size.x"/>
+	<item value="1040" key="RevertDialog.size.y"/>
 	<item value="359" key="HistoryTableProvider.SVNHistoryPage.Date"/>
-	<item value="287" key="HistoryTableProvider.SVNHistoryPage.Author"/>
 	<item value="1351" key="CommitDialog.size.x"/>
 	<item value="717" key="HistoryTableProvider.SVNHistoryPage.Comment"/>
 	<item value="859" key="CommitDialog.size.y"/>

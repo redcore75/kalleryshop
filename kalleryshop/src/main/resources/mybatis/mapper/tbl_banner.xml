@@ -21,6 +21,25 @@
 		]]>
 	</select>
 	
+	<select id="getVw_bannerListByBanner_mgr_seq" parameterType="Long" resultType="Vw_banner">
+		<![CDATA[
+		SELECT tb.banner_seq,
+			   tb.banner_mgr_seq,
+			   tbm.banner_name,
+			   tb.url_addr,
+			   tb.text_data,
+			   tb.img_path,
+			   tb.is_valid,
+		       tb.regby,
+		       date_format(tb.regdate, '%Y%m%d') AS regdate,
+		       tb.uptby,
+		       date_format(tb.uptdate, '%Y%m%d') AS uptdate
+		  FROM tbl_banner tb, tbl_banner_mgr tbm
+		 WHERE tb.banner_mgr_seq = tbm.banner_mgr_seq
+		   AND tb.banner_mgr_seq = #{banner_mgr_seq}
+		]]>
+	</select>	
+	
 	<select id="getPageHelperCntByParamMap" parameterType="HashMap" resultType="Long">
 		<![CDATA[
 		SELECT COUNT(*)
@@ -115,7 +134,7 @@
 		       is_valid = #{is_valid},
 		       uptby = #{uptby},
 		       uptdate = sysdate()
-		 WHERE banner_mgr_seq = #{banner_mgr_seq}
+		 WHERE banner_seq = #{banner_seq}
 		]]>
 	</update>
 </mapper>

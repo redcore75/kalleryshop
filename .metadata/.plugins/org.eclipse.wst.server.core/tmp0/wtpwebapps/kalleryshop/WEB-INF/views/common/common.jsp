@@ -11,10 +11,15 @@
 <%@ page trimDirectiveWhitespaces="true" %>
 <%@ page import="java.util.*"%>
 <%@ page import="org.slf4j.*"%>
+<%@ page import="org.springframework.web.context.*"%>
+<%@ page import="org.springframework.web.context.support.*"%>
+<%@ page import="org.springframework.web.servlet.*"%>
 <%@ page import="kr.co.redcore.GlobalConstants"%>
 <%@ page import="kr.co.redcore.domain.*"%>
 <%@ page import="kr.co.redcore.domain.view.*"%>
 <%@ page import="kr.co.redcore.service.*"%>
+<%@ page import="kr.co.redcore.service.banner.*"%>
+<%@ page import="kr.co.redcore.service.member.*"%>
 <%@ page import="kr.co.redcore.util.*"%>
 <%@ page import="kr.co.redcore.util.string.*"%>
 <jsp:scriptlet>
@@ -22,6 +27,11 @@
 </jsp:scriptlet>
 <spring:htmlEscape defaultHtmlEscape="true" />
 <%
+//Logger logger = LoggerFactory.getLogger(getClass());
+
+WebApplicationContext wac = WebApplicationContextUtils.getWebApplicationContext(this.getServletContext(), FrameworkServlet.SERVLET_CONTEXT_PREFIX + "appServlet");
+Properties configProp = (Properties)wac.getBean("configProp");
+
 // 모바일에서 접근중인지 체크
 int isMobile = 0;
 String userAgent = request.getHeader("USER-AGENT");

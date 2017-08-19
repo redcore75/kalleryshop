@@ -220,12 +220,12 @@ ParamMap paramMap = (ParamMap) request.getAttribute("paramMap");
 								<table class="table">
 									<tbody>
 										<tr>
-											<th width="10%">상품번호</th>
-											<th width="30%">상품명</th>
-											<th>상품매입가</th>
-											<th>상품판매가</th>
-											<th>상품시장가</th>
-											<th>삭제</th>
+											<th width="10%"><spring:message code="common.wd.상품번호" /></th>
+											<th width="30%"><spring:message code="common.wd.상품명" /></th>
+											<th><spring:message code="common.wd.상품매입가" /></th>
+											<th><spring:message code="common.wd.상품판매가" /></th>
+											<th><spring:message code="common.wd.상품시장가" /></th>
+											<th><spring:message code="common.wd.삭제" /></th>
 										</tr>
 										<tbody id="catePrdList"></tbody>
 									</tbody>
@@ -275,11 +275,11 @@ ParamMap paramMap = (ParamMap) request.getAttribute("paramMap");
 									<tbody>
 										<tr>
 											<th style="width: 10px">#</th>			
-											<th width="10%">상품번호</th>
-											<th width="30%">상품명</th>
-											<th>상품매입가</th>
-											<th>상품판매가</th>
-											<th>상품시장가</th>
+											<th width="10%"><spring:message code="common.wd.상품번호" /></th>
+											<th width="30%"><spring:message code="common.wd.상품명" /></th>
+											<th><spring:message code="common.wd.상품매입가" /></th>
+											<th><spring:message code="common.wd.상품판매가" /></th>
+											<th><spring:message code="common.wd.상품시장가" /></th>
 										</tr>
 										<tbody id="popPrdList"></tbody>
 									</tbody>

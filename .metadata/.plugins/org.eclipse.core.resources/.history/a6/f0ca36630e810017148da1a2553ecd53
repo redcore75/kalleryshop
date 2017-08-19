@@ -1,0 +1,372 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ include file="/WEB-INF/views/common/common.jsp"%>
+<%
+Logger logger = LoggerFactory.getLogger(getClass());
+ParamMap paramMap = (ParamMap) request.getAttribute("paramMap");
+%>
+<head>	 				
+	<script type="text/javascript">	
+		$(document).ready(function(){
+			$("#updateForm").validate({
+				rules: {
+					member_name: {
+						required: true, 		
+					},
+					member_nick_name: {
+						required: true, 		
+					},
+					password: {
+						required: true, 		
+					},
+					passrchk: {
+						equalTo: "#password",
+					},
+					birthday: {
+						required: true, 		
+					},
+				},
+				messages: {
+					member_name: { 
+						required: '<spring:message code="common.st.이름을입력하세요" />', 
+					},
+					member_nick_name: { 
+						required: '<spring:message code="common.st.닉네임을입력하세요" />', 
+					},
+					password: { 
+						required: '<spring:message code="common.st.비밀번호를입력하세요" />', 
+					},
+					passrchk: {
+						equalTo: '<spring:message code="common.st.비밀번호가일치하지않습니다" />', 
+					},
+					birthday: {
+						required: '<spring:message code="common.st.생년월일을선택하세요" />', 
+					},
+				},
+				submitHandler: function (form) {
+					form.submit();
+				}
+			});
+			
+			$("#checkMemberNickNameDup").click(function(){
+				var member_nick_name = $("#member_nick_name").val();
+				if(member_nick_name == "") {
+					alert('<spring:message code="common.st.닉네임을입력하세요" />');
+				} else {
+					$.ajax({
+						url:"${pageContext.request.contextPath}/api/external/checkMemberNickName.do?member_nick_name=" + member_nick_name,
+						type:"GET",
+						data: {},
+						dataType:"json",
+						cache:false,
+						success:function(data){
+							if(data.result_code == 0000) {
+								$("#member_nick_name").val("");
+								alert('<spring:message code="common.st.사용중인닉네임입니다" />');
+							} else {
+								alert('<spring:message code="common.st.사용가능한닉네임입니다" />');
+							}
+						},
+						error : function(request, status, error) {
+							alert("code : " + request.status + "\r\nmessage : " + request.responseText + "\r\nerror : " + error);
+						}
+					});
+				}
+			});		
+		});
+	</script>
+</head>
+<body>
+
+	<div class="content">
+  		<form:form modelAttribute="tbl_member" class="form-signin" id="updateForm" name="updateForm" method="post" action="update.do" enctype="multipart/form-data">
+  			<cf:token/>
+  			<form:input path="member_level_seq" type="hidden"/>
+  			<form:input path="member_type" type="hidden"/>
+  			<form:input path="email_addr" type="hidden"/>
+      		<div class="box box-default">
+        		<div class="box-header with-border">
+          			<h3 class="box-title"><spring:message code="common.wd.개인정보수정" /></h3>
+        		</div>
+        		<!-- /.box-header -->
+        		<div class="box-body">
+ 
+					</div>
+					<div class="form-group">
+          			<div class="row">
+            			<div class="col-md-2">
+            				<spring:message code="common.wd.회원명" />
+            			</div>
+            			<div class="col-md-10">			        			
+							<form:errors path="member_name" cssClass="text-red" element="div"/>
+							<form:input path="member_name" type="text" class="form-control" maxlength="50" style="width: 100%;"/>
+            			</div>
+            			<!-- /.col -->
+					</div>
+					</div>
+          			<div class="row">
+            			<div class="col-md-2">
+            				<spring:message code="common.wd.닉네임" />
+            			</div>
+            			<div class="col-md-10">
+            				<form:errors path="member_nick_name" cssClass="text-red" element="div"/>
+            				<div class="row">
+            					<div class="col-md-10">
+									<form:input path="member_nick_name" type="text" class="form-control" maxlength="50" style="width: 100%;"/>
+            					</div>
+            					<div class="col-md-2">
+	            					<button id="checkMemberNickNameDup" type="button" class="btn btn-default"><spring:message code="common.wd.중복체크" /></button>
+    	        				</div>
+							</div>
+            				<!-- /.col -->
+            			</div>
+					</div>			
+          			<div class="row">
+            			<div class="col-md-2">
+            				<spring:message code="common.wd.비밀번호" />
+            			</div>
+            			<div class="col-md-10">			        			
+							<form:errors path="password" cssClass="text-red" element="div"/>
+							<form:input path="password" type="password" class="form-control" maxlength="100" style="width: 100%;"/>
+            			</div>
+            			<!-- /.col -->
+					</div>
+          			<div class="row">
+            			<div class="col-md-2">
+            			</div>
+            			<div class="col-md-10">			        			
+							<form:errors path="passrchk" cssClass="text-red" element="div"/>
+							<form:input path="passrchk" type="password" class="form-control" maxlength="100" style="width: 100%;"/>
+            			</div>
+            			<!-- /.col -->
+					</div>
+          			<div class="row">
+            			<div class="col-md-2">
+            				<spring:message code="common.wd.생년월일" />
+            			</div>
+            			<div class="col-md-10">
+            				<form:errors path="birthday" cssClass="text-red" element="div"/>
+            				<div class="input-group date">
+            					<div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+            					<form:input path="birthday" type="text" class="form-control datepicker input-lg" maxlength="8" data-date-start-view="decade" data-date-format="yyyymmdd" data-date="19990101" placeholder="YYYYMMDD" style="width: 100%;" readonly="true"/>            					
+            				</div>
+            			</div>
+            			<!-- /.col -->
+					</div>         			
+				</div>
+        		<!-- /.box-body -->
+      		</div>
+      		<!-- /.box -->
+
+			<div class="row">
+				<div class="col-md-12">
+					<button type="submit" id="btnSubmit" class="btn btn-block btn-info" style="width: 100%;"><spring:message code="common.wd.수정하기" /></button>
+				</div>
+			</div>
+		</form:form>
+		
+		
+		
+		<form:form modelAttribute="tbl_member" class="form-signin" id="updateForm" name="updateForm" method="post" action="update.do" enctype="multipart/form-data">
+  			<cf:token/>
+  			<form:input path="member_level_seq" type="hidden"/>
+  			<form:input path="member_type" type="hidden"/>
+  			<form:input path="email_addr" type="hidden"/>
+      		<div class="box box-default">
+        		<div class="box-header with-border">
+					<div class="row">
+            			<div class="col-md-12" align="center">
+							<img src="${pageContext.request.contextPath}/upload/image/usr/avatar5.png" class="img-circle" alt="User Image">
+        				</div>
+        			</div>
+        			<div class="row">        				
+        				<div class="col-md-12">
+        					<div class="form-group">
+			        			<div class="row">
+	            					<div class="col-md-4" align="center">
+	        						</div>
+	            					<div class="col-md-2" align="center">
+	            						<form:input path="profile_photo_file" type="file" class="btn btn-default" maxlength="200" style="width: 100%;" data-show-preview="false"/>
+	        						</div>
+	            					<div class="col-md-2" align="center">
+	            						<button id="deleteProfilePhoto" type="button" class="btn btn-default" style="width: 100%;"><spring:message code="common.wd.사진삭제" /></button>
+	        						</div>
+	            					<div class="col-md-5" align="center">
+	        						</div>
+	        					</div>
+			        			<div class="row">
+			        				<div class="col-md-12">
+			        					<form:errors path="profile_photo_file" cssClass="text-red" element="div"/>
+			        				</div>
+			        			</div>
+		        			</div>
+        				</div>
+        			</div>        			
+        		</div>
+
+        		<div class="box-body">					
+          			<div class="row">
+            			<div class="col-md-12">
+              				<div class="form-group">
+								<div class="row">
+									<div class="col-md-12">
+										<form:errors path="common_error" cssClass="text-red" element="div"/>
+									</div>
+								</div>
+              				</div>
+            			</div>
+					</div>
+          			<div class="row">
+            			<div class="col-md-12">
+              				<div class="form-group">
+								<div class="row">
+									<div class="col-md-1"><label><spring:message code="common.wd.이메일" /></label></div>
+									<div class="col-md-11">
+										<form:errors path="member_id" cssClass="text-red" element="div"/>
+										<div class="row">
+											<div class="col-md-12">
+												<form:input path="member_id" type="text" class="form-control" maxlength="30" style="width: 100%;" readonly="true"/>   
+											</div>
+										</div>
+									</div>
+								</div>
+              				</div>
+            			</div>
+					</div>
+          			<div class="row">
+            			<div class="col-md-12">
+              				<div class="form-group">
+								<div class="row">
+									<div class="col-md-1"><label><spring:message code="common.wd.회원명" /></label></div>
+									<div class="col-md-11">
+										<form:errors path="member_nick_name" cssClass="text-red" element="div"/>
+										<div class="row">
+											<div class="col-md-10">
+												<form:input path="member_nick_name" type="text" class="form-control" maxlength="50" style="width: 100%;"/>   
+											</div>
+											<div class="col-md-2">
+												<button id="checkMemberNickNameDup" type="button" class="btn btn-default"><spring:message code="common.wd.중복체크" /></button>
+											</div>
+										</div>
+									</div>
+								</div>
+              				</div>
+            			</div>
+					</div>
+          			<div class="row">
+            			<div class="col-md-12">
+              				<div class="form-group">
+								<div class="row">
+									<div class="col-md-1"><label><spring:message code="common.wd.이메일" /></label></div>
+									<div class="col-md-11">
+										<form:errors path="member_id" cssClass="text-red" element="div"/>
+										<div class="row">
+											<div class="col-md-12">
+												<form:input path="member_id" type="text" class="form-control" maxlength="30" style="width: 100%;" readonly="true"/>   
+											</div>
+										</div>
+									</div>
+								</div>
+              				</div>
+            			</div>
+					</div>
+          			<div class="row">
+            			<div class="col-md-12">
+              				<div class="form-group">
+								<div class="row">
+									<div class="col-md-1"></div>
+									<div class="col-md-11">
+										<form:errors path="member_id" cssClass="text-red" element="div"/>
+										<div class="row">
+											<div class="col-md-12">
+												<form:input path="member_id" type="text" class="form-control" maxlength="30" style="width: 100%;" readonly="true"/>   
+											</div>
+										</div>
+									</div>
+								</div>
+              				</div>
+            			</div>
+					</div>					
+					
+					
+					
+					
+										
+					
+					
+					
+
+
+
+					
+          			<div class="row">
+            			<div class="col-md-6">
+              				<div class="form-group">
+								<div class="row">
+									<div class="col-md-2"><label><spring:message code="common.wd.관리자아이디" /></label></div>
+									<div class="col-md-10">
+										<form:errors path="member_id" cssClass="text-red" element="div"/>
+										<div class="row">
+											<div class="col-md-6">												
+												<form:input path="member_id" type="text" class="form-control" maxlength="30" style="width: 100%;"/>
+											</div>
+											<div class="col-md-6">
+												<button id="checkMemberIdDup" type="button" class="btn btn-info btn-flat"><spring:message code="common.wd.중복체크" /></button>
+											</div>
+										</div>
+									</div>
+								</div>
+              				</div>
+            			</div>
+            			<!-- /.col -->
+            			<div class="col-md-6">
+	              			<div class="form-group">
+								<div class="row">
+									<div class="col-md-2"><label><spring:message code="common.wd.비밀번호" /></label></div>
+									<div class="col-md-10">
+										<form:errors path="password" cssClass="text-red" element="div"/>
+										<form:input path="password" type="password" class="form-control" maxlength="100" style="width: 100%;"/>
+									</div>
+								</div>
+	              			</div>
+            			</div>
+            			<!-- /.col -->
+					</div>
+					<!-- /.row -->
+          			<div class="row">
+            			<div class="col-md-6">
+              				<div class="form-group">
+								<div class="row">
+									<div class="col-md-2"><label><spring:message code="common.wd.관리자명" /></label></div>
+									<div class="col-md-10">
+										<form:errors path="member_name" cssClass="text-red" element="div"/>
+										<form:input path="member_name" type="text" class="form-control" maxlength="50" style="width: 100%;"/>
+									</div>
+								</div>
+              				</div>
+            			</div>
+            			<!-- /.col -->
+            			<div class="col-md-6">
+	              			<div class="form-group">
+								<div class="row">
+									<div class="col-md-2"><label><spring:message code="common.wd.이메일" /></label></div>
+									<div class="col-md-10">
+										<form:errors path="email_addr" cssClass="text-red" element="div"/>
+										<form:input path="email_addr" type="text" class="form-control" maxlength="30" style="width: 100%;"/>
+									</div>
+								</div>
+	              			</div>
+            			</div>
+            			<!-- /.col -->
+					</div>
+				</div>
+        		<!-- /.box-body -->
+      		</div>
+      		<!-- /.box -->
+		</form:form>		
+		
+		
+		
+	</div>
+	<!-- /.content -->
+	
+</body>

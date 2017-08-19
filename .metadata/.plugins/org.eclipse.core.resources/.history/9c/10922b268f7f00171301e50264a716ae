@@ -1,0 +1,174 @@
+package kr.co.redcore.controller.front;
+
+import java.util.Map;
+import java.util.Properties;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.support.SessionStatus;
+import org.springframework.web.servlet.ModelAndView;
+
+import kr.co.redcore.GlobalConstants;
+import kr.co.redcore.annotation.CheckToken;
+import kr.co.redcore.controller.BaseController;
+import kr.co.redcore.domain.Tbl_member;
+import kr.co.redcore.service.AuthNumService;
+import kr.co.redcore.service.EmailService;
+import kr.co.redcore.service.member.MemberService;
+
+@Controller
+@SessionAttributes(value = { "tbl_member" })
+public class MemberJoinController extends BaseController {
+	private static final Logger logger = LoggerFactory.getLogger(MemberJoinController.class);
+
+	@Autowired
+	private Properties configProp;
+	
+	@Autowired
+	private EmailService emailService;
+	
+	@Autowired
+	private AuthNumService authNumService;	
+	
+	@Autowired
+	private MemberService memberService;
+
+	@InitBinder
+	public void initBinder(WebDataBinder dataBinder) {
+		// WebDataBinder에서 수정불가능한 필드를 나열한다.
+		dataBinder.setDisallowedFields("member_seq", "email_addr");
+	}
+
+	@RequestMapping(value = "/front/member/join/agreeForm.do")
+	public ModelAndView agreeForm(HttpSession session, HttpServletRequest req, HttpServletResponse res, @RequestParam Map<String, Object> params) throws Exception {		
+		Tbl_member tbl_member = new Tbl_member();
+		
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName(this.getFrontThemeRoute("member/join/agreeForm"));
+		mv.addObject("tbl_member", tbl_member);
+		
+		return mv;
+	}
+	
+	@RequestMapping(value = "/front/member/join/emailInputForm.do")
+	public ModelAndView emailInputForm(HttpSession session, HttpServletRequest req, HttpServletResponse res, @RequestParam Map<String, Object> params, @ModelAttribute Tbl_member tbl_member) throws Exception {		
+		logger.debug("tbl_member.getTerm_agree1() >>>> " + tbl_member.getTerm_agree1());
+		logger.debug("tbl_member.getTerm_agree2() >>>> " + tbl_member.getTerm_agree2());
+		logger.debug("tbl_member.getTerm_agree3() >>>> " + tbl_member.getTerm_agree3());
+		
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName(this.getFrontThemeRoute("member/join/emailInputForm"));
+
+		return mv;
+	}
+	
+	@CheckToken
+	@RequestMapping(value = "/front/member/join/emailAuthForm.do")
+	public ModelAndView emailAuthForm(HttpSession session, HttpServletRequest req, HttpServletResponse res, @RequestParam Map<String, Object> params, @ModelAttribute Tbl_member tbl_member, BindingResult bindingResult, SessionStatus status) throws Exception {
+		ModelAndView mv = new ModelAndView();
+
+		if(!super.validateTokenBindResult(req, bindingResult)) {
+			mv.setViewName(this.getFrontThemeRoute("member/join/emailInputForm"));
+		} else {
+			logger.debug("tbl_member.getTerm_agree1() >>>> " + tbl_member.getTerm_agree1());
+			logger.debug("tbl_member.getTerm_agree2() >>>> " + tbl_member.getTerm_agree2());
+			logger.debug("tbl_member.getTerm_agree3() >>>> " + tbl_member.getTerm_agree3());
+			logger.debug("tbl_member.getEmail_addr() >>>> " + tbl_member.getEmail_addr());
+			
+			try {
+				// 이메일 인증시 사용할 인증번호를 생성하고, 이메일로 전송처리 한다.
+				String authNum = authNumService.getAuthNum(GlobalConstants.AUTH_TYPE_MEM_EAMIL, tbl_member.getEmail_addr());
+				
+				StringBuffer content = new StringBuffer();
+				content.append("이메일 : " + tbl_member.getEmail_addr() + "\n");
+				content.append("인증번호 : " + authNum + "\n");
+				
+				emailService.sendEmail(tbl_member.getEmail_addr(), "[" + configProp.getProperty("shop_id") + " 회원가입]이메일 인증번호 도착 !!!", content.toString());
+			} catch(Exception ex) {
+				bindingResult.rejectValue("email_addr", "error.send_email");
+				mv.setViewName(this.getFrontThemeRoute("member/join/emailInputForm"));
+			}
+			
+			mv.setViewName(this.getFrontThemeRoute("member/join/emailAuthForm"));
+		}
+		
+		return mv;
+	}
+	
+	@CheckToken
+	@RequestMapping(value = "/front/member/join/memRegistForm.do")
+	public ModelAndView memRegistForm(HttpSession session, HttpServletRequest req, HttpServletResponse res, @RequestParam Map<String, Object> params, @ModelAttribute Tbl_member tbl_member, BindingResult bindingResult, SessionStatus status) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		
+		if(!super.validateTokenBindResult(req, bindingResult)) {
+			mv.setViewName(this.getFrontThemeRoute("member/join/emailAuthForm"));
+		} else {
+			logger.debug("tbl_member.getTerm_agree1() >>>> " + tbl_member.getTerm_agree1());
+			logger.debug("tbl_member.getTerm_agree2() >>>> " + tbl_member.getTerm_agree2());
+			logger.debug("tbl_member.getTerm_agree3() >>>> " + tbl_member.getTerm_agree3());
+			logger.debug("tbl_member.getEmail_addr() >>>> " + tbl_member.getEmail_addr());
+			logger.debug("tbl_member.getAuth_num() >>>> " + tbl_member.getAuth_num());			
+
+			boolean trueAuthNum = authNumService.checkAuthNum(GlobalConstants.AUTH_TYPE_MEM_EAMIL, tbl_member.getEmail_addr(), tbl_member.getAuth_num() != null ? tbl_member.getAuth_num() : "");
+
+			logger.debug("authNumService.checkAuthNum >>>> " + trueAuthNum);
+			if(trueAuthNum) {
+				// 인증번호가 맞다면
+				tbl_member.setMember_id(tbl_member.getEmail_addr());//이메일을 member_id로 사용함. 
+				tbl_member.setMember_level_seq(GlobalConstants.MEBMER_LEVEL_F_NOR);
+				tbl_member.setMember_type(GlobalConstants.MEMBER_TYPE_FRONT);
+				
+				mv.setViewName(this.getFrontThemeRoute("member/join/memRegistForm"));
+			} else {
+				// 인증번호가 틀리다면
+				bindingResult.rejectValue("auth_num", "error.auth_num");
+				mv.setViewName(this.getFrontThemeRoute("member/join/emailAuthForm"));
+			}
+		}
+		
+		return mv;
+	}
+	
+	@CheckToken
+	@RequestMapping(value = "/front/member/join/memRegist.do")
+	public ModelAndView memRegist(HttpSession session, HttpServletRequest req, HttpServletResponse res, @RequestParam Map<String, Object> params, @ModelAttribute @Valid Tbl_member tbl_member, BindingResult bindingResult, SessionStatus status) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		
+		if(!super.validateTokenBindResult(req, bindingResult)) {
+			mv.setViewName(this.getFrontThemeRoute("member/join/memRegistForm"));
+		} else {
+			logger.debug("tbl_member.getTerm_agree1() >>>> " + tbl_member.getTerm_agree1());
+			logger.debug("tbl_member.getTerm_agree2() >>>> " + tbl_member.getTerm_agree2());
+			logger.debug("tbl_member.getTerm_agree3() >>>> " + tbl_member.getTerm_agree3());
+			logger.debug("tbl_member.getEmail_addr() >>>> " + tbl_member.getEmail_addr());
+			logger.debug("tbl_member.getAuth_num() >>>> " + tbl_member.getAuth_num());			
+
+			tbl_member.setCurr_point(0);
+			tbl_member.setIs_del(GlobalConstants.IS_VALID_N);
+			tbl_member.setIs_valid(GlobalConstants.IS_VALID_Y);
+			tbl_member.setRegby(tbl_member.getMember_id());
+			tbl_member.setUptby(tbl_member.getMember_id());
+			
+			memberService.insertTbl_member(tbl_member);
+			
+			mv.setViewName(this.getFrontThemeRoute("member/join/memRegistDone"));
+		}
+		
+		return mv;
+	}
+}

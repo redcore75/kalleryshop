@@ -1,0 +1,65 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ include file="/WEB-INF/views/common/common.jsp"%>
+<%
+Logger logger = LoggerFactory.getLogger(getClass());
+Tbl_member tbl_member = (Tbl_member) session.getAttribute(GlobalConstants.FRONT_LOGININFO_KEY);
+%>
+	<header>
+		<div class="row">
+			<div class="col-md-1">
+				<!--  logo image -->
+			</div>
+			<div class="col-md-10">
+				<img src="${pageContext.request.contextPath}/upload/image/usr/avatar5.png" width="30" height="30" class="img-circle" alt="User Image">
+				<strong><spring:message code="common.wd.접속자" /> : </strong>
+				<%
+					if(tbl_member != null) {
+						out.println(tbl_member.getMember_id() + " Point : " + tbl_member.getCurr_point() + "");
+					} else {
+						out.println("Guest");
+				}
+				%>
+			</div>
+			<div class="col-md-1">
+				<%
+				if(tbl_member != null) {
+					%><a href="${pageContext.request.contextPath}/front/login/logout.do"><button type="button" class="btn btn-flat">Logout</button></a><%
+				} else {
+					%><a href="${pageContext.request.contextPath}/front/login/loginForm.do"><button type="button" class="btn btn-flat">Login</button></a><%				
+				}
+				%>
+			</div>
+		</div>
+	</header>
+
+	<section class="menu-section">
+		<div class="navbar navbar-inverse">
+			<div class="container"> 
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+
+				<div id="navbar" class="navbar-collapse collapse">
+					<ul class="nav navbar-nav">
+						<li><a href="${pageContext.request.contextPath}/front/main/index.do"><%=configProp.get("shop_id")%></a></li>
+					</ul>				
+				
+					<ul class="nav navbar-nav">
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><spring:message code="common.wd.개인정보" /><span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="${pageContext.request.contextPath}/front/member/info/updateForm.do"><spring:message code="common.wd.개인정보" /></a></li>
+								<li><a href="#"><spring:message code="common.wd.포인트구매" />/<spring:message code="common.wd.사용내역" /></a></li>
+								<li><a href="${pageContext.request.contextPath}/front/member/point_order/pointList.do"><spring:message code="common.wd.포인트구매" /></a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>

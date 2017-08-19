@@ -34,7 +34,6 @@
 <fullyQualifiedTypeName name="java.util.Arrays"/>
 <fullyQualifiedTypeName name="org.junit.Assert"/>
 <fullyQualifiedTypeName name="kr.co.redcore.util.string.UserString"/>
-<fullyQualifiedTypeName name="kr.co.redcore.domain.Tbl_shop_env"/>
 <fullyQualifiedTypeName name="kr.co.redcore.service.ProductService"/>
 <fullyQualifiedTypeName name="kr.co.redcore.domain.view.Vw_prd_mst"/>
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestBody"/>
@@ -46,4 +45,6 @@
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="kr.co.redcore.domain.Tbl_banner_mgr"/>
 <fullyQualifiedTypeName name="kr.co.redcore.mapper.Tbl_banner_mgrMapper"/>
+<fullyQualifiedTypeName name="kr.co.redcore.service.ShopEnvService"/>
+<fullyQualifiedTypeName name="kr.co.redcore.domain.Tbl_shop_env"/>
 </qualifiedTypeNameHistroy>

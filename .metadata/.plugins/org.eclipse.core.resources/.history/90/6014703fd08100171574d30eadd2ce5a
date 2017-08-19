@@ -1,0 +1,51 @@
+package kr.co.redcore.service.member;
+
+import java.util.Properties;
+
+import kr.co.redcore.GlobalConstants;
+import kr.co.redcore.domain.Tbl_auth_num;
+import kr.co.redcore.domain.Tbl_member;
+import kr.co.redcore.domain.Tbl_member_access_log;
+import kr.co.redcore.domain.Tbl_member_point;
+import kr.co.redcore.mapper.Tbl_auth_numMapper;
+import kr.co.redcore.mapper.Tbl_memberMapper;
+import kr.co.redcore.mapper.Tbl_member_access_logMapper;
+import kr.co.redcore.mapper.Tbl_member_pointMapper;
+import kr.co.redcore.util.UserRand;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+@Service
+public class MemberPointService {
+	private static final Logger logger = LoggerFactory.getLogger(MemberPointService.class);
+	
+	@Autowired
+	private Tbl_memberMapper tbl_memberMapper;		
+	
+	@Autowired
+	private Tbl_member_pointMapper tbl_member_pointMapper;	
+	
+	@Autowired
+	private Properties configProp;
+	
+	@Transactional(rollbackFor = {Exception.class})
+	public void buyOrderMemberPoint(String member_id, long buy_point) throws Exception {
+		Tbl_member tbl_member = tbl_memberMapper.getTbl_memberByMember_id(member_id);
+		
+		long curr_point = tbl_member.getCurr_point() + buy_point;
+		tbl_memberMapper.updateTbl_memberForCurr_point(member_id, curr_point);
+		
+		Tbl_member_point tbl_member_point = new Tbl_member_point();
+		tbl_member_point.setMember_seq(tbl_member.getMember_seq());
+		tbl_member_point.setUse_type(GlobalConstants.POINT_BUY);
+		tbl_member_point.setMember_id(member_id);
+		tbl_member_point.setPrev_point(tbl_member.getCurr_point());
+		tbl_member_point.setUse_point(buy_point);
+		tbl_member_point.setCurr_point(curr_point);				
+		tbl_member_pointMapper.insertTbl_member_point(tbl_member_point);
+	}
+}

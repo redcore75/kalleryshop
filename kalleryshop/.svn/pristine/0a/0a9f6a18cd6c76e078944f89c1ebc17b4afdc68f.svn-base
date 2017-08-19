@@ -1,0 +1,43 @@
+package kr.co.redcore.controller.front.module;
+
+import java.util.List;
+import java.util.Map;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
+import kr.co.redcore.controller.BaseController;
+import kr.co.redcore.service.banner.BannerService;
+
+@Controller
+public class BannerModuleController extends BaseController {
+	private static final Logger logger = LoggerFactory.getLogger(BannerModuleController.class);
+
+	@Autowired
+	private BannerService bannerService;
+
+	@InitBinder
+	public void initBinder(WebDataBinder dataBinder) {
+		// WebDataBinder에서 수정불가능한 필드를 나열한다.
+	}
+	
+	@RequestMapping(value = "/front/module/banner.do")
+	public ModelAndView banner(HttpSession session, HttpServletRequest req, HttpServletResponse res, @RequestParam Map<String, Object> params) throws Exception {
+		String banner_mgr_seq = (String) params.get("banner_mgr_seq");
+		List bannerList = bannerService.getVw_bannerListByBanner_mgr_seq(Long.parseLong(banner_mgr_seq));
+		
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName(this.getFrontThemeRoute("module/banner"));
+		mv.addObject("bannerList", bannerList);
+		
+		return mv;
+	}
+}

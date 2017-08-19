@@ -1,0 +1,35 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ include file="/WEB-INF/views/common/common.jsp"%>
+<%
+Logger logger = LoggerFactory.getLogger(getClass());
+ParamMap paramMap = (ParamMap) request.getAttribute("paramMap");
+%>
+<head>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#rotating').simplebanner();
+		$(".resizeme").aeImageResize({ height: 250, width: 1000 });
+	});
+</script>
+</head>
+<body>
+	<div align="center">
+		<div id="rotating" class="simpleBanner">
+			<div class="bannerListWpr">
+				<ul class="bannerList">
+				<!-- LI list goes here -->
+				<c:forEach items="${bannerList}" var="list">
+					<li><img src="${pageContext.request.contextPath}/upload/${list.img_path}" class="resizeme"/></li>
+				</c:forEach>
+				</ul>
+			</div>
+			<!-- 
+			<div class="bannerControlsWpr bannerControlsPrev"><div class="bannerControls"></div></div>
+			 -->
+			<div class="bannerIndicators"><ul></ul></div>
+			<!-- 
+			<div class="bannerControlsWpr bannerControlsNext"><div class="bannerControls"></div></div>
+			 -->
+		</div>
+	</div>
+</body>

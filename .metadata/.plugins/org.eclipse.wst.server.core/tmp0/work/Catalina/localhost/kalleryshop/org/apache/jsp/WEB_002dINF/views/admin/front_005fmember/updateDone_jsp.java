@@ -5,6 +5,8 @@ import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 import java.util.*;
 import org.slf4j.*;
+import org.springframework.web.context.*;
+import org.springframework.web.context.support.*;
 import kr.co.redcore.GlobalConstants;
 import kr.co.redcore.domain.*;
 import kr.co.redcore.domain.view.*;
@@ -78,6 +80,14 @@ public final class updateDone_jsp extends org.apache.jasper.runtime.HttpJspBase
       if (_jspx_meth_spring_005fhtmlEscape_005f0(_jspx_page_context))
         return;
 
+//Logger logger = LoggerFactory.getLogger(getClass());
+
+ServletContext ctx = pageContext.getServletContext();
+WebApplicationContext wac = WebApplicationContextUtils.getRequiredWebApplicationContext(ctx);
+Properties configProp = (Properties)wac.getBean("configProp");
+
+//Tbl_member tbl_member = (Tbl_member) session.getAttribute(GlobalConstants.ADMIN_LOGININFO_KEY);
+
 // 모바일에서 접근중인지 체크
 int isMobile = 0;
 String userAgent = request.getHeader("USER-AGENT");
@@ -127,7 +137,7 @@ Logger logger = LoggerFactory.getLogger(getClass());
     org.springframework.web.servlet.tags.HtmlEscapeTag _jspx_th_spring_005fhtmlEscape_005f0 = (org.springframework.web.servlet.tags.HtmlEscapeTag) _005fjspx_005ftagPool_005fspring_005fhtmlEscape_0026_005fdefaultHtmlEscape_005fnobody.get(org.springframework.web.servlet.tags.HtmlEscapeTag.class);
     _jspx_th_spring_005fhtmlEscape_005f0.setPageContext(_jspx_page_context);
     _jspx_th_spring_005fhtmlEscape_005f0.setParent(null);
-    // /WEB-INF/views/common/common.jsp(23,0) name = defaultHtmlEscape type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/views/common/common.jsp(25,0) name = defaultHtmlEscape type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_spring_005fhtmlEscape_005f0.setDefaultHtmlEscape("true");
     int[] _jspx_push_body_count_spring_005fhtmlEscape_005f0 = new int[] { 0 };
     try {

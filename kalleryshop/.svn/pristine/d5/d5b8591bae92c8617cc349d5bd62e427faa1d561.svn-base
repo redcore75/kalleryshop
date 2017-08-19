@@ -1,0 +1,4 @@
+profiles.id = prod
+upload_path =  /home/kalleryshop/upload
+shop_id = kalleryshop
+shop_theme = default

@@ -1,0 +1,392 @@
+2017-08-12 15:27:51,046 [Thread-2] [DEBUG] [n.s.e.config.ConfigurationFactory] Configuring ehcache from InputStream
+2017-08-12 15:27:51,058 [Thread-2] [DEBUG] [net.sf.ehcache.config.BeanHandler] Ignoring ehcache attribute xmlns:xsi
+2017-08-12 15:27:51,058 [Thread-2] [DEBUG] [net.sf.ehcache.config.BeanHandler] Ignoring ehcache attribute xsi:noNamespaceSchemaLocation
+2017-08-12 15:27:51,059 [Thread-2] [DEBUG] [n.s.e.config.DiskStoreConfiguration] Disk Store Path: C:\Users\myhome\AppData\Local\Temp\
+2017-08-12 15:27:51,067 [Thread-2] [DEBUG] [net.sf.ehcache.CacheManager] Creating new CacheManager with InputStream
+2017-08-12 15:27:51,067 [Thread-2] [DEBUG] [net.sf.ehcache.util.PropertyUtil] propertiesString is null.
+2017-08-12 15:27:51,072 [Thread-2] [DEBUG] [n.s.e.config.ConfigurationHelper] No CacheManagerEventListenerFactory class specified. Skipping...
+2017-08-12 15:27:51,073 [Thread-2] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for hostName: null
+2017-08-12 15:27:51,073 [Thread-2] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for port: 9000
+2017-08-12 15:27:51,073 [Thread-2] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for remoteObjectPort: null
+2017-08-12 15:27:51,073 [Thread-2] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for socketTimeoutMillis: 120000
+2017-08-12 15:27:51,077 [Thread-2] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for peerDiscovery: automatic
+2017-08-12 15:27:51,077 [Thread-2] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for hostName: null
+2017-08-12 15:27:51,077 [Thread-2] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for multicastGroupAddress: 230.0.0.100
+2017-08-12 15:27:51,077 [Thread-2] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for multicastGroupPort: 9000
+2017-08-12 15:27:51,077 [Thread-2] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for timeToLive: null
+2017-08-12 15:27:51,078 [Thread-2] [DEBUG] [n.s.e.d.RMICacheManagerPeerProviderFactory] No TTL set. Setting it to the default of 1, which means packets are limited to the same subnet.
+2017-08-12 15:27:52,149 [Thread-2] [DEBUG] [n.s.e.d.RMICacheManagerPeerListener] 0 RMICachePeers bound in registry for RMI listener
+2017-08-12 15:27:52,223 [Thread-2] [DEBUG] [net.sf.ehcache.util.PropertyUtil] propertiesString is null.
+2017-08-12 15:27:52,225 [Thread-2] [DEBUG] [net.sf.ehcache.Cache] No BootstrapCacheLoaderFactory class specified. Skipping...
+2017-08-12 15:27:52,225 [Thread-2] [DEBUG] [net.sf.ehcache.Cache] CacheWriter factory not configured. Skipping...
+2017-08-12 15:27:52,225 [Thread-2] [DEBUG] [n.s.e.config.ConfigurationHelper] No CacheExceptionHandlerFactory class specified. Skipping...
+2017-08-12 15:27:52,237 [Thread-2] [DEBUG] [net.sf.ehcache.store.MemoryStore] Initialized net.sf.ehcache.store.MemoryStore for tokens
+2017-08-12 15:27:52,255 [Thread-2] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Pass-Through Statistic: LOCAL_OFFHEAP_SIZE
+2017-08-12 15:27:52,256 [Thread-2] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Pass-Through Statistic: LOCAL_OFFHEAP_SIZE_BYTES
+2017-08-12 15:27:52,256 [Thread-2] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Pass-Through Statistic: LOCAL_DISK_SIZE
+2017-08-12 15:27:52,256 [Thread-2] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Pass-Through Statistic: LOCAL_DISK_SIZE_BYTES
+2017-08-12 15:27:52,256 [Thread-2] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Pass-Through Statistic: WRITER_QUEUE_LENGTH
+2017-08-12 15:27:52,256 [Thread-2] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Pass-Through Statistic: REMOTE_SIZE
+2017-08-12 15:27:52,257 [Thread-2] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Pass-Through Statistic: LAST_REJOIN_TIMESTAMP
+2017-08-12 15:27:52,265 [Thread-2] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: OFFHEAP_GET
+2017-08-12 15:27:52,266 [Thread-2] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: OFFHEAP_PUT
+2017-08-12 15:27:52,266 [Thread-2] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: OFFHEAP_REMOVE
+2017-08-12 15:27:52,266 [Thread-2] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: DISK_GET
+2017-08-12 15:27:52,266 [Thread-2] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: DISK_PUT
+2017-08-12 15:27:52,267 [Thread-2] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: DISK_REMOVE
+2017-08-12 15:27:52,267 [Thread-2] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: XA_COMMIT
+2017-08-12 15:27:52,267 [Thread-2] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: XA_ROLLBACK
+2017-08-12 15:27:52,267 [Thread-2] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: XA_RECOVERY
+2017-08-12 15:27:52,268 [Thread-2] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: CLUSTER_EVENT
+2017-08-12 15:27:52,268 [Thread-2] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: NONSTOP
+2017-08-12 15:27:52,271 [Thread-2] [DEBUG] [net.sf.ehcache.Cache] Initialised cache: tokens
+2017-08-12 15:27:52,271 [Thread-2] [DEBUG] [n.s.e.d.RMICacheManagerPeerListener] Adding to RMI listener
+2017-08-12 15:27:52,290 [Thread-2] [DEBUG] [n.s.e.d.RMICacheManagerPeerListener] 1 RMICachePeers bound in registry for RMI listener
+2017-08-12 15:27:52,290 [Thread-2] [DEBUG] [n.s.e.config.ConfigurationHelper] CacheDecoratorFactory not configured. Skipping for 'tokens'.
+2017-08-12 15:27:52,290 [Thread-2] [DEBUG] [n.s.e.config.ConfigurationHelper] CacheDecoratorFactory not configured for defaultCache. Skipping for 'tokens'.
+2017-08-12 15:27:52,495 [Thread-2] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Scanned package: 'kr.co.redcore.domain' for aliases
+2017-08-12 15:27:52,498 [Thread-2] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Scanned package: 'kr.co.redcore.domain.view' for aliases
+2017-08-12 15:27:52,524 [Thread-2] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed configuration file: 'class path resource [mybatis/mybatis-config.xml]'
+2017-08-12 15:27:53,021 [Thread-2] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_auth_num.xml]'
+2017-08-12 15:27:53,035 [Thread-2] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_banner.xml]'
+2017-08-12 15:27:53,045 [Thread-2] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_banner_mgr.xml]'
+2017-08-12 15:27:53,052 [Thread-2] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_cate_mst.xml]'
+2017-08-12 15:27:53,059 [Thread-2] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_cate_prd.xml]'
+2017-08-12 15:27:53,069 [Thread-2] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_common_code.xml]'
+2017-08-12 15:27:53,073 [Thread-2] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_common_code_group.xml]'
+2017-08-12 15:27:53,083 [Thread-2] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_member.xml]'
+2017-08-12 15:27:53,088 [Thread-2] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_member_access_log.xml]'
+2017-08-12 15:27:53,092 [Thread-2] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_member_point.xml]'
+2017-08-12 15:27:53,097 [Thread-2] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_opt_group.xml]'
+2017-08-12 15:27:53,101 [Thread-2] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_prd_detail.xml]'
+2017-08-12 15:27:53,109 [Thread-2] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_prd_mst.xml]'
+2017-08-12 15:27:53,114 [Thread-2] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_prd_opt.xml]'
+2017-08-12 15:27:53,118 [Thread-2] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_shop_env.xml]'
+2017-08-12 15:27:53,825 [Thread-2] [INFO ] [org.hibernate.validator.util.Version] Hibernate Validator 4.2.0.Final
+2017-08-12 15:27:53,828 [Thread-2] [DEBUG] [o.h.v.e.r.DefaultTraversableResolver] Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+2017-08-12 15:27:53,831 [Thread-2] [DEBUG] [o.h.v.xml.ValidationXmlParser] Trying to load META-INF/validation.xml for XML based Validator configuration.
+2017-08-12 15:27:53,831 [Thread-2] [DEBUG] [o.h.v.xml.ValidationXmlParser] No META-INF/validation.xml found. Using annotation based configuration only
+2017-08-12 15:27:56,087 [Multicast Heartbeat Sender Thread] [DEBUG] [n.s.ehcache.distribution.PayloadUtil] Cache peers for this CacheManager to be advertised: //192.168.219.173:9000/tokens
+2017-08-12 15:28:23,217 ["http-bio-8080"-exec-6] [DEBUG] [kr.co.redcore.aop.ControllerAspect] @@@@@@@@@@@@@ >>> Around Action Execution Time Start !! >>>
+2017-08-12 15:28:23,217 ["http-bio-8080"-exec-6] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ------------------- controller start -----------------------------------------------------
+2017-08-12 15:28:23,218 ["http-bio-8080"-exec-6] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ### Controller Before Advice Start !! ###
+2017-08-12 15:28:23,218 ["http-bio-8080"-exec-6] [DEBUG] [kr.co.redcore.aop.ControllerAspect] Controller Class => IndexController
+2017-08-12 15:28:23,218 ["http-bio-8080"-exec-6] [DEBUG] [kr.co.redcore.aop.ControllerAspect] Controller Method => index
+2017-08-12 15:28:23,218 ["http-bio-8080"-exec-6] [DEBUG] [kr.co.redcore.aop.ControllerAspect] /kalleryshop/front/main/index.do
+2017-08-12 15:28:23,218 ["http-bio-8080"-exec-6] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ContentType => null
+2017-08-12 15:28:23,218 ["http-bio-8080"-exec-6] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ################################################################################
+2017-08-12 15:28:23,218 ["http-bio-8080"-exec-6] [DEBUG] [kr.co.redcore.aop.ControllerAspect] Params => 
+2017-08-12 15:28:23,219 ["http-bio-8080"-exec-6] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ################################################################################
+2017-08-12 15:28:23,219 ["http-bio-8080"-exec-6] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ### Controller Before Advice End !! ###
+2017-08-12 15:28:23,227 ["http-bio-8080"-exec-6] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ------------------- controller end -------------------------------------------------------
+2017-08-12 15:28:23,228 ["http-bio-8080"-exec-6] [DEBUG] [kr.co.redcore.aop.ControllerAspect] >>> class kr.co.redcore.controller.front.IndexController Execution time : 0.009
+2017-08-12 15:28:23,228 ["http-bio-8080"-exec-6] [DEBUG] [kr.co.redcore.aop.ControllerAspect] @@@@@@@@@@@@@ >>> Around Action Execution Time END !! >>>
+2017-08-12 15:29:21,874 ["http-bio-8080"-exec-10] [DEBUG] [kr.co.redcore.aop.ControllerAspect] @@@@@@@@@@@@@ >>> Around Action Execution Time Start !! >>>
+2017-08-12 15:29:21,874 ["http-bio-8080"-exec-10] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ------------------- controller start -----------------------------------------------------
+2017-08-12 15:29:21,874 ["http-bio-8080"-exec-10] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ### Controller Before Advice Start !! ###
+2017-08-12 15:29:21,874 ["http-bio-8080"-exec-10] [DEBUG] [kr.co.redcore.aop.ControllerAspect] Controller Class => IndexController
+2017-08-12 15:29:21,874 ["http-bio-8080"-exec-10] [DEBUG] [kr.co.redcore.aop.ControllerAspect] Controller Method => index
+2017-08-12 15:29:21,874 ["http-bio-8080"-exec-10] [DEBUG] [kr.co.redcore.aop.ControllerAspect] /kalleryshop/front/main/index.do
+2017-08-12 15:29:21,874 ["http-bio-8080"-exec-10] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ContentType => null
+2017-08-12 15:29:21,874 ["http-bio-8080"-exec-10] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ################################################################################
+2017-08-12 15:29:21,874 ["http-bio-8080"-exec-10] [DEBUG] [kr.co.redcore.aop.ControllerAspect] Params => 
+2017-08-12 15:29:21,874 ["http-bio-8080"-exec-10] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ################################################################################
+2017-08-12 15:29:21,874 ["http-bio-8080"-exec-10] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ### Controller Before Advice End !! ###
+2017-08-12 15:29:21,874 ["http-bio-8080"-exec-10] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ------------------- controller end -------------------------------------------------------
+2017-08-12 15:29:21,874 ["http-bio-8080"-exec-10] [DEBUG] [kr.co.redcore.aop.ControllerAspect] >>> class kr.co.redcore.controller.front.IndexController Execution time : 0.0
+2017-08-12 15:29:21,874 ["http-bio-8080"-exec-10] [DEBUG] [kr.co.redcore.aop.ControllerAspect] @@@@@@@@@@@@@ >>> Around Action Execution Time END !! >>>
+2017-08-12 15:29:24,623 [Thread-7] [DEBUG] [n.s.e.d.MulticastKeepaliveHeartbeatReceiver] dispose called
+2017-08-12 15:29:24,626 [Thread-7] [DEBUG] [n.s.e.d.RMICacheManagerPeerListener] rmiregistry unexported.
+2017-08-12 15:29:24,627 [Thread-7] [DEBUG] [n.s.e.d.RMICacheManagerPeerListener] 1 RMICachePeers unbound from registry in RMI listener
+2017-08-12 15:29:26,600 [Thread-8] [DEBUG] [n.s.e.config.ConfigurationFactory] Configuring ehcache from InputStream
+2017-08-12 15:29:26,607 [Thread-8] [DEBUG] [net.sf.ehcache.config.BeanHandler] Ignoring ehcache attribute xmlns:xsi
+2017-08-12 15:29:26,607 [Thread-8] [DEBUG] [net.sf.ehcache.config.BeanHandler] Ignoring ehcache attribute xsi:noNamespaceSchemaLocation
+2017-08-12 15:29:26,608 [Thread-8] [DEBUG] [n.s.e.config.DiskStoreConfiguration] Disk Store Path: C:\Users\myhome\AppData\Local\Temp\
+2017-08-12 15:29:26,667 [Thread-8] [DEBUG] [net.sf.ehcache.CacheManager] Creating new CacheManager with InputStream
+2017-08-12 15:29:26,667 [Thread-8] [DEBUG] [net.sf.ehcache.util.PropertyUtil] propertiesString is null.
+2017-08-12 15:29:26,672 [Thread-8] [DEBUG] [n.s.e.config.ConfigurationHelper] No CacheManagerEventListenerFactory class specified. Skipping...
+2017-08-12 15:29:26,672 [Thread-8] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for hostName: null
+2017-08-12 15:29:26,672 [Thread-8] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for port: 9000
+2017-08-12 15:29:26,672 [Thread-8] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for remoteObjectPort: null
+2017-08-12 15:29:26,673 [Thread-8] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for socketTimeoutMillis: 120000
+2017-08-12 15:29:26,675 [Thread-8] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for peerDiscovery: automatic
+2017-08-12 15:29:26,675 [Thread-8] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for hostName: null
+2017-08-12 15:29:26,675 [Thread-8] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for multicastGroupAddress: 230.0.0.100
+2017-08-12 15:29:26,675 [Thread-8] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for multicastGroupPort: 9000
+2017-08-12 15:29:26,675 [Thread-8] [DEBUG] [net.sf.ehcache.util.PropertyUtil] Value found for timeToLive: null
+2017-08-12 15:29:26,676 [Thread-8] [DEBUG] [n.s.e.d.RMICacheManagerPeerProviderFactory] No TTL set. Setting it to the default of 1, which means packets are limited to the same subnet.
+2017-08-12 15:29:26,685 [Thread-8] [DEBUG] [n.s.e.d.RMICacheManagerPeerListener] 0 RMICachePeers bound in registry for RMI listener
+2017-08-12 15:29:26,711 [Thread-8] [DEBUG] [net.sf.ehcache.util.PropertyUtil] propertiesString is null.
+2017-08-12 15:29:26,712 [Thread-8] [DEBUG] [net.sf.ehcache.Cache] No BootstrapCacheLoaderFactory class specified. Skipping...
+2017-08-12 15:29:26,712 [Thread-8] [DEBUG] [net.sf.ehcache.Cache] CacheWriter factory not configured. Skipping...
+2017-08-12 15:29:26,712 [Thread-8] [DEBUG] [n.s.e.config.ConfigurationHelper] No CacheExceptionHandlerFactory class specified. Skipping...
+2017-08-12 15:29:26,721 [Thread-8] [DEBUG] [net.sf.ehcache.store.MemoryStore] Initialized net.sf.ehcache.store.MemoryStore for tokens
+2017-08-12 15:29:26,738 [Thread-8] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Pass-Through Statistic: LOCAL_OFFHEAP_SIZE
+2017-08-12 15:29:26,739 [Thread-8] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Pass-Through Statistic: LOCAL_OFFHEAP_SIZE_BYTES
+2017-08-12 15:29:26,739 [Thread-8] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Pass-Through Statistic: LOCAL_DISK_SIZE
+2017-08-12 15:29:26,739 [Thread-8] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Pass-Through Statistic: LOCAL_DISK_SIZE_BYTES
+2017-08-12 15:29:26,739 [Thread-8] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Pass-Through Statistic: WRITER_QUEUE_LENGTH
+2017-08-12 15:29:26,739 [Thread-8] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Pass-Through Statistic: REMOTE_SIZE
+2017-08-12 15:29:26,739 [Thread-8] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Pass-Through Statistic: LAST_REJOIN_TIMESTAMP
+2017-08-12 15:29:26,746 [Thread-8] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: OFFHEAP_GET
+2017-08-12 15:29:26,746 [Thread-8] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: OFFHEAP_PUT
+2017-08-12 15:29:26,747 [Thread-8] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: OFFHEAP_REMOVE
+2017-08-12 15:29:26,747 [Thread-8] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: DISK_GET
+2017-08-12 15:29:26,747 [Thread-8] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: DISK_PUT
+2017-08-12 15:29:26,747 [Thread-8] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: DISK_REMOVE
+2017-08-12 15:29:26,747 [Thread-8] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: XA_COMMIT
+2017-08-12 15:29:26,747 [Thread-8] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: XA_ROLLBACK
+2017-08-12 15:29:26,747 [Thread-8] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: XA_RECOVERY
+2017-08-12 15:29:26,748 [Thread-8] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: CLUSTER_EVENT
+2017-08-12 15:29:26,748 [Thread-8] [DEBUG] [n.s.e.s.e.ExtendedStatisticsImpl] Mocking Operation Statistic: NONSTOP
+2017-08-12 15:29:26,753 [Thread-8] [DEBUG] [net.sf.ehcache.Cache] Initialised cache: tokens
+2017-08-12 15:29:26,753 [Thread-8] [DEBUG] [n.s.e.d.RMICacheManagerPeerListener] Adding to RMI listener
+2017-08-12 15:29:26,760 [Thread-8] [DEBUG] [n.s.e.d.RMICacheManagerPeerListener] 1 RMICachePeers bound in registry for RMI listener
+2017-08-12 15:29:26,760 [Thread-8] [DEBUG] [n.s.e.config.ConfigurationHelper] CacheDecoratorFactory not configured. Skipping for 'tokens'.
+2017-08-12 15:29:26,760 [Thread-8] [DEBUG] [n.s.e.config.ConfigurationHelper] CacheDecoratorFactory not configured for defaultCache. Skipping for 'tokens'.
+2017-08-12 15:29:26,847 [Thread-8] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Scanned package: 'kr.co.redcore.domain' for aliases
+2017-08-12 15:29:26,848 [Thread-8] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Scanned package: 'kr.co.redcore.domain.view' for aliases
+2017-08-12 15:29:26,863 [Thread-8] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed configuration file: 'class path resource [mybatis/mybatis-config.xml]'
+2017-08-12 15:29:27,177 [Thread-8] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_auth_num.xml]'
+2017-08-12 15:29:27,194 [Thread-8] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_banner.xml]'
+2017-08-12 15:29:27,204 [Thread-8] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_banner_mgr.xml]'
+2017-08-12 15:29:27,209 [Thread-8] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_cate_mst.xml]'
+2017-08-12 15:29:27,214 [Thread-8] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_cate_prd.xml]'
+2017-08-12 15:29:27,225 [Thread-8] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_common_code.xml]'
+2017-08-12 15:29:27,229 [Thread-8] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_common_code_group.xml]'
+2017-08-12 15:29:27,238 [Thread-8] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_member.xml]'
+2017-08-12 15:29:27,243 [Thread-8] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_member_access_log.xml]'
+2017-08-12 15:29:27,247 [Thread-8] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_member_point.xml]'
+2017-08-12 15:29:27,251 [Thread-8] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_opt_group.xml]'
+2017-08-12 15:29:27,255 [Thread-8] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_prd_detail.xml]'
+2017-08-12 15:29:27,263 [Thread-8] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_prd_mst.xml]'
+2017-08-12 15:29:27,267 [Thread-8] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_prd_opt.xml]'
+2017-08-12 15:29:27,272 [Thread-8] [DEBUG] [o.m.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\project-java\workspace\kalleryshop\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\kalleryshop\WEB-INF\classes\mybatis\mapper\tbl_shop_env.xml]'
+2017-08-12 15:29:27,737 [Thread-8] [INFO ] [org.hibernate.validator.util.Version] Hibernate Validator 4.2.0.Final
+2017-08-12 15:29:27,740 [Thread-8] [DEBUG] [o.h.v.e.r.DefaultTraversableResolver] Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+2017-08-12 15:29:27,745 [Thread-8] [DEBUG] [o.h.v.xml.ValidationXmlParser] Trying to load META-INF/validation.xml for XML based Validator configuration.
+2017-08-12 15:29:27,746 [Thread-8] [DEBUG] [o.h.v.xml.ValidationXmlParser] No META-INF/validation.xml found. Using annotation based configuration only
+2017-08-12 15:29:30,368 ["http-bio-8080"-exec-10] [DEBUG] [kr.co.redcore.aop.ControllerAspect] @@@@@@@@@@@@@ >>> Around Action Execution Time Start !! >>>
+2017-08-12 15:29:30,368 ["http-bio-8080"-exec-10] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ------------------- controller start -----------------------------------------------------
+2017-08-12 15:29:30,370 ["http-bio-8080"-exec-10] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ### Controller Before Advice Start !! ###
+2017-08-12 15:29:30,370 ["http-bio-8080"-exec-10] [DEBUG] [kr.co.redcore.aop.ControllerAspect] Controller Class => IndexController
+2017-08-12 15:29:30,370 ["http-bio-8080"-exec-10] [DEBUG] [kr.co.redcore.aop.ControllerAspect] Controller Method => index
+2017-08-12 15:29:30,370 ["http-bio-8080"-exec-10] [DEBUG] [kr.co.redcore.aop.ControllerAspect] /kalleryshop/front/main/index.do
+2017-08-12 15:29:30,370 ["http-bio-8080"-exec-10] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ContentType => null
+2017-08-12 15:29:30,370 ["http-bio-8080"-exec-10] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ################################################################################
+2017-08-12 15:29:30,370 ["http-bio-8080"-exec-10] [DEBUG] [kr.co.redcore.aop.ControllerAspect] Params => 
+2017-08-12 15:29:30,370 ["http-bio-8080"-exec-10] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ################################################################################
+2017-08-12 15:29:30,370 ["http-bio-8080"-exec-10] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ### Controller Before Advice End !! ###
+2017-08-12 15:29:30,378 ["http-bio-8080"-exec-10] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ------------------- controller end -------------------------------------------------------
+2017-08-12 15:29:30,378 ["http-bio-8080"-exec-10] [DEBUG] [kr.co.redcore.aop.ControllerAspect] >>> class kr.co.redcore.controller.front.IndexController Execution time : 0.008
+2017-08-12 15:29:30,378 ["http-bio-8080"-exec-10] [DEBUG] [kr.co.redcore.aop.ControllerAspect] @@@@@@@@@@@@@ >>> Around Action Execution Time END !! >>>
+2017-08-12 15:29:31,449 ["http-bio-8080"-exec-10] [ERROR] [o.s.web.servlet.tags.MessageTag] No message found under code 'common.wd.배팅일정' for locale 'ko'.javax.servlet.jsp.JspTagException: No message found under code 'common.wd.배팅일정' for locale 'ko'.
+	at org.springframework.web.servlet.tags.MessageTag.doStartTagInternal(MessageTag.java:185) ~[spring-webmvc-3.2.18.RELEASE.jar:3.2.18.RELEASE]
+	at org.springframework.web.servlet.tags.RequestContextAwareTag.doStartTag(RequestContextAwareTag.java:80) ~[spring-webmvc-3.2.18.RELEASE.jar:3.2.18.RELEASE]
+	at org.apache.jsp.WEB_002dINF.views.decorators.front.default_.topPage_jsp._jspx_meth_spring_005fmessage_005f0(topPage_jsp.java:261) [kalleryshop/:na]
+	at org.apache.jsp.WEB_002dINF.views.decorators.front.default_.topPage_jsp._jspService(topPage_jsp.java:116) [kalleryshop/:na]
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70) [jasper.jar:7.0.8]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722) [servlet-api.jar:na]
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:417) [jasper.jar:7.0.8]
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:391) [jasper.jar:7.0.8]
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:334) [jasper.jar:7.0.8]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722) [servlet-api.jar:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:306) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:672) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.ApplicationDispatcher.doInclude(ApplicationDispatcher.java:581) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.ApplicationDispatcher.include(ApplicationDispatcher.java:518) [catalina.jar:7.0.8]
+	at org.apache.jasper.runtime.JspRuntimeLibrary.include(JspRuntimeLibrary.java:927) [jasper.jar:7.0.8]
+	at org.apache.jasper.runtime.PageContextImpl.include(PageContextImpl.java:656) [jasper.jar:7.0.8]
+	at org.apache.jsp.WEB_002dINF.views.decorators.front.mainLayer_jsp._jspService(mainLayer_jsp.java:191) [kalleryshop/:na]
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70) [jasper.jar:7.0.8]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722) [servlet-api.jar:na]
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:417) [jasper.jar:7.0.8]
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:391) [jasper.jar:7.0.8]
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:334) [jasper.jar:7.0.8]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722) [servlet-api.jar:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:306) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:672) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.ApplicationDispatcher.doInclude(ApplicationDispatcher.java:581) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.ApplicationDispatcher.include(ApplicationDispatcher.java:518) [catalina.jar:7.0.8]
+	at com.opensymphony.sitemesh.compatability.OldDecorator2NewDecorator.render(OldDecorator2NewDecorator.java:46) [sitemesh-2.4.2.jar:na]
+	at com.opensymphony.sitemesh.webapp.decorator.BaseWebAppDecorator.render(BaseWebAppDecorator.java:33) [sitemesh-2.4.2.jar:na]
+	at com.opensymphony.sitemesh.webapp.SiteMeshFilter.doFilter(SiteMeshFilter.java:84) [sitemesh-2.4.2.jar:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:244) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:240) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:161) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:164) [catalina.jar:7.0.8]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100) [catalina.jar:7.0.8]
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:541) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118) [catalina.jar:7.0.8]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:383) [catalina.jar:7.0.8]
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:243) [tomcat-coyote.jar:7.0.8]
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:188) [tomcat-coyote.jar:7.0.8]
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:288) [tomcat-coyote.jar:7.0.8]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [na:1.7.0_45]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [na:1.7.0_45]
+	at java.lang.Thread.run(Unknown Source) [na:1.7.0_45]
+
+2017-08-12 15:29:31,683 [Multicast Heartbeat Sender Thread] [DEBUG] [n.s.ehcache.distribution.PayloadUtil] Cache peers for this CacheManager to be advertised: //192.168.219.173:9000/tokens
+2017-08-12 15:30:40,501 ["http-bio-8080"-exec-11] [DEBUG] [kr.co.redcore.aop.ControllerAspect] @@@@@@@@@@@@@ >>> Around Action Execution Time Start !! >>>
+2017-08-12 15:30:40,502 ["http-bio-8080"-exec-11] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ------------------- controller start -----------------------------------------------------
+2017-08-12 15:30:40,502 ["http-bio-8080"-exec-11] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ### Controller Before Advice Start !! ###
+2017-08-12 15:30:40,502 ["http-bio-8080"-exec-11] [DEBUG] [kr.co.redcore.aop.ControllerAspect] Controller Class => IndexController
+2017-08-12 15:30:40,502 ["http-bio-8080"-exec-11] [DEBUG] [kr.co.redcore.aop.ControllerAspect] Controller Method => index
+2017-08-12 15:30:40,502 ["http-bio-8080"-exec-11] [DEBUG] [kr.co.redcore.aop.ControllerAspect] /kalleryshop/front/main/index.do
+2017-08-12 15:30:40,502 ["http-bio-8080"-exec-11] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ContentType => null
+2017-08-12 15:30:40,502 ["http-bio-8080"-exec-11] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ################################################################################
+2017-08-12 15:30:40,502 ["http-bio-8080"-exec-11] [DEBUG] [kr.co.redcore.aop.ControllerAspect] Params => 
+2017-08-12 15:30:40,502 ["http-bio-8080"-exec-11] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ################################################################################
+2017-08-12 15:30:40,502 ["http-bio-8080"-exec-11] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ### Controller Before Advice End !! ###
+2017-08-12 15:30:40,502 ["http-bio-8080"-exec-11] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ------------------- controller end -------------------------------------------------------
+2017-08-12 15:30:40,502 ["http-bio-8080"-exec-11] [DEBUG] [kr.co.redcore.aop.ControllerAspect] >>> class kr.co.redcore.controller.front.IndexController Execution time : 0.0
+2017-08-12 15:30:40,502 ["http-bio-8080"-exec-11] [DEBUG] [kr.co.redcore.aop.ControllerAspect] @@@@@@@@@@@@@ >>> Around Action Execution Time END !! >>>
+2017-08-12 15:30:40,508 ["http-bio-8080"-exec-11] [ERROR] [o.s.web.servlet.tags.MessageTag] No message found under code 'common.wd.배팅일정' for locale 'ko'.javax.servlet.jsp.JspTagException: No message found under code 'common.wd.배팅일정' for locale 'ko'.
+	at org.springframework.web.servlet.tags.MessageTag.doStartTagInternal(MessageTag.java:185) ~[spring-webmvc-3.2.18.RELEASE.jar:3.2.18.RELEASE]
+	at org.springframework.web.servlet.tags.RequestContextAwareTag.doStartTag(RequestContextAwareTag.java:80) ~[spring-webmvc-3.2.18.RELEASE.jar:3.2.18.RELEASE]
+	at org.apache.jsp.WEB_002dINF.views.decorators.front.default_.topPage_jsp._jspx_meth_spring_005fmessage_005f0(topPage_jsp.java:261) [kalleryshop/:na]
+	at org.apache.jsp.WEB_002dINF.views.decorators.front.default_.topPage_jsp._jspService(topPage_jsp.java:116) [kalleryshop/:na]
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70) [jasper.jar:7.0.8]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722) [servlet-api.jar:na]
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:417) [jasper.jar:7.0.8]
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:391) [jasper.jar:7.0.8]
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:334) [jasper.jar:7.0.8]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722) [servlet-api.jar:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:306) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:672) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.ApplicationDispatcher.doInclude(ApplicationDispatcher.java:581) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.ApplicationDispatcher.include(ApplicationDispatcher.java:518) [catalina.jar:7.0.8]
+	at org.apache.jasper.runtime.JspRuntimeLibrary.include(JspRuntimeLibrary.java:927) [jasper.jar:7.0.8]
+	at org.apache.jasper.runtime.PageContextImpl.include(PageContextImpl.java:656) [jasper.jar:7.0.8]
+	at org.apache.jsp.WEB_002dINF.views.decorators.front.mainLayer_jsp._jspService(mainLayer_jsp.java:191) [kalleryshop/:na]
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70) [jasper.jar:7.0.8]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722) [servlet-api.jar:na]
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:417) [jasper.jar:7.0.8]
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:391) [jasper.jar:7.0.8]
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:334) [jasper.jar:7.0.8]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722) [servlet-api.jar:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:306) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:672) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.ApplicationDispatcher.doInclude(ApplicationDispatcher.java:581) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.ApplicationDispatcher.include(ApplicationDispatcher.java:518) [catalina.jar:7.0.8]
+	at com.opensymphony.sitemesh.compatability.OldDecorator2NewDecorator.render(OldDecorator2NewDecorator.java:46) [sitemesh-2.4.2.jar:na]
+	at com.opensymphony.sitemesh.webapp.decorator.BaseWebAppDecorator.render(BaseWebAppDecorator.java:33) [sitemesh-2.4.2.jar:na]
+	at com.opensymphony.sitemesh.webapp.SiteMeshFilter.doFilter(SiteMeshFilter.java:84) [sitemesh-2.4.2.jar:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:244) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:240) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:161) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:164) [catalina.jar:7.0.8]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100) [catalina.jar:7.0.8]
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:541) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118) [catalina.jar:7.0.8]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:383) [catalina.jar:7.0.8]
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:243) [tomcat-coyote.jar:7.0.8]
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:188) [tomcat-coyote.jar:7.0.8]
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:166) [tomcat-coyote.jar:7.0.8]
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:288) [tomcat-coyote.jar:7.0.8]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [na:1.7.0_45]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [na:1.7.0_45]
+	at java.lang.Thread.run(Unknown Source) [na:1.7.0_45]
+
+2017-08-12 15:30:44,036 ["http-bio-8080"-exec-11] [DEBUG] [kr.co.redcore.aop.ControllerAspect] @@@@@@@@@@@@@ >>> Around Action Execution Time Start !! >>>
+2017-08-12 15:30:44,036 ["http-bio-8080"-exec-11] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ------------------- controller start -----------------------------------------------------
+2017-08-12 15:30:44,036 ["http-bio-8080"-exec-11] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ### Controller Before Advice Start !! ###
+2017-08-12 15:30:44,036 ["http-bio-8080"-exec-11] [DEBUG] [kr.co.redcore.aop.ControllerAspect] Controller Class => IndexController
+2017-08-12 15:30:44,036 ["http-bio-8080"-exec-11] [DEBUG] [kr.co.redcore.aop.ControllerAspect] Controller Method => index
+2017-08-12 15:30:44,036 ["http-bio-8080"-exec-11] [DEBUG] [kr.co.redcore.aop.ControllerAspect] /kalleryshop/front/main/index.do
+2017-08-12 15:30:44,036 ["http-bio-8080"-exec-11] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ContentType => null
+2017-08-12 15:30:44,036 ["http-bio-8080"-exec-11] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ################################################################################
+2017-08-12 15:30:44,036 ["http-bio-8080"-exec-11] [DEBUG] [kr.co.redcore.aop.ControllerAspect] Params => 
+2017-08-12 15:30:44,036 ["http-bio-8080"-exec-11] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ################################################################################
+2017-08-12 15:30:44,036 ["http-bio-8080"-exec-11] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ### Controller Before Advice End !! ###
+2017-08-12 15:30:44,036 ["http-bio-8080"-exec-11] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ------------------- controller end -------------------------------------------------------
+2017-08-12 15:30:44,036 ["http-bio-8080"-exec-11] [DEBUG] [kr.co.redcore.aop.ControllerAspect] >>> class kr.co.redcore.controller.front.IndexController Execution time : 0.0
+2017-08-12 15:30:44,036 ["http-bio-8080"-exec-11] [DEBUG] [kr.co.redcore.aop.ControllerAspect] @@@@@@@@@@@@@ >>> Around Action Execution Time END !! >>>
+2017-08-12 15:30:44,037 ["http-bio-8080"-exec-11] [ERROR] [o.s.web.servlet.tags.MessageTag] No message found under code 'common.wd.배팅일정' for locale 'ko'.javax.servlet.jsp.JspTagException: No message found under code 'common.wd.배팅일정' for locale 'ko'.
+	at org.springframework.web.servlet.tags.MessageTag.doStartTagInternal(MessageTag.java:185) ~[spring-webmvc-3.2.18.RELEASE.jar:3.2.18.RELEASE]
+	at org.springframework.web.servlet.tags.RequestContextAwareTag.doStartTag(RequestContextAwareTag.java:80) ~[spring-webmvc-3.2.18.RELEASE.jar:3.2.18.RELEASE]
+	at org.apache.jsp.WEB_002dINF.views.decorators.front.default_.topPage_jsp._jspx_meth_spring_005fmessage_005f0(topPage_jsp.java:261) [kalleryshop/:na]
+	at org.apache.jsp.WEB_002dINF.views.decorators.front.default_.topPage_jsp._jspService(topPage_jsp.java:116) [kalleryshop/:na]
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70) [jasper.jar:7.0.8]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722) [servlet-api.jar:na]
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:417) [jasper.jar:7.0.8]
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:391) [jasper.jar:7.0.8]
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:334) [jasper.jar:7.0.8]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722) [servlet-api.jar:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:306) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:672) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.ApplicationDispatcher.doInclude(ApplicationDispatcher.java:581) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.ApplicationDispatcher.include(ApplicationDispatcher.java:518) [catalina.jar:7.0.8]
+	at org.apache.jasper.runtime.JspRuntimeLibrary.include(JspRuntimeLibrary.java:927) [jasper.jar:7.0.8]
+	at org.apache.jasper.runtime.PageContextImpl.include(PageContextImpl.java:656) [jasper.jar:7.0.8]
+	at org.apache.jsp.WEB_002dINF.views.decorators.front.mainLayer_jsp._jspService(mainLayer_jsp.java:191) [kalleryshop/:na]
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70) [jasper.jar:7.0.8]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722) [servlet-api.jar:na]
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:417) [jasper.jar:7.0.8]
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:391) [jasper.jar:7.0.8]
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:334) [jasper.jar:7.0.8]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722) [servlet-api.jar:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:306) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:672) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.ApplicationDispatcher.doInclude(ApplicationDispatcher.java:581) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.ApplicationDispatcher.include(ApplicationDispatcher.java:518) [catalina.jar:7.0.8]
+	at com.opensymphony.sitemesh.compatability.OldDecorator2NewDecorator.render(OldDecorator2NewDecorator.java:46) [sitemesh-2.4.2.jar:na]
+	at com.opensymphony.sitemesh.webapp.decorator.BaseWebAppDecorator.render(BaseWebAppDecorator.java:33) [sitemesh-2.4.2.jar:na]
+	at com.opensymphony.sitemesh.webapp.SiteMeshFilter.doFilter(SiteMeshFilter.java:84) [sitemesh-2.4.2.jar:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:244) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:240) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:161) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:164) [catalina.jar:7.0.8]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100) [catalina.jar:7.0.8]
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:541) [catalina.jar:7.0.8]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118) [catalina.jar:7.0.8]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:383) [catalina.jar:7.0.8]
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:243) [tomcat-coyote.jar:7.0.8]
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:188) [tomcat-coyote.jar:7.0.8]
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:288) [tomcat-coyote.jar:7.0.8]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [na:1.7.0_45]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [na:1.7.0_45]
+	at java.lang.Thread.run(Unknown Source) [na:1.7.0_45]
+
+2017-08-12 15:31:10,302 ["http-bio-8080"-exec-7] [DEBUG] [kr.co.redcore.aop.ControllerAspect] @@@@@@@@@@@@@ >>> Around Action Execution Time Start !! >>>
+2017-08-12 15:31:10,302 ["http-bio-8080"-exec-7] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ------------------- controller start -----------------------------------------------------
+2017-08-12 15:31:10,303 ["http-bio-8080"-exec-7] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ### Controller Before Advice Start !! ###
+2017-08-12 15:31:10,303 ["http-bio-8080"-exec-7] [DEBUG] [kr.co.redcore.aop.ControllerAspect] Controller Class => IndexController
+2017-08-12 15:31:10,303 ["http-bio-8080"-exec-7] [DEBUG] [kr.co.redcore.aop.ControllerAspect] Controller Method => index
+2017-08-12 15:31:10,303 ["http-bio-8080"-exec-7] [DEBUG] [kr.co.redcore.aop.ControllerAspect] /kalleryshop/front/main/index.do
+2017-08-12 15:31:10,303 ["http-bio-8080"-exec-7] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ContentType => null
+2017-08-12 15:31:10,303 ["http-bio-8080"-exec-7] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ################################################################################
+2017-08-12 15:31:10,303 ["http-bio-8080"-exec-7] [DEBUG] [kr.co.redcore.aop.ControllerAspect] Params => 
+2017-08-12 15:31:10,303 ["http-bio-8080"-exec-7] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ################################################################################
+2017-08-12 15:31:10,303 ["http-bio-8080"-exec-7] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ### Controller Before Advice End !! ###
+2017-08-12 15:31:10,303 ["http-bio-8080"-exec-7] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ------------------- controller end -------------------------------------------------------
+2017-08-12 15:31:10,303 ["http-bio-8080"-exec-7] [DEBUG] [kr.co.redcore.aop.ControllerAspect] >>> class kr.co.redcore.controller.front.IndexController Execution time : 0.001
+2017-08-12 15:31:10,303 ["http-bio-8080"-exec-7] [DEBUG] [kr.co.redcore.aop.ControllerAspect] @@@@@@@@@@@@@ >>> Around Action Execution Time END !! >>>
+2017-08-12 15:31:18,662 ["http-bio-8080"-exec-14] [DEBUG] [kr.co.redcore.aop.ControllerAspect] @@@@@@@@@@@@@ >>> Around Action Execution Time Start !! >>>
+2017-08-12 15:31:18,662 ["http-bio-8080"-exec-14] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ------------------- controller start -----------------------------------------------------
+2017-08-12 15:31:18,662 ["http-bio-8080"-exec-14] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ### Controller Before Advice Start !! ###
+2017-08-12 15:31:18,662 ["http-bio-8080"-exec-14] [DEBUG] [kr.co.redcore.aop.ControllerAspect] Controller Class => LoginController
+2017-08-12 15:31:18,662 ["http-bio-8080"-exec-14] [DEBUG] [kr.co.redcore.aop.ControllerAspect] Controller Method => loginForm
+2017-08-12 15:31:18,662 ["http-bio-8080"-exec-14] [DEBUG] [kr.co.redcore.aop.ControllerAspect] /kalleryshop/front/login/loginForm.do
+2017-08-12 15:31:18,663 ["http-bio-8080"-exec-14] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ContentType => null
+2017-08-12 15:31:18,663 ["http-bio-8080"-exec-14] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ################################################################################
+2017-08-12 15:31:18,663 ["http-bio-8080"-exec-14] [DEBUG] [kr.co.redcore.aop.ControllerAspect] Params => 
+2017-08-12 15:31:18,663 ["http-bio-8080"-exec-14] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ################################################################################
+2017-08-12 15:31:18,663 ["http-bio-8080"-exec-14] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ### Controller Before Advice End !! ###
+2017-08-12 15:31:18,668 ["http-bio-8080"-exec-14] [DEBUG] [kr.co.redcore.aop.ControllerAspect] ------------------- controller end -------------------------------------------------------
+2017-08-12 15:31:18,668 ["http-bio-8080"-exec-14] [DEBUG] [kr.co.redcore.aop.ControllerAspect] >>> class kr.co.redcore.controller.front.LoginController Execution time : 0.006
+2017-08-12 15:31:18,668 ["http-bio-8080"-exec-14] [DEBUG] [kr.co.redcore.aop.ControllerAspect] @@@@@@@@@@@@@ >>> Around Action Execution Time END !! >>>
+2017-08-12 17:20:22,773 [Multicast Heartbeat Sender Thread] [DEBUG] [n.s.e.d.MulticastKeepaliveHeartbeatSender] Error on multicast socketjava.net.SocketException: Network is unreachable: Datagram send failed
+	at java.net.TwoStacksPlainDatagramSocketImpl.send(Native Method) ~[na:1.7.0_45]
+	at java.net.DatagramSocket.send(Unknown Source) ~[na:1.7.0_45]
+	at net.sf.ehcache.distribution.MulticastKeepaliveHeartbeatSender$MulticastServerThread.run(MulticastKeepaliveHeartbeatSender.java:144) ~[ehcache-2.9.0.jar:2.9.0]
+

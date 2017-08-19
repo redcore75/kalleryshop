@@ -1,0 +1,76 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ include file="/WEB-INF/views/common/common.jsp"%>
+<%
+Logger logger = LoggerFactory.getLogger(getClass());
+ParamMap paramMap = (ParamMap) request.getAttribute("paramMap");
+%>
+<head>	 				
+	<script type="text/javascript">	
+		$(document).ready(function(){
+		});
+	</script>
+</head>
+<body>
+
+	<div class="container">
+      	<div class="box box-default">
+        	<div class="box-header with-border">
+        		<h3 class="box-title"><spring:message code="common.wd.포인트구매" /></h3>
+        	</div>
+        	<!-- /.box-header -->
+        	<div class="box-body">
+        		<div class="row">
+        			<div class="col-md-12">
+						<div class="alert alert-warning alert-dismissible">
+	                		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+	                		<h4><i class="icon fa fa-warning"></i><spring:message code="common.wd.주의사항" />!</h4>
+	                		<spring:message code="common.st.포인트취소는불가능합니다" />
+	             	 	</div>          				
+        			</div>
+        		</div>
+        		<div class="row">
+           			<div class="col-md-4" align="center">
+ 						<div class="small-box bg-aqua">
+            				<div class="inner">
+              					<h4>Point 10000</h4>
+              					<p>10,000원</p>
+            				</div>
+	            			<div class="icon">
+	              				<i class="ion ion-bag"></i>
+	            			</div>
+            				<a href="${pageContext.request.contextPath}/front/member/point_order/pointBuyOrder.do?buy_point=10000" class="small-box-footer">구매하기<i class="fa fa-arrow-circle-right"></i></a>
+            			</div>
+          			</div>
+           			<div class="col-md-4" align="center">
+ 						<div class="small-box bg-aqua">
+            				<div class="inner">
+              					<h4>Point 15000</h4>
+              					<p>15,000원</p>
+            				</div>
+	            			<div class="icon">
+	              				<i class="ion ion-bag"></i>
+	            			</div>
+	            			<a href="${pageContext.request.contextPath}/front/member/point_order/pointBuyOrder.do?buy_point=15000" class="small-box-footer">구매하기<i class="fa fa-arrow-circle-right"></i></a>
+	            		</div>
+          			</div>
+           			<div class="col-md-4" align="center">
+ 						<div class="small-box bg-aqua">
+            				<div class="inner">
+              					<h4>Point 20000</h4>
+              					<p>20,000원</p>
+            				</div>
+	            			<div class="icon">
+	              				<i class="ion ion-bag"></i>
+	            			</div>
+            				<a href="${pageContext.request.contextPath}/front/member/point_order/pointBuyOrder.do?buy_point=20000" class="small-box-footer">구매하기<i class="fa fa-arrow-circle-right"></i></a>
+						</div>
+          			</div>          			          			
+        		</div>
+			</div>
+        	<!-- /.box-body -->
+      	</div>
+      	<!-- /.box -->
+	</div>
+	<!-- /.content -->
+	
+</body>

@@ -89,7 +89,7 @@ ParamMap paramMap = (ParamMap) request.getAttribute("paramMap");
   			<form:input path="member_type" type="hidden" value="A"/>
       		<div class="box box-default">
         		<div class="box-header with-border">
-          			<h3 class="box-title"><spring:message code="common.wd.시스템관리" /> > <spring:message code="common.wd.관리자등록" /></h3>
+          			<h3 class="box-title"><spring:message code="common.wd.회원관리" /> > <spring:message code="common.wd.관리자등록" /></h3>
         		</div>
         		<!-- /.box-header -->
         		<div class="box-body">

@@ -35,10 +35,18 @@ Tbl_member tbl_member = (Tbl_member) session.getAttribute(GlobalConstants.ADMIN_
 		              		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><spring:message code="common.wd.기본설정" /><span class="caret"></span></a>
 		              		<ul class="dropdown-menu">
 		                		<li><a href="${pageContext.request.contextPath}/admin/shop_env/updateForm.do"><spring:message code="common.wd.기본정보" /></a></li>
+		                		<li><a href="${pageContext.request.contextPath}/admin/serv_term/updateForm.do"><spring:message code="common.wd.약관정보" /></a></li>		                	
 		              		</ul>
-		            	</li>	          				            	
+		            	</li>
 		            	<li class="dropdown">
-		              		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><spring:message code="common.wd.시스템관리" /><span class="caret"></span></a>
+		              		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><spring:message code="common.wd.배너관리" /><span class="caret"></span></a>
+		              		<ul class="dropdown-menu">
+		                		<li><a href="${pageContext.request.contextPath}/admin/banner_manager/searchList.do"><spring:message code="common.wd.배너관리리스트" /></a></li>
+		                		<li><a href="${pageContext.request.contextPath}/admin/banner/searchList.do"><spring:message code="common.wd.배너상세리스트" /></a></li>
+		              		</ul>
+		            	</li>
+		            	<li class="dropdown">
+		              		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><spring:message code="common.wd.회원관리" /><span class="caret"></span></a>
 		              		<ul class="dropdown-menu">
 		                		<li><a href="${pageContext.request.contextPath}/admin/admin_member/searchList.do"><spring:message code="common.wd.관리자리스트" /></a></li>
 		                		<li><a href="${pageContext.request.contextPath}/admin/front_member/searchList.do"><spring:message code="common.wd.회원리스트" /></a></li>

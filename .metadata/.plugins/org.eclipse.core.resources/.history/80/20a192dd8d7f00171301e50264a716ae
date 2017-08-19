@@ -1,0 +1,104 @@
+package kr.co.redcore.controller.front;
+
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.support.SessionStatus;
+import org.springframework.web.servlet.ModelAndView;
+
+import kr.co.redcore.GlobalConstants;
+import kr.co.redcore.annotation.CheckToken;
+import kr.co.redcore.controller.BaseController;
+import kr.co.redcore.domain.Tbl_member;
+import kr.co.redcore.domain.view.Vw_prd_mst;
+import kr.co.redcore.exception.ImageFileTypeException;
+import kr.co.redcore.service.AuthNumService;
+import kr.co.redcore.service.EmailService;
+import kr.co.redcore.service.member.LoginService;
+import kr.co.redcore.service.member.MemberService;
+
+@Controller
+@SessionAttributes(value = { "tbl_member" })
+public class MemberInfoController extends BaseController {
+	private static final Logger logger = LoggerFactory.getLogger(MemberInfoController.class);
+
+	@Autowired
+	private LoginService loginService;	
+	
+	@Autowired
+	private MemberService memberService;
+
+	@InitBinder
+	public void initBinder(WebDataBinder dataBinder) {
+		// WebDataBinder에서 수정불가능한 필드를 나열한다.
+		dataBinder.setDisallowedFields("member_id", "member_level_seq", "member_type", "email_addr");
+	}
+
+	@RequestMapping(value = "/front/member/info/updateForm.do")
+	public ModelAndView updateForm(HttpSession session, HttpServletRequest req, HttpServletResponse res, @RequestParam Map<String, Object> params) throws Exception {
+		//String member_id = (String) params.get("member_id");
+		Tbl_member tbl_member = loginService.getLoginInfo(req, GlobalConstants.FRONT_LOGININFO_KEY);
+		
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName(this.getFrontThemeRoute("member/info/updateForm"));
+		mv.addObject("tbl_member", tbl_member);
+		
+		return mv;
+	}
+	
+	@CheckToken
+	@RequestMapping(value = "/front/member/info/update.do")
+	public ModelAndView update(HttpSession session, HttpServletRequest req, HttpServletResponse res, @RequestParam Map<String, Object> params, @ModelAttribute @Valid Tbl_member tbl_member, BindingResult bindingResult, SessionStatus status) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		
+		if(!super.validateTokenBindResult(req, bindingResult)) {
+			mv.setViewName(this.getFrontThemeRoute("member/info/updateForm"));
+		} else {
+			// 파일업로드 처리
+			try {
+				tbl_member.setProfile_photo_path(uploadFile(tbl_member.getProfile_photo_file(), getSubImagePath(GlobalConstants.UPLOAD_PATH_IMAGE_USR)));
+			} catch (ImageFileTypeException ex) {
+				bindingResult.rejectValue("profile_photo_file", "error.image_file_type");
+				mv.setViewName(this.getFrontThemeRoute("member/info/updateForm"));
+				return mv;
+			} catch (Exception ex) {
+				bindingResult.rejectValue("profile_photo_file", "error.upload_file");
+				mv.setViewName(this.getFrontThemeRoute("member/info/updateForm"));
+				return mv;
+			}
+			
+			tbl_member.setRegby(tbl_member.getMember_id());
+			tbl_member.setUptby(tbl_member.getMember_id());
+			
+			memberService.updateTbl_memberForInfo(tbl_member);
+			
+			mv.setViewName(this.getFrontThemeRoute("member/info/updateDone"));
+		}
+		
+		return mv;
+	}
+	
+//	@RequestMapping(value = "/front/member/info/updateDone.do")
+//	public ModelAndView updateDone(HttpSession session, HttpServletRequest req, HttpServletResponse res, @RequestParam Map<String, Object> params) throws Exception {
+//		ModelAndView mv = new ModelAndView();
+//		mv.setViewName(this.getFrontThemeRoute("member/info/updateDone"));
+//		
+//		return mv;
+//	}
+}

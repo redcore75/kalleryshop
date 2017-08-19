@@ -1,0 +1,32 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ include file="/WEB-INF/views/common/common.jsp"%>
+<%
+Logger logger = LoggerFactory.getLogger(getClass());
+ParamMap paramMap = (ParamMap) request.getAttribute("paramMap");
+%>
+<head>	 				
+<script type="text/javascript">
+	$(document).ready(function(){
+	});
+</script>
+</head>
+<body>
+	<div class="container">
+        <header class="jumbotron my-4">
+            <h1 class="display-3">A Warm Welcome!</h1>
+            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.</p>
+            <a href="#" class="btn btn-primary btn-lg">Call to action!</a>
+        </header>	
+	
+		<div class="row">
+			<div class="col-md-1"></div>
+			<div class="col-md-10">
+				<c:import url="/front/module/banner.do">
+					<c:param name="banner_mgr_seq" value="1" />
+				</c:import>
+			</div>
+			<div class="col-md-1"></div>
+		</div>
+	</div>
+	<!-- /.content -->
+</body>
